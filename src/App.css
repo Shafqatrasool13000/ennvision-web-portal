@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  font-family: "EnnVisions" !important;
+}
+
+body {
+  font-family: "EnnVisions" !important;
+  /* background-color: #FBF9F9 !important; */
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "EnnVisions";
+  src: local("SFUIText-Regular"),
+    url("./assets/fonts/EnnVisions.otf") format("truetype");
+}
+@font-face {
+  font-family: "EnnVisionsMedium";
+  src: local("SFUIText-Regular"),
+    url("./assets/fonts/EnnVisionsMedium.otf") format("truetype");
+}
+@font-face {
+  font-family: "EnnVisionsBold";
+  src: local("SFUIText-Regular"),
+    url("./assets/fonts/EnnVisionsBold.otf") format("truetype");
+}
+
+.arrow-box {
+  position: fixed;
+  bottom: 6%;
+  right: 5%;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 30;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.mobile-nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-nav-title p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #aab2ba;
+}
+
+.ant-drawer-close {
+  visibility: hidden;
+}
+button {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .web-view {
+    display: none;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .mobile-view {
+    display: none;
+  }
+}
+.page-indicator-section img {
+  cursor: pointer;
+}
+.page-indicator-section .indicators .indicator {
+  height: 4px;
+  width: 35px;
+  border-radius: 10px;
+}
+.page-indicator-section .indicators .indicator-fill {
+  background-color: #c7112b;
+}
+.page-indicator-section .indicators .indicator-null {
+  background-color: #8d99b247;
+}
+.ant-drawer-body {
+  padding: 13px !important;
+}
+.ant-drawer-header {
+  padding: 0 !important;
+}
+.ant-drawer-close {
+  margin-right: 0 !important;
+}
+.mobile-nav-title {
+  margin-right: 25px;
+  margin-top: 15px;
+}
+.ant-drawer-header {
+  border-bottom: none !important;
+}
