@@ -1,5 +1,5 @@
 import CustomButton from "../../../Components/CustomButton/Index";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ListProperty3Styled from "./style";
 import { Col, Container, Row } from "react-bootstrap";
 import {

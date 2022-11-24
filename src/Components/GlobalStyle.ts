@@ -32,7 +32,6 @@ export const tertiaryGrey5 = "#E5E5EA";
 export const tertiaryGrey6 = "#D6D6E0";
 export const tertiaryGrey7 = "#232837";
 export const tertiaryGrey8 = "#FCFBFB";
-export const tertiaryGrey9 = "#FCFBFB";
 export const tertiaryGrey10 = "#FAFAFA";
 export const tertiaryGrey11 = "#00B0E9";
 export const tertiaryGrey12 = "#8E8E93";
@@ -68,6 +67,7 @@ export const ButtonContainer = styled.div`
     height: auto;
   }
 `;
+
 export const TertiaryHeading = styled.h3`
   font-size: 24px;
   font-weight: 700;

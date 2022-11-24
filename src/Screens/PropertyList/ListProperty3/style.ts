@@ -1,71 +1,71 @@
-import styled from "styled-components"
-import { lightColor1, lightGrey2, pureDark, secondaryDark4, whiteColor } from "../../../Components/GlobalStyle"
+import styled from "styled-components";
+import {
+  lightColor1,
+  lightGrey2,
+  pureDark,
+  secondaryDark4,
+  whiteColor,
+} from "../../../Components/GlobalStyle";
 
 const ListProperty3Styled = styled.div`
+  background-color: white;
+  height: 100vh;
+  padding-top: 100px;
 
-background-color: white;
-height: 100vh;
-padding-top: 40px;
+  .title {
+    &:last-child {
+      font-size: 20px;
+    }
+  }
 
-.title{
-&:last-child{
- font-size:20px;
-}
-}
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
 
-@media screen and (max-width:768px){
-height: 100%;
-}
+  .property-intro {
+    font-family: "EnnVisionsMedium";
 
-.property-intro{
+    .heading {
+      font-size: 16px;
+      color: ${pureDark};
+    }
 
-font-family:'EnnVisionsMedium';
+    .free {
+      font-size: 16px;
+      color: ${pureDark};
+    }
 
-.heading{
-font-size:16px;
-color: ${pureDark};
-}
+    .price {
+      font-size: 16px;
+      color: ${lightGrey2};
+    }
+  }
+  .row {
+    .property-card {
+      &-inner-section {
+        background: ${whiteColor};
+        padding: 16px;
+        border-radius: 6px;
+        border: 1px solid ${lightColor1};
+        position: relative;
 
-.free{
-font-size: 16px;
-color: ${pureDark};
-}
+        .feature {
+          margin-top: 14px;
 
-.price{
-font-size: 16px;
-color: ${lightGrey2};
-}
+          &-text {
+            color: ${secondaryDark4};
+            font-size: 14px;
+          }
+        }
+      }
 
-}
-.row{
+      .property-below-btn {
+        position: absolute;
+        bottom: 5%;
+        right: 3%;
+      }
+    }
+  }
+`;
 
-.property-card{
-
-&-inner-section{
-background: ${whiteColor};
-padding: 16px;
-border-radius: 6px;
-border: 1px solid ${lightColor1};
-position: relative;
-
-.feature{
-margin-top: 14px;
-
-&-text{
-color: ${secondaryDark4};
-font-size: 14px;
-}
-}
-}
-
-.property-below-btn{
-position: absolute;
-bottom: 5%;
-right: 3%;
-}
-}
-}
-
-`
-
-export default ListProperty3Styled
+export default ListProperty3Styled;

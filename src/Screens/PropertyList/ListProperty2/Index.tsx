@@ -70,7 +70,7 @@ const Index = () => {
                     <p className="feature-text ms-2 mb-0">{title}</p>
                   </div>
                 ))}
-                <Link to={"list-2"} className="property-btn">
+                <div className="property-btn">
                   <CustomButton
                     bgcolor={PrimaryColor}
                     color="white"
@@ -81,9 +81,9 @@ const Index = () => {
                     margin="auto"
                     fontSize="16px"
                     fontFamily="EnnVisionsMedium"
-                    // clicked={() => navigate("list-2")}
+                    clicked={() => navigate("list-2")}
                   />
-                </Link>
+                </div>
               </div>
             </Col>
           ))}

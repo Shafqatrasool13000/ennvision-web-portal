@@ -72,16 +72,17 @@ const Index = () => {
             <div className="left-side-inner-section">
               <Formik
                 initialValues={initialValues}
-                validationSchema={validationSchema}
+                // validationSchema={validationSchema}
+                onSubmit={() => console.log("submit")}
               >
-                {(formik, form) => {
+                {({ formik, form }: any) => {
                   return (
                     <Form
                       style={{
                         height: "100%",
                       }}
                       name="basic"
-                      onFinish={formik.handleSubmit}
+                      // onFinish={formik.handleSubmit}
                       // onFinishFailed={onFinishFailed}
                       autoComplete="off"
                     >
@@ -98,11 +99,11 @@ const Index = () => {
                           type="input"
                           name="name"
                           placeholder="Location name"
-                          className={
-                            formik.errors.name && formik.touched.name
-                              ? "is-invalid"
-                              : "customInput"
-                          }
+                          // className={
+                          //   formik.errors.name && formik.touched.name
+                          //     ? "is-invalid"
+                          //     : "customInput"
+                          // }
                           icon={searchIcon}
                         />
                         <div>
@@ -112,11 +113,11 @@ const Index = () => {
                             name="streetNumber"
                             label="Street Number"
                             placeholder="Street Number"
-                            className={
-                              formik.errors.name && formik.touched.name
-                                ? "is-invalid"
-                                : "customInput"
-                            }
+                            // className={
+                            //   formik.errors.name && formik.touched.name
+                            //     ? "is-invalid"
+                            //     : "customInput"
+                            // }
                           />
                         </div>
                         <FormControl
@@ -125,11 +126,11 @@ const Index = () => {
                           label="Street Name"
                           placeholder="Street Name"
                           // handleSelectValue={handleSelectCountry}
-                          className={
-                            formik.errors.countryId && formik.touched.countryId
-                              ? "is-invalid"
-                              : "customPasswordInput"
-                          }
+                          // className={
+                          //   formik.errors.countryId && formik.touched.countryId
+                          //     ? "is-invalid"
+                          //     : "customPasswordInput"
+                          // }
                           defaultValue={locationsId !== "createNew"}
                         />
                         <FormControl
@@ -138,14 +139,14 @@ const Index = () => {
                           name="postalCode"
                           placeholder="Postal Code"
                           // handleSelectValue={handleSelectedState}
-                          className={
-                            formik.errors.stateId && formik.touched.stateId
-                              ? "is-invalid"
-                              : "customInput"
-                          }
+                          // className={
+                          //   formik.errors.stateId && formik.touched.stateId
+                          //     ? "is-invalid"
+                          //     : "customInput"
+                          // }
                           defaultValue={locationsId !== "createNew"}
                         />
-                        <Link to={"list-1"} className="mt-3">
+                        <div>
                           <CustomButton
                             bgcolor={PrimaryColor}
                             color="white"
@@ -156,9 +157,9 @@ const Index = () => {
                             margin="auto"
                             fontSize="16px"
                             fontFamily="EnnVisionsMedium"
-                            // clicked={() => navigate("list-1")}
+                            clicked={() => navigate("list-1")}
                           />
-                        </Link>
+                        </div>
                       </div>
                     </Form>
                   );

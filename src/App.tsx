@@ -41,7 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="find-home" element={<FindHome />} />
-        <Route path="property-details/:id" element={<PropertyDetails />} />{" "}
+        <Route path="property-details/:id" element={<PropertyDetails />} />
         <Route path="find-professionals" element={<FindProfessionals />} />
         <Route path="property" element={<ListAProperty />}>
           <Route index element={<ListProperty1 />} />

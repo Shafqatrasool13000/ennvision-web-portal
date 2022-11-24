@@ -2,11 +2,14 @@ import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {
   BlackDot,
+  lightGrey4,
+  PrimaryColor,
   TertiraryHeading,
   TetraHeading,
   UnderlineBlue,
+  UnderlineRed,
 } from "../../Components/GlobalStyle";
-import { PropertyInfo } from "./style";
+import { PropertyInfoStyled } from "./style";
 import FormControl from "../../Components/FormControl";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -16,8 +19,8 @@ import FeatureDetails from "./FeatureDetails";
 import GenerateInfo from "./GenerateInfo";
 import plusIcon from "../../assets/icons/ic_add_property_address_add_field.svg";
 import minusIcon from "../../assets/icons/ic_add_property_address_remove_field.svg";
-// import Editors from "./Editor";
 import CustomButton from "../../Components/CustomButton/Index";
+// import Editors from "./Editor";
 
 const Index = () => {
   const [apartment, setApartment] = useState("Rent");
@@ -42,15 +45,17 @@ const Index = () => {
   const propertyTypes = ["Residential", "Commercial", "Plot"];
 
   return (
-    <PropertyInfo>
-      <Container>
+    <PropertyInfoStyled>
+      <div className="container">
         <TertiraryHeading className="ms-3">
           Fill Property Information
         </TertiraryHeading>
         <div className="ms-3">
-          <UnderlineBlue />
+          <UnderlineRed />
           <BlackDot />
         </div>
+      </div>
+      <Container className="inner-section">
         <div className="heading-bar">
           <h2 className="heading-bar-title">Sell or rent out your property</h2>
           <p className="heading-bar-subtitle">
@@ -302,14 +307,47 @@ const Index = () => {
           }}
         </Formik>
         {/* <Editors/> */}
+        <GenerateInfo />
+        <FeatureDetails />
+        <Gallery />
       </Container>
-
-      <GenerateInfo />
-      <FeatureDetails />
-      <Gallery />
-
-      <Container></Container>
-    </PropertyInfo>
+      <Container className="mt-3">
+        <Row className="justify-content-end">
+          <Col md={4} />
+          <Col
+            className="d-flex justify-content-end"
+            md={{ span: 2, offset: 4 }}
+          >
+            <CustomButton
+              bgcolor={lightGrey4}
+              color="white"
+              padding="8px 8px"
+              width="100%"
+              type="submit"
+              title="Draft"
+              margin="auto"
+              fontSize="18px"
+            />
+          </Col>
+          <Col
+            className="d-flex justify-content-end mt-2 mt-md-0"
+            md={{ span: 2 }}
+          >
+            <CustomButton
+              bgcolor={PrimaryColor}
+              color="white"
+              padding="8px 8px"
+              width="100%"
+              type="submit"
+              title="Submit"
+              margin="auto"
+              fontSize="18px"
+              // clicked={navigateToList}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </PropertyInfoStyled>
   );
 };
 
