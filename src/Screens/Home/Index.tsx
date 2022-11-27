@@ -1,4 +1,3 @@
-import React from "react";
 import HeroSection from "./HeroSection";
 import ExploreProperty from "./ExploreProperty";
 import FeatureProperties from "./FeatureProperties";

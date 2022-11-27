@@ -1,25 +1,26 @@
-import React from "react";
-import CustomButton from "../CustomButton/Index";
 import { MobileCardContainer } from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import { BasicColor, PrimaryColor } from "../GlobalStyle";
 import deleteIcon from "../../Assets/icons/ic_delete.svg";
 import editIcon from "../../Assets/icons/ic_edit.svg";
-import addIcon from '../../Assets/ic_add_new.svg';
-const Index = ({ data, deleteHandler, editHandler }) => {
-  const navigate=useNavigate();
+import addIcon from "../../Assets/ic_add_new.svg";
+const Index = ({ data, deleteHandler, editHandler }: any) => {
+  const navigate = useNavigate();
 
   return (
     <MobileCardContainer>
       <div className=" plus-icon d-md-none">
-      <img src={addIcon} onClick={()=>navigate("/lineItem/createLineItem")} alt="add-icon" />
+        <img
+          src={addIcon}
+          onClick={() => navigate("/lineItem/createLineItem")}
+          alt="add-icon"
+        />
       </div>
       <div>
-      {data?.map((content, i) => {
-        return (
+        {data?.map((content: any, i: number) => {
+          return (
             <div key={i} className="mobile-card-content">
               <div className="mobile-card-content-row">
-
                 <Link className="id hf-link" to="#">
                   {content.id}
                 </Link>
@@ -30,7 +31,7 @@ const Index = ({ data, deleteHandler, editHandler }) => {
                       alt="delete Icon"
                       className="action_icons deleteicon"
                       onClick={() => {
-                        deleteHandler(content)
+                        deleteHandler(content);
                       }}
                       style={{ cursor: "pointer" }}
                     />
@@ -40,12 +41,11 @@ const Index = ({ data, deleteHandler, editHandler }) => {
                       alt="edit Icon"
                       className="action_icons editicon"
                       onClick={() => {
-                        editHandler(content)
+                        editHandler(content);
                       }}
                       style={{ cursor: "pointer" }}
                     />
                   </div>
-
                 </div>
               </div>
               <div className="mobile-card-content-row">
@@ -91,8 +91,8 @@ const Index = ({ data, deleteHandler, editHandler }) => {
               />
             </div> */}
             </div>
-        );
-      })}
+          );
+        })}
       </div>
     </MobileCardContainer>
   );

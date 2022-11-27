@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BasicColor = "#C0922E";
 export const PrimaryColor = "#C7112B";
-export const whiteColor = "#FFFFFF";
+export const whiteColor = "#ffffff";
 export const pureDark = "#000000";
 export const lightDark = "#4D4D4D";
 export const secondaryDark = "#221E30";
@@ -20,6 +20,8 @@ export const lightGrey5 = "#E9E9E9";
 export const lightGrey6 = "#717272";
 export const lightGrey7 = "#464E5F";
 export const lightGrey8 = "#E9E9E9";
+export const lightGrey9 = "#0D0E10";
+export const lightGrey10 = "#e5e2e2";
 
 export const secondaryGreen = "#32D74B";
 export const greenishColor = "#34C759";
@@ -116,7 +118,7 @@ export const TertiraryHeadingMini = styled.h6`
 
 export const TetraHeading = styled.div`
   font-size: 16px;
-  color: #232837;
+  color: ${tertiaryGrey7};
   font-family: "EnnVisionsMedium";
 `;
 export const MiniHeading = styled.p`

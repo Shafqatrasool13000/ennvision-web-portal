@@ -1,12 +1,8 @@
 import { Formik } from "formik";
 import * as Yup from "yup";
-import {Form } from "antd";
+import { Form } from "antd";
 import FormControl from "../../Components/FormControl";
-import { useNavigate } from "react-router-dom";
-import GenericService from "../../Services/GenericService";
-import { API_URL } from "../../Services/config";
-import { toast } from "react-toastify";
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AliceCarousel from "react-alice-carousel";
 
 const initialValues = {
@@ -22,48 +18,37 @@ const validationSchema = Yup.object({
     .min(6, "Minimum six character is required"),
 });
 
-const Index = ({ logIn }) => {
-  const navigation = useNavigate();
-  const genericService = new GenericService();
-
+const Index = ({ logIn }: any) => {
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     768: { items: 3 },
     1024: { items: 4 },
     1200: { items: 6 },
-    1366:{items:8}
+    1366: { items: 8 },
   };
 
-  const onSubmit = (value) => {
+  const onSubmit = (value: any) => {
     console.log(value, "value");
-    genericService
-      .post(`${API_URL}auth/signin`, value)
-      .then((msg) => {
-        if (msg.resultCode == 200) {
-          logIn();
-          localStorage.setItem("userData", JSON.stringify(msg.data));
-          navigation("/my-home");
-        } else {
-          toast(msg.message, "top-right");
-        }
-      })
-      .catch((error) => {
-        console.log(error, "error");
-        if (error.response.status == 401) {
-          toast("login credentials is invalid", "top-right");
-        }
-      });
   };
 
- const filtersData=[
-  'Select Areas','All Residential','Price Range','Size Range','Bedroom','Bathroom','Propsure Verified','All Filters'
- ]
+  const filtersData = [
+    "Select Areas",
+    "All Residential",
+    "Price Range",
+    "Size Range",
+    "Bedroom",
+    "Bathroom",
+    "Propsure Verified",
+    "All Filters",
+  ];
 
   return (
-    <Container style={{
-      marginTop:'70px'
-    }}>
+    <Container
+      style={{
+        marginTop: "70px",
+      }}
+    >
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -75,33 +60,36 @@ const Index = ({ logIn }) => {
               name="basic"
               onFinish={formik.handleSubmit}
               autoComplete="off"
-              validateMessages={validationSchema}
+              // validateMessages={validationSchema}
             >
-                <AliceCarousel
-                  mouseTracking
-                  disableButtonsControls
-                  disableDotsControls
-                  items={[ 
-                  ...filtersData.map((name,index)=>(
-                 <div key={index} className="me-2">
-                   <FormControl
-                    control="select"
-                    type="text"
-                    name="location"
-                    placeholder={name}
-                    className={
-                      formik.errors.email && formik.touched.email
-                        ? "is-invalid"
-                        : "customInput"
-                    }
-                    options={[{ id: "0", name: 'City 1' }, { id: "1", name: 'City 2' },]}
-                  />
-                 </div>
-                  ))
-                  ]}
-                  responsive={responsive}
-                  controlsStrategy="alternate"
-                />
+              <AliceCarousel
+                mouseTracking
+                disableButtonsControls
+                disableDotsControls
+                items={[
+                  ...filtersData.map((name, index) => (
+                    <div key={index} className="me-2">
+                      <FormControl
+                        control="select"
+                        type="text"
+                        name="location"
+                        placeholder={name}
+                        className={
+                          formik.errors.email && formik.touched.email
+                            ? "is-invalid"
+                            : "customInput"
+                        }
+                        options={[
+                          { id: "0", name: "City 1" },
+                          { id: "1", name: "City 2" },
+                        ]}
+                      />
+                    </div>
+                  )),
+                ]}
+                responsive={responsive}
+                controlsStrategy="alternate"
+              />
             </Form>
           );
         }}

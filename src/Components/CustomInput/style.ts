@@ -7,12 +7,11 @@ export const CustomInputContainer = styled.div`
   label {
     font-size: 14px;
     text-transform: capitalize;
-    font-family: 'EnnVisionsMedium';
     display: block;
     margin-bottom: 10px;
-    color:#1B283F;
+    color: #1b283f;
   }
   .ant-input {
     padding: 8px 8px !important;
-}
+  }
 `;

@@ -12,12 +12,27 @@ import ListAProperty from "./Screens/ListAProperty/Index";
 import Resources from "./Screens/Resources/Index";
 import Error from "./Components/Error/Error";
 
-import ListProperty1 from "./Screens/PropertyList/ListProperty1/Index";
-import ListProperty2 from "./Screens/PropertyList/ListProperty2/Index";
-import ListProperty3 from "./Screens/PropertyList/ListProperty3/Index";
+import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
+import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
+import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
 
 import PaymentInfo from "./Screens/BillSummary/Index";
 import PropertyInfo from "./Screens/PropertyInfo/Index";
+import EditPhone from "./Screens/CreateProfessional/EditPhone";
+
+import BecomeProfessional from "./Screens/BecomeProfessional/Index";
+
+import CreatePost from "./Screens/CreatePost/CreatePost";
+import CreatePost1 from "./Screens/CreatePost/CreatePost1";
+import CreatePost2 from "./Screens/CreatePost/CreatePost2";
+import CreatePost3 from "./Screens/CreatePost/CreatePost3";
+import CreatePost4 from "./Screens/CreatePost/CreatePost4";
+
+import PostList from "./Screens/CreatePost/Index";
+
+import Confirmed from "./Components/Confirmed/Index";
+
+import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
 
 function App() {
   const clearCacheData = () => {
@@ -40,16 +55,37 @@ function App() {
       </span>
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="editPhone" element={<EditPhone />} />
+
         <Route path="find-home" element={<FindHome />} />
         <Route path="property-details/:id" element={<PropertyDetails />} />
+        <Route path="become-professional" element={<BecomeProfessional />} />
+
+        <Route path="create-post" element={<CreatePost />} />
+        <Route path="create-post-1" element={<CreatePost1 />} />
+        <Route path="create-post-2" element={<CreatePost2 />} />
+        <Route path="create-post-3" element={<CreatePost3 />} />
+        <Route path="create-post-4" element={<CreatePost4 />} />
+
+        <Route path="confirmed" element={<Confirmed />} />
+
+        <Route path="post-list" element={<PostList />} />
+
         <Route path="find-professionals" element={<FindProfessionals />} />
+
+        <Route
+          path="professional-profile/:id"
+          element={<ProfessionalProfile />}
+        />
+
         <Route path="property" element={<ListAProperty />}>
-          <Route index element={<ListProperty1 />} />
-          <Route path="list-1" element={<ListProperty2 />} />
-          <Route path="list-2" element={<ListProperty3 />} />
-          <Route path="bill-info" element={<PaymentInfo />} />
-          <Route path="property-info" element={<PropertyInfo />} />
+          <Route index element={<CreateProperty />} />
         </Route>
+        <Route path="create-property-1" element={<CreateProperty1 />} />
+        <Route path="create-property-2" element={<CreateProperty2 />} />
+        <Route path="bill-info" element={<PaymentInfo />} />
+        <Route path="property-info" element={<PropertyInfo />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="*" element={<Error />} />
       </Routes>

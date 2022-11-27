@@ -1,12 +1,18 @@
 import styled from "styled-components";
-import { PrimaryColor, tertiaryGrey7, whiteColor } from "../GlobalStyle";
+import { tertiaryGrey7, whiteColor } from "../GlobalStyle";
 
-export const StyledContainer = styled.div`
+const NavbarStyle = styled.div`
   background: transparent;
   width: 100%;
   z-index: 20;
-  .navbar {
-    /* background-color: ${PrimaryColor}; */
+  .company-logo {
+    width: 164px;
+    height: 33px;
+  }
+  .scroll-navbar {
+    background-color: ${whiteColor} !important;
+    transition: background-color 200ms linear;
+    box-shadow: 0px 0px 3px #00000029;
   }
   .nav-link {
     color: ${whiteColor} !important;
@@ -16,8 +22,13 @@ export const StyledContainer = styled.div`
       }
     }
   }
+  .nav-link-dark {
+    color: ${tertiaryGrey7} !important;
+  }
 `;
-export const StyledAuthContainer = styled.div`
+export default NavbarStyle;
+
+export const AuthNavbarStyle = styled.div`
   background: transparent;
   width: 100%;
   z-index: 20;
@@ -25,7 +36,7 @@ export const StyledAuthContainer = styled.div`
     height: 33px;
   }
   .navbar {
-    background: #ffffff;
+    background: ${whiteColor};
     box-shadow: 0px 0px 3px #00000029;
   }
   .active {

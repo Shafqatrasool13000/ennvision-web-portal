@@ -7,7 +7,7 @@ import bitcoin from "../../assets/icons/ic_add_property_payment_bitcoin.svg";
 import select from "../../assets/icons/ic_add_property_sel_payment.svg";
 import unselect from "../../assets/icons/ic_add_property_payment.svg";
 import plusIcon from "../../assets/icons/ic_add_property_add_card.svg";
-import CustomButton from "../../Components/CustomButton/Index";
+import CustomButton from "../../Components/CustomButton/CustomButton";
 import {
   BlackDot,
   lightblue2,

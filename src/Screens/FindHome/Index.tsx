@@ -1,32 +1,31 @@
-import React from 'react';
-import { FindHomeStyled } from './style';
-import AuthNavbar from '../../Components/Navbar/AuthNavbar';
-import Properties from '../Home/Properties';
-import { Container } from 'react-bootstrap';
-import SocialFooter from '../../Components/SocialFooter/SocialFooter';
-import Filters from './Filters';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { FindHomeStyled } from "./style";
+import AuthNavbar from "../../Components/Navbar/AuthNavbar";
+import Properties from "../Home/Properties";
+import { Container } from "react-bootstrap";
+import SocialFooter from "../../Components/SocialFooter/SocialFooter";
+import Filters from "./Filters";
+import { Helmet } from "react-helmet";
+import MapBox from "../../Components/MapBox/Index";
 
 const Index = () => {
   return (
     <>
-     <Helmet>
-    <title>Find Home</title>
-    </Helmet>
-    <FindHomeStyled>
-    <AuthNavbar/>
-    <SocialFooter/>
-    <Container>
-    <Filters/>
-    <div style={{
-      height: '340px',
-      backgroundColor: 'rgb(255 0 0 / 20%)'
-    }}/>
-    <Properties/>
-    </Container>
-    </FindHomeStyled>
-      </>
-  )
-}
+      <Helmet>
+        <title>Find Home</title>
+      </Helmet>
+      <FindHomeStyled>
+        <AuthNavbar />
+        <SocialFooter />
+        <Container>
+          <Filters />
+          <MapBox width="1320px" height="347px" />
 
-export default Index
+          <Properties />
+        </Container>
+      </FindHomeStyled>
+    </>
+  );
+};
+
+export default Index;

@@ -19,7 +19,8 @@ import FeatureDetails from "./FeatureDetails";
 import GenerateInfo from "./GenerateInfo";
 import plusIcon from "../../assets/icons/ic_add_property_address_add_field.svg";
 import minusIcon from "../../assets/icons/ic_add_property_address_remove_field.svg";
-import CustomButton from "../../Components/CustomButton/Index";
+import CustomButton from "../../Components/CustomButton/CustomButton";
+import { Link } from "react-router-dom";
 // import Editors from "./Editor";
 
 const Index = () => {
@@ -342,7 +343,7 @@ const Index = () => {
               title="Submit"
               margin="auto"
               fontSize="18px"
-              // clicked={navigateToList}
+              clicked={<Link to="/" />}
             />
           </Col>
         </Row>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CustormButtonContainer: any = styled.div`
+const CustormButtonStyle: any = styled.div`
   width: ${(props: any) => props.width};
 
   .ant-btn {
@@ -21,3 +21,5 @@ export const CustormButtonContainer: any = styled.div`
     }
   }
 `;
+
+export default CustormButtonStyle;

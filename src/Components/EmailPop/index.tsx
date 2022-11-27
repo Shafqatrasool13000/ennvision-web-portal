@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import { EmailTemplateContainer } from "./style";
 import ic_logo_pdf from "../../Assets/icons/ic_logo_pdf.svg";
 import FormControl from "../FormControl";
@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form, Modal } from "antd";
 import { useMutation } from "react-query";
-import CustomButton from "../CustomButton/Index";
+import CustomButton from "../CustomButton/CustomButton";
 import { API_URL, EMAIL_SEND } from "../../Services/config";
 import axios from "axios";
 import SuccessfullModal from "../Delete/SuccessfullModal";
@@ -24,9 +24,7 @@ const validationSchema = Yup.object({
 });
 
 const Index = ({ user, setemailReportPopup }) => {
-
-
-  const [emailSuccessReportModal, setemailSuccessReportModal] = useState(false)
+  const [emailSuccessReportModal, setemailSuccessReportModal] = useState(false);
   const mutation = useMutation(
     (data) => {
       return axios.post(API_URL + EMAIL_SEND, data, {
@@ -38,19 +36,17 @@ const Index = ({ user, setemailReportPopup }) => {
     },
     {
       onSuccess: (data) => {
-        setemailSuccessReportModal(true)
+        setemailSuccessReportModal(true);
         setemailReportPopup(false);
       },
 
-      onError: (err, variables, snapshotValue) => {
-      },
+      onError: (err, variables, snapshotValue) => {},
     }
   );
 
-
   const handleCancel = () => {
-    setemailSuccessReportModal(false)
-  }
+    setemailSuccessReportModal(false);
+  };
 
   const onSubmit = (data1) => {
     const finalData = { ...data1, estimateId: user.id };
