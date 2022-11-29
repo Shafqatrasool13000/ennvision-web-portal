@@ -34,11 +34,11 @@ import Confirmed from "./Components/Confirmed/Index";
 
 import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
 import PropertyParent from "./Screens/ParentComponent/PropertyParent";
-import { ScrollContext } from "./utils/CreateContext";
+import { ContextApiData } from "./utils/CreateContext";
 import useScrollToTop from "./hooks/useScrollToTop";
 
 function App() {
-  const { changeNavColor, scrollToTop } = useContext(ScrollContext);
+  const { changeNavColor, scrollToTop } = useContext(ContextApiData);
   useScrollToTop();
   const clearCacheData = () => {
     caches.keys().then((names) => {

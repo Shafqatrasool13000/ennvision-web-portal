@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BlackDot,
   TertiraryHeading,
@@ -23,7 +22,7 @@ const Index = ({
             <BlackDot />
           </div>
         </div>
-        {title && <ViewMore listing={listing} />}
+        {title && <ViewMore />}
       </div>
     </>
   );

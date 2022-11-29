@@ -63,10 +63,11 @@ export const HeroSectionStyled = styled.div`
     }
     .location-select-section {
       max-width: 1000px;
-      margin-top: 45px;
       background-color: ${whiteColor};
       border-radius: 7px;
-      width: 95%;
+      @media screen and (max-width: 991px) {
+        width: 95% !important;
+      }
       .title {
         color: ${pureDark};
         font-size: 16px;
@@ -78,11 +79,12 @@ export const HeroSectionStyled = styled.div`
       }
       .property-type {
         border-left: 1px solid ${lightGrey3};
-        height: 70%;
         .search-box {
           background-color: ${PrimaryColor};
           border-radius: 4px;
           padding: 12px;
+          height: 40px;
+          cursor: pointer;
 
           img {
             vertical-align: super;

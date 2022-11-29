@@ -12,6 +12,7 @@ const InputField = (props: any) => {
     placeholder,
     className,
     name,
+    value,
     ...rest
   } = props;
   return (
@@ -29,6 +30,7 @@ const InputField = (props: any) => {
             placeholder={placeholder}
             defaultValue={defaultValue}
             {...field}
+            value={value}
           />
         )}
       </Field>

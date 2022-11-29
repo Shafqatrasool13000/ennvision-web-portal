@@ -148,7 +148,7 @@ const CreateProperty = () => {
                             width="100%"
                             type="submit"
                             title="Start Listing"
-                            margin="auto"
+                            // margin="auto"
                             fontSize="16px"
                             fontFamily="EnnVisionsMedium"
                             clicked={() => navigate("/create-property")}
