@@ -98,6 +98,7 @@ const Index = () => {
                     margin="auto"
                     fontFamily={"EnnVisionsMedium"}
                     clicked={() => navigate("/property-info")}
+                    fontSize="16px"
                   />
                 </div>
               </div>

@@ -15,6 +15,7 @@ export type ButtonProps = {
   fontSize: string;
   icon?: string | null;
   fontFamily?: string;
+  margin?: string;
 };
 
 const CustomButton = ({
@@ -31,6 +32,7 @@ const CustomButton = ({
   fontSize,
   icon = null,
   fontFamily = "EnnVisions",
+  margin = "auto",
 }: ButtonProps) => {
   return (
     <CustormButtonStyle
@@ -40,6 +42,7 @@ const CustomButton = ({
       padding={padding}
       fontSize={fontSize}
       fontFamily={fontFamily}
+      margin={margin}
     >
       <Button
         disabled={disabled}

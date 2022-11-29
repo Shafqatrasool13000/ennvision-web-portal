@@ -5,13 +5,13 @@ import ErrorMsg from "../ErrorMessage";
 import { Input } from "antd";
 import { InputStyleContainer } from "./Style";
 
-const PasswordField = (props) => {
-  const { label,className, placeholder, name, ...rest } = props;
+const PasswordField = (props: any) => {
+  const { label, className, placeholder, name, ...rest } = props;
   return (
     <InputStyleContainer>
       {/* <label htmlFor={name}>{label}</label> */}
       <Field name={name} id={name}>
-        {({ field, form, meta }) => (
+        {({ field, form, meta }: any) => (
           <Input.Password
             className={className}
             {...rest}
@@ -25,7 +25,6 @@ const PasswordField = (props) => {
               )
             }
           />
-   
         )}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />

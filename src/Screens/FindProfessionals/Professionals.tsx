@@ -84,6 +84,7 @@ const Professionals = () => {
                       title="Chat"
                       margin="auto"
                       icon={img1}
+                      fontSize="16px"
                       // clicked={() => editHandler(content)}
                     />
                     <div className="d-flex ms-2">
@@ -96,6 +97,8 @@ const Professionals = () => {
                         title="Call"
                         margin="auto"
                         icon={img2}
+                        fontSize="16px"
+
                         // clicked={() => editHandler(content)}
                       />
                     </div>

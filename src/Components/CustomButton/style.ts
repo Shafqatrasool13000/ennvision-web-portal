@@ -14,6 +14,7 @@ const CustormButtonStyle: any = styled.div`
     width: -moz-available;
     width: -webkit-fill-available;
     height: auto;
+    margin: ${(props: any) => props.margin};
     font-family: ${(props: any) => props.fontFamily};
     cursor: pointer;
     &:hover {

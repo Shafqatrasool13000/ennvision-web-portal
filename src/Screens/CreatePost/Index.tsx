@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <div>
       <CustomModal isModal={isPostModal} setIsModalVisible={setIsPostModal}>
-        <EditPost setIsPostModal={setIsPostModal} />
+        <EditPost />
       </CustomModal>
       <CustomModal
         isModalVisible={isPostDetailsModal}
@@ -62,7 +62,7 @@ const Index = () => {
         isModalVisible={isPost4Modal}
         setIsModalVisible={setIsPost4Modal}
       >
-        <Post4 setIsPost4Modal={setIsPost4Modal} />
+        <Post4 />
       </CustomModal>
       <div className="d-none d-md-block">
         <Container>

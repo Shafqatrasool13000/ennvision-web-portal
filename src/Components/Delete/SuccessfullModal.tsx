@@ -4,7 +4,7 @@ import ic_logo from "../../Assets/icons/ic_logo.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Index = ({ handleCancel, message, deleteUser, toLocation }) => {
+const Index = ({ handleCancel, message, deleteUser, toLocation }: any) => {
   const navigate = useNavigate();
   const closeModal = () => {
     handleCancel();

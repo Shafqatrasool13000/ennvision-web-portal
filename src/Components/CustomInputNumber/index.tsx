@@ -3,7 +3,7 @@ import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { InputNumber } from "antd";
 import { CustomInputContainer } from "./style";
-const InputField = (props) => {
+const InputField = (props: any) => {
   const {
     label,
     prefix,
@@ -18,7 +18,7 @@ const InputField = (props) => {
     <CustomInputContainer>
       <label htmlFor={label}>{label}</label>
       <Field name={name} id={name}>
-        {({ field }) => (
+        {({ field }: any) => (
           <InputNumber
             addonBefore="$"
             addonAfter="Rate"

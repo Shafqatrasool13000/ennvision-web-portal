@@ -4,7 +4,7 @@ import ic_logo from "../../Assets/icons/ic_logo.svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Index = ({ handleCancel, userDetail, deleteUser, toLocation }) => {
+const Index = ({ handleCancel, userDetail, deleteUser, toLocation }: any) => {
   const navigate = useNavigate();
   const closeModal = () => {
     handleCancel();
@@ -34,7 +34,7 @@ const Index = ({ handleCancel, userDetail, deleteUser, toLocation }) => {
         <div className="login-container-card-btn">
           <button
             className="login-container-card-btn-yes"
-            onClick={() => handleDelete() }
+            onClick={() => handleDelete()}
           >
             Yes!
           </button>

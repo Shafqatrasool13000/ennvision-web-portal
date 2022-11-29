@@ -4,16 +4,24 @@ import ErrorMsg from "../ErrorMessage";
 import { Select } from "antd";
 import { CustomSelectContainer } from "./style";
 
-const SelectComp = (props) => {
-  const { name, placeholder, loading , handleSelectValue = null , onSelect, defaultValue, label, options, ...rest } =
-    props;
+const SelectComp = (props: any) => {
+  const {
+    name,
+    placeholder,
+    loading,
+    handleSelectValue = null,
+    onSelect,
+    defaultValue,
+    label,
+    options,
+    ...rest
+  } = props;
 
-  const OptionsArr = options?.map((option) => {
+  const OptionsArr = options?.map((option: any) => {
     return (
       <Select.Option key={option.id} value={option.id}>
         {option.name}
       </Select.Option>
-      
     );
   });
 
@@ -21,21 +29,21 @@ const SelectComp = (props) => {
     <CustomSelectContainer>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
-        {({ field, form, meta }) => {
+        {({ field, form, meta }: any) => {
           return (
             <div className="custom-select-inner">
               <Select
                 className="custom-ExpertProfile-mySelect"
                 showSearch
-                filterOption={(input, option) =>
-                  option.children.toLowerCase().indexOf(input.toLowerCase()) >=
-                  0
-                }
-                filterSort={(optionA, optionB) =>
-                  optionA.children
-                    .toLowerCase()
-                    .localeCompare(optionB.children.toLowerCase())
-                }
+                // filterOption={(input, option) =>
+                //   option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+                //   0
+                // }
+                // filterSort={(optionA, optionB) =>
+                //   optionA.children
+                //     .toLowerCase()
+                //     .localeCompare(optionB.children.toLowerCase())
+                // }
                 name={name}
                 {...rest}
                 id={name}

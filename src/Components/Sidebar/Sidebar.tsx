@@ -12,19 +12,18 @@ import notificationIcon from "../../Assets/ic_notification.svg";
 import flagIcon from "../../Assets/ic_flag.svg";
 import profileIcon from "../../Assets/card-profile.png";
 import { Link, useLocation } from "react-router-dom";
-import { CollapsedContext } from "../../App";
-import Navbars from "../Navbar/Navbar";
+// import { CollapsedContext } from "../../App";
 // import { useSelector } from "react-redux";
 
 const { Header, Content, Sider } = Layout;
-const Sidebar = ({ children }) => {
+const Sidebar = ({ children }: any) => {
   // const userName = useSelector((state) => state.fetchUser.user);
 
   const location = useLocation();
   return (
     <SideBarContainer>
       <div className="d-md-none">
-        <Navbars title={location.pathname.split('/')[1]} />
+        {/* <Navbars title={location.pathname.split('/')[1]} /> */}
       </div>{" "}
       <Layout>
         <Sider
@@ -36,7 +35,7 @@ const Sidebar = ({ children }) => {
           }}
           breakpoint="lg"
           collapsedWidth="0"
-          onCollapse={(collapsed, type) => { }}
+          onCollapse={(collapsed, type) => {}}
         >
           <div className="logos">
             <img src={logos} alt="Logo" className="logo" />
@@ -86,7 +85,7 @@ const Sidebar = ({ children }) => {
           <div className="d-none d-md-block">
             <Header
               className="site-layout-sub-header-background"
-            // style={{ position: "fixed", zIndex: 1, width: "100%" }}
+              // style={{ position: "fixed", zIndex: 1, width: "100%" }}
             >
               <div className="navigation">
                 <div className="right-side">

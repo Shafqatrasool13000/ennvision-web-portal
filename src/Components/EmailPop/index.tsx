@@ -5,9 +5,8 @@ import FormControl from "../FormControl";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form, Modal } from "antd";
-import { useMutation } from "react-query";
 import CustomButton from "../CustomButton/CustomButton";
-import { API_URL, EMAIL_SEND } from "../../Services/config";
+import { API_URL } from "../../Services/config";
 import axios from "axios";
 import SuccessfullModal from "../Delete/SuccessfullModal";
 
@@ -23,34 +22,34 @@ const validationSchema = Yup.object({
   message: Yup.string().required("Message is required"),
 });
 
-const Index = ({ user, setemailReportPopup }) => {
+const Index = ({ user, setemailReportPopup }: any) => {
   const [emailSuccessReportModal, setemailSuccessReportModal] = useState(false);
-  const mutation = useMutation(
-    (data) => {
-      return axios.post(API_URL + EMAIL_SEND, data, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
-    },
-    {
-      onSuccess: (data) => {
-        setemailSuccessReportModal(true);
-        setemailReportPopup(false);
-      },
+  // const mutation = useMutation(
+  //   (data) => {
+  //     return axios.post(API_URL + EMAIL_SEND, data, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Origin": "*",
+  //       },
+  //     });
+  //   },
+  //   {
+  //     onSuccess: (data) => {
+  //       setemailSuccessReportModal(true);
+  //       setemailReportPopup(false);
+  //     },
 
-      onError: (err, variables, snapshotValue) => {},
-    }
-  );
+  //     onError: (err, variables, snapshotValue) => {},
+  //   }
+  // );
 
   const handleCancel = () => {
     setemailSuccessReportModal(false);
   };
 
-  const onSubmit = (data1) => {
+  const onSubmit = (data1: any) => {
     const finalData = { ...data1, estimateId: user.id };
-    mutation.mutate(finalData);
+    // mutation.mutate(finalData);
   };
 
   return (
@@ -120,6 +119,7 @@ const Index = ({ user, setemailReportPopup }) => {
                     width="100%"
                     type="submit"
                     title="SUBMIT"
+                    fontSize="16px"
                     margin="auto"
                   />
                 </div>
