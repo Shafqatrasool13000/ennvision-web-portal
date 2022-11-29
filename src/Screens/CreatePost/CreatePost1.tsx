@@ -7,12 +7,15 @@ import icon1 from "../../assets/icons/ic_newsfeed_like.svg";
 import icon2 from "../../assets/icons/ic_newsfeed_saved.svg";
 import icon3 from "../../assets/icons/ic_newsfeed_sent.svg";
 import { Col, Row } from "react-bootstrap";
+import navigate from "../../assets/hooks/useNavigation";
+import { useNavigate } from "react-router-dom";
 
 const Post_List1 = ({ setIsPost2Modal, setIsPost3Modal }: any) => {
   const showPost3Modal = () => {
     setIsPost2Modal(false);
     setIsPost3Modal(true);
   };
+  const navigate = useNavigate();
   return (
     <CreatePost1Style>
       <div className="inner-section">
@@ -21,13 +24,20 @@ const Post_List1 = ({ setIsPost2Modal, setIsPost3Modal }: any) => {
           <div className="choose-section-icons mt-xs-2 mt-sm-0">
             <img src={icon1} alt="" />
             <img
-              onClick={showPost3Modal}
-              src={icon2}
-              className="cursor-pointer"
+              src={icon1}
+              onClick={() => navigate("/create-post-1")}
               alt=""
             />
-            <img src={icon3} alt="icon" />
-            <img src={icon1} alt="icon" />
+            <img
+              src={icon2}
+              onClick={() => navigate("/create-post-2")}
+              alt=""
+            />
+            <img
+              src={icon1}
+              onClick={() => navigate("/create-post-3")}
+              alt=""
+            />
             <img src={icon2} alt="icon" />
             <img src={icon3} alt="icon" />
           </div>
@@ -80,6 +90,7 @@ const Post_List1 = ({ setIsPost2Modal, setIsPost3Modal }: any) => {
             margin="auto"
             fontSize="18px"
             fontFamily="EnnVisionsMedium"
+            clicked={() => navigate("/create-post-4")}
           />
         </div>
       </div>

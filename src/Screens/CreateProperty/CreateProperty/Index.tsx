@@ -151,7 +151,7 @@ const CreateProperty = () => {
                             margin="auto"
                             fontSize="16px"
                             fontFamily="EnnVisionsMedium"
-                            clicked={() => navigate("/create-property-1")}
+                            clicked={() => navigate("/create-property")}
                           />
                         </div>
                       </div>
@@ -162,7 +162,7 @@ const CreateProperty = () => {
             </div>
           </Col>
           <Col md={6} className="right-side mt-3 mt-md-0">
-            <MapBox width="640px" height="540px" />
+            <MapBox width="640px" height="500px" />
           </Col>
         </Row>
       </Container>

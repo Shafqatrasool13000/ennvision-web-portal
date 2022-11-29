@@ -25,9 +25,21 @@ const Post_List3 = ({ setIsPost3Modal, setIsPost4Modal }: any) => {
           <p className="gallery mt-1">Create Post</p>
 
           <div className="choose-section-icons mt-xs-2 mt-sm-0">
-            <img src={icon1} alt="" />
-            <img src={icon2} alt="" />
-            <img src={icon1} alt="" />
+            <img
+              src={icon1}
+              onClick={() => navigate("/create-post-1")}
+              alt=""
+            />
+            <img
+              src={icon2}
+              onClick={() => navigate("/create-post-2")}
+              alt=""
+            />
+            <img
+              src={icon1}
+              onClick={() => navigate("/create-post-3")}
+              alt=""
+            />
             <img src={icon2} alt="" />
             <img src={icon3} alt="" />
           </div>
@@ -93,6 +105,7 @@ const Post_List3 = ({ setIsPost3Modal, setIsPost4Modal }: any) => {
               margin="auto"
               fontSize="18px"
               fontFamily="EnnVisionsMedium"
+              clicked={() => navigate("/create-post-4")}
             />
           </div>
         </div>

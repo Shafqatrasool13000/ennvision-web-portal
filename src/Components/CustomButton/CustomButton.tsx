@@ -1,6 +1,22 @@
 import { Button } from "antd";
 import CustormButtonStyle from "./style";
 
+export type ButtonProps = {
+  title: string;
+  type: "button" | "submit" | "reset" | undefined;
+  bgcolor: string;
+  disabled?: boolean;
+  width: string;
+  color: string;
+  padding: string;
+  clicked?: () => void;
+  form?: any;
+  key?: string | number;
+  fontSize: string;
+  icon?: string | null;
+  fontFamily?: string;
+};
+
 const CustomButton = ({
   title,
   type,
@@ -15,7 +31,7 @@ const CustomButton = ({
   fontSize,
   icon = null,
   fontFamily = "EnnVisions",
-}: any) => {
+}: ButtonProps) => {
   return (
     <CustormButtonStyle
       bgcolor={bgcolor}
@@ -37,6 +53,7 @@ const CustomButton = ({
             <img src={icon} alt={icon} />
           </span>
         )}
+
         {title}
       </Button>
     </CustormButtonStyle>

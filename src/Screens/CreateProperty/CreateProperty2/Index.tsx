@@ -5,10 +5,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import {
   BlackDot,
   lightblue2,
+  PrimaryColor,
   pureDark,
   tertiaryGrey18,
   TertiraryHeading,
   UnderlineRed,
+  whiteColor,
 } from "../../../Components/GlobalStyle";
 import redTickIcon from "../../../assets/icons/ic_select_red.svg";
 
@@ -86,7 +88,7 @@ const CreateProperty2 = () => {
               />
             </div>
             <CustomButton
-              bgcolor={lightblue2}
+              bgcolor={PrimaryColor}
               color="white"
               padding="8px 8px"
               width="150px"
@@ -95,7 +97,7 @@ const CreateProperty2 = () => {
               margin="auto"
               fontSize="16px"
               fontFamily="EnnVisionsMedium"
-              clicked={() => navigate("/create-property-2")}
+              clicked={() => navigate("/bill-info")}
             />
           </div>
         </div>
@@ -112,8 +114,8 @@ const CreateProperty2 = () => {
                 ))}
                 <div className="property-below-btn">
                   <CustomButton
-                    bgcolor={index === 0 ? "#F3F3F3" : "#049CCE"}
-                    color={index === 0 ? pureDark : "white"}
+                    bgcolor={index === 0 ? lightblue2 : PrimaryColor}
+                    color={whiteColor}
                     padding="8px 8px"
                     width="120px"
                     type="submit"

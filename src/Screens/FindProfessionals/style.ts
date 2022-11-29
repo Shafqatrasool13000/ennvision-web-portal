@@ -84,7 +84,7 @@ export const ProfessionalStyled = styled.div`
       margin-top: 28px;
     }
     .detail-text {
-      margin-top: -40px;
+      margin-top: -30px;
       background: #ffffff;
       box-shadow: 0px 0px 15px #0000001c;
       border-radius: 6px;
@@ -100,6 +100,7 @@ export const ProfessionalStyled = styled.div`
       .profession {
         font-size: 15px;
         color: ${pureDark};
+        margin: 0;
       }
     }
   }

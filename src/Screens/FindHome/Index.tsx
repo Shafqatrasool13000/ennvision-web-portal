@@ -16,11 +16,10 @@ const Index = () => {
       </Helmet>
       <FindHomeStyled>
         <AuthNavbar />
-        <SocialFooter />
+        {/* <SocialFooter /> */}
         <Container>
           <Filters />
           <MapBox width="1320px" height="347px" />
-
           <Properties />
         </Container>
       </FindHomeStyled>

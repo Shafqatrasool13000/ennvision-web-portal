@@ -109,12 +109,21 @@ export const ExplorePropertyStyled = styled.div`
     font-size: 20px;
     border: 1px solid ${lightGrey4};
     .img-section {
-      object-fit: cover;
+      height: 100%;
+      img {
+        object-fit: cover;
+        height: 100%;
+        max-height: 470px;
+      }
     }
     .sub-title {
       font-size: 16px;
       color: ${lightDark};
       font-size: 16px;
+    }
+    .explore-btn {
+      bottom: 3%;
+      right: 0;
     }
   }
 `;
@@ -143,10 +152,10 @@ export const PropertiesStyled = styled.div`
           font-size: 14px;
           border-radius: 3px;
           border: none;
-          &:hover {
+          /* &:hover {
             color: ${whiteColor};
             background-color: ${PrimaryColor};
-          }
+          } */
         }
         .price {
           font-size: 18px;
@@ -577,11 +586,6 @@ export const FindProfessionalStyled = styled.div`
         transition: 0.5s ease;
         background-color: rgba(0, 0, 0, 0.36);
       }
-
-      /* .area-container:hover .overlay {
-    opacity: 0.2;
-} */
-
       .text {
         color: white;
         font-size: 30px;
@@ -607,7 +611,7 @@ export const ProfessionalStyled = styled.div`
       margin-top: 42px;
     }
     .detail-text {
-      margin-top: -40px;
+      margin-top: -30px;
       background: #ffffff;
       box-shadow: 0px 0px 15px #0000001c;
       border-radius: 6px;
@@ -623,6 +627,7 @@ export const ProfessionalStyled = styled.div`
       .profession {
         font-size: 15px;
         color: ${pureDark};
+        margin: 0;
       }
     }
     .load-more {
@@ -715,10 +720,10 @@ export const MembershipPlansStyled = styled.div`
         margin-top: 40px;
         background-color: ${lightColor1};
         color: ${tertiaryGrey7};
-        &:hover {
+        /* &:hover {
           background-color: ${PrimaryColor};
           color: ${whiteColor};
-        }
+        } */
       }
     }
   }

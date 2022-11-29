@@ -80,7 +80,7 @@ const CreateProperty1 = () => {
                     margin="auto"
                     fontSize="16px"
                     fontFamily="EnnVisionsMedium"
-                    clicked={() => navigate("/list-2")}
+                    clicked={() => navigate("/create-property-1")}
                   />
                 </div>
               </div>

@@ -10,7 +10,7 @@ import Testomonials from "./Testomonials";
 import MembershipPlans from "./MembershipPlans";
 import { Helmet } from "react-helmet";
 
-const Index = () => {
+const Home = () => {
   return (
     <>
       <Helmet>
@@ -31,4 +31,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;

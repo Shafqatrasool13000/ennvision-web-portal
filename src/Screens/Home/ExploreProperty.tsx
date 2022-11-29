@@ -1,14 +1,15 @@
-import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExplorePropertyStyled } from "./style";
 import ic_image_2 from "../../assets/Image/ic_image_2.png";
 import {
   BlackDot,
+  PrimaryColor,
   SecondaryHeading,
   TertiaryHeading,
   TertiraryHeadingMini,
   UnderlineRed,
 } from "../../Components/GlobalStyle";
+import CustomButton from "../../Components/CustomButton/CustomButton";
 const ExploreProperty = () => {
   return (
     <ExplorePropertyStyled>
@@ -22,13 +23,13 @@ const ExploreProperty = () => {
         <UnderlineRed />
         <BlackDot />
       </div>
-      <Row className="align-items-center">
-        <Col md={7} className="p-0">
+      <Row className="position-relative">
+        <Col sm={6} md={6} className="p-0 pe-sm-2">
           <div className="img-section">
             <img src={ic_image_2} alt="property" />
           </div>
         </Col>
-        <Col md={5} className="mt-4 mt-md-none">
+        <Col sm={6} md={6} className="mt-4 mt-md-none pb-5">
           <TertiaryHeading>MPAC Autofill property</TertiaryHeading>
           <p className="sub-title">
             Power your search with our House Up real estate platform, for timely
@@ -45,6 +46,18 @@ const ExploreProperty = () => {
               timely listings and a seamless experience
             </span>
           </p>
+          <div className="explore-btn position-absolute w-100 d-flex justify-content-end me-3 mt-3">
+            <CustomButton
+              bgcolor={PrimaryColor}
+              color="white"
+              padding="6px 8px"
+              width="160px"
+              type="submit"
+              title="EXPLORE"
+              fontSize="16px"
+              // clicked={navigateToDashboard}
+            />
+          </div>
         </Col>
       </Row>
     </ExplorePropertyStyled>

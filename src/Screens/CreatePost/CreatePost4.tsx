@@ -1,9 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import { CreatePost4Style } from "./style";
 import post from "../../assets/Image/ic_image_2.png";
 import CustomButton from "../../Components/CustomButton/CustomButton";
-import { lightblue2, PrimaryColor } from "../../Components/GlobalStyle";
-import dropDown from "../../assets/icons/ic_drop_down.svg";
+import { PrimaryColor } from "../../Components/GlobalStyle";
 import icon1 from "../../assets/icons/ic_newsfeed_like.svg";
 import icon2 from "../../assets/icons/ic_newsfeed_saved.svg";
 import icon3 from "../../assets/icons/ic_newsfeed_sent.svg";
@@ -11,10 +10,11 @@ import { Col, Form, Row } from "react-bootstrap";
 import FormControl from "../../Components/FormControl";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import CustomModal from "../../Components/Modal/CustomModal";
+import Confirmed from "../../Components/Confirmed/Index";
 
-const Post_List5 = ({ setIsPostModal }: any) => {
-  const navigate = useNavigate();
+const Post_List5 = () => {
+  const [isModalVisib, setIsModalVisible] = useState(false);
 
   let initialValues = {
     email: "",
@@ -32,6 +32,12 @@ const Post_List5 = ({ setIsPostModal }: any) => {
 
   return (
     <CreatePost4Style>
+      <CustomModal
+        isModalVisible={isModalVisib}
+        setIsModalVisible={setIsModalVisible}
+      >
+        <Confirmed />
+      </CustomModal>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -88,7 +94,7 @@ const Post_List5 = ({ setIsPostModal }: any) => {
                         margin="auto"
                         fontSize="18px"
                         fontFamily="EnnVisionsMedium"
-                        // clicked={() => setIsPost4Modal(false)}
+                        clicked={() => setIsModalVisible(true)}
                       />
                     </div>
                   </div>

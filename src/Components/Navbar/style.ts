@@ -14,8 +14,16 @@ const NavbarStyle = styled.div`
     transition: background-color 200ms linear;
     box-shadow: 0px 0px 3px #00000029;
   }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .active {
+    font-family: "EnnVisionsMedium";
+  }
   .nav-link {
     color: ${whiteColor} !important;
+    font-size: 15px;
     @media screen and (min-width: 991px) {
       &:not(:first-child) {
         margin-left: 27px;

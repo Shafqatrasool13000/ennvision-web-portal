@@ -9,7 +9,6 @@ const ConfirmedStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(33, 33, 33, 0.37);
 
   .inner-container {
     max-width: 420px;

@@ -1,13 +1,14 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import AppBar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import NavbarStyle from "./style";
 import logo from "../../assets/icons/ic_logo2.svg";
 import logo1 from "../../assets/icons/ic_logo.svg";
 import profile from "../../assets/icons/ic_profile_placeholder.svg";
-import { useState } from "react";
-function Navbars() {
+
+function Navbar() {
   const [changeNavColor, setChangeNavColor] = useState(false);
   const navColorHandler = () => {
     if (window.scrollY >= 80) {
@@ -20,13 +21,13 @@ function Navbars() {
 
   return (
     <NavbarStyle>
-      <Navbar
+      <AppBar
         className={changeNavColor ? "scroll-navbar" : ""}
         expand="lg"
         fixed="top"
       >
         <Container>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <AppBar.Toggle aria-controls="navbarScroll" />
           <NavLink to="/">
             <img
               className="company-logo"
@@ -34,10 +35,10 @@ function Navbars() {
               alt="logo"
             />
           </NavLink>
-          <Navbar.Brand href="#" className="d-lg-none">
+          <AppBar.Brand href="#" className="d-lg-none">
             <img src={profile} alt="profile" />
-          </Navbar.Brand>
-          <Navbar.Collapse id="navbarScroll">
+          </AppBar.Brand>
+          <AppBar.Collapse id="navbarScroll">
             <Nav className="mx-auto my-2 my-lg-0" navbarScroll>
               <NavLink
                 className={
@@ -72,14 +73,14 @@ function Navbars() {
                 RESOURCES
               </NavLink>
             </Nav>
-          </Navbar.Collapse>
-          <Navbar.Brand href="#" className="d-none d-lg-block">
+          </AppBar.Collapse>
+          <AppBar.Brand href="#" className="d-none d-lg-block">
             <img src={profile} alt="profile" />
-          </Navbar.Brand>
+          </AppBar.Brand>
         </Container>
-      </Navbar>
+      </AppBar>
     </NavbarStyle>
   );
 }
 
-export default Navbars;
+export default Navbar;

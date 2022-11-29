@@ -1,8 +1,6 @@
 import { Modal } from "antd";
-import React, { useState } from "react";
 
-const CustomModal = ({ children, isModal }: any) => {
-  const [isModalVisible, setIsModalVisible] = useState(isModal);
+const CustomModal = ({ children, isModalVisible, setIsModalVisible }: any) => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };

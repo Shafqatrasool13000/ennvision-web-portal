@@ -1,17 +1,18 @@
 import { Helmet } from "react-helmet";
+import Navbar from "../../Components/Navbar/AuthNavbar";
 import SocialFooter from "../../Components/SocialFooter/SocialFooter";
-import ProfessionalHeroSection from "../../Components/ProfessionalHeroSection/Index";
 
-const Resources = () => {
+const PropertyParent = ({ children }: any) => {
   return (
     <>
       <Helmet>
-        <title>Resources</title>
+        <title>List Property</title>
       </Helmet>
-      <ProfessionalHeroSection />
+      <Navbar />
+      {children}
       {/* <SocialFooter /> */}
     </>
   );
 };
 
-export default Resources;
+export default PropertyParent;

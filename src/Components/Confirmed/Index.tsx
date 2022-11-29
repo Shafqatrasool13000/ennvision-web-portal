@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/ic_logo(1).svg";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { PrimaryColor } from "../../Components/GlobalStyle";
 import ConfirmedStyle from "./style";
 const Confirmed = () => {
+  const navigate = useNavigate();
   return (
     <ConfirmedStyle>
       <div className="inner-container">
@@ -21,6 +23,7 @@ const Confirmed = () => {
             title="THANKS!"
             margin="auto"
             fontSize="16px"
+            clicked={() => navigate("/")}
           />
         </div>
       </div>

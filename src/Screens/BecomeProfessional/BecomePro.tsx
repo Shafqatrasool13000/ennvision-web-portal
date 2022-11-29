@@ -4,7 +4,7 @@ import {
   TertiraryHeading,
   UnderlineBlue,
 } from "../../Components/GlobalStyle";
-import { InputsStyled } from "./style";
+import { ProInputsStyle } from "./style";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import FormControl from "../../Components/FormControl";
@@ -28,7 +28,7 @@ const Inputs = () => {
   });
 
   return (
-    <InputsStyled className="mt-5">
+    <ProInputsStyle className="mt-5">
       <TertiraryHeading className="ms-3">
         Become a Professional
       </TertiraryHeading>
@@ -201,6 +201,7 @@ const Inputs = () => {
                         type="submit"
                         title="SUBMIT"
                         fontSize="16px"
+
                         // clicked={navigateToDashboard}
                       />
                     </Link>
@@ -211,7 +212,7 @@ const Inputs = () => {
           }}
         </Formik>
       </div>
-    </InputsStyled>
+    </ProInputsStyle>
   );
 };
 

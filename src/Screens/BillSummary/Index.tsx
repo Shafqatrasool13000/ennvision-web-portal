@@ -97,7 +97,7 @@ const Index = () => {
                     title="Check Out"
                     margin="auto"
                     fontFamily={"EnnVisionsMedium"}
-                    clicked={() => navigate("property-info")}
+                    clicked={() => navigate("/property-info")}
                   />
                 </div>
               </div>

@@ -11,14 +11,14 @@ const ProfessionalHeroSection = () => {
         <Navbar />
       </Container>
       <ProfessionalHeroSectionStyle>
-        <div
+        {/* <div
           className="position-absolute w-100"
           style={{
             bottom: "2%",
           }}
         >
           <SocialFooter />
-        </div>
+        </div> */}
         <div className="inner-container d-flex align-items-center flex-column justify-content-center">
           <h4 className="inner-container-main-heading">
             <span>

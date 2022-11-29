@@ -1,9 +1,6 @@
-import React from "react";
 import {
-  BlackDot,
   SecondaryHeading,
   TertiraryHeadingMini,
-  UnderlineRed,
 } from "../../Components/GlobalStyle";
 import { TestomonialStyled } from "./style";
 import testomonialImg1 from "../../assets/Image/ic_testimonials.png";
@@ -35,9 +32,9 @@ const testomonialsData = [
   },
 ];
 const responsive = {
-  0: { items: 1 },
-  568: { items: 1 },
-  1024: { items: 1 },
+  0: { items: 1.2 },
+  568: { items: 1.2 },
+  1024: { items: 1.2 },
 };
 const items = [
   ...testomonialsData.map(({ name, date, description, img }) => (
@@ -76,7 +73,7 @@ const Testomonials = () => {
             disableButtonsControls
             disableDotsControls
             // paddingLeft={100}
-            paddingRight={100}
+            // paddingRight={100}
           />
         </Container>
       </div>

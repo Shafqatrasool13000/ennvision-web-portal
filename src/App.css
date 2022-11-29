@@ -46,7 +46,7 @@ body {
 
 .arrow-box {
   position: fixed;
-  bottom: 4%;
+  bottom: 3%;
   right: 5%;
   border-radius: 50%;
   cursor: pointer;
@@ -115,4 +115,9 @@ button {
 }
 .ant-drawer-header {
   border-bottom: none !important;
+}
+
+.ant-modal-content {
+  background: transparent !important;
+  box-shadow: none !important;
 }

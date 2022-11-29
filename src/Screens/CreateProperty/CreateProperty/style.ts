@@ -6,9 +6,6 @@ import {
 } from "../../../Components/GlobalStyle";
 
 const CreatePropertyStyle = styled.div`
-  background-color: white;
-  height: 100vh;
-
   @media screen and (max-width: 768px) {
     height: 100%;
   }

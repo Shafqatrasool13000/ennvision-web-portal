@@ -8,11 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import CreateContext from "./utils/CreateContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <CreateContext>
+        <App />
+      </CreateContext>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -290,7 +290,7 @@ const PropertyDetails = () => {
             <Map height="347px" width="1320px" />
           </div>
         </Container>
-        <SocialFooter />
+        {/* <SocialFooter /> */}
       </PropertyDetailsStyle>
     </>
   );

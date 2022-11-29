@@ -6,7 +6,6 @@ import {
   PrimaryColor,
   TertiraryHeading,
   TetraHeading,
-  UnderlineBlue,
   UnderlineRed,
 } from "../../Components/GlobalStyle";
 import { PropertyInfoStyled } from "./style";
@@ -20,11 +19,13 @@ import GenerateInfo from "./GenerateInfo";
 import plusIcon from "../../assets/icons/ic_add_property_address_add_field.svg";
 import minusIcon from "../../assets/icons/ic_add_property_address_remove_field.svg";
 import CustomButton from "../../Components/CustomButton/CustomButton";
-import { Link } from "react-router-dom";
+import CustomModal from "../../Components/Modal/CustomModal";
+import Confirmed from "../../Components/Confirmed/Index";
 // import Editors from "./Editor";
 
 const Index = () => {
   const [apartment, setApartment] = useState("Rent");
+  const [isModalVisib, setIsModalVisible] = useState(false);
   const apartmentHandler = () => {
     setApartment(apartment === "Rent" ? "Buy" : "Rent");
   };
@@ -47,6 +48,12 @@ const Index = () => {
 
   return (
     <PropertyInfoStyled>
+      <CustomModal
+        isModalVisible={isModalVisib}
+        setIsModalVisible={setIsModalVisible}
+      >
+        <Confirmed />
+      </CustomModal>
       <div className="container">
         <TertiraryHeading className="ms-3">
           Fill Property Information
@@ -343,7 +350,7 @@ const Index = () => {
               title="Submit"
               margin="auto"
               fontSize="18px"
-              clicked={<Link to="/" />}
+              clicked={() => setIsModalVisible(true)}
             />
           </Col>
         </Row>
