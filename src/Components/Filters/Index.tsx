@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Nav } from "react-bootstrap";
 import { ContextApiData } from "../../utils/CreateContext";
 import CustomButton from "../CustomButton/CustomButton";
-import { BasicColor, PrimaryColor, whiteColor } from "../GlobalStyle";
+import { PrimaryColor } from "../GlobalStyle";
 import FiltersStyle from "./style";
 
 const types = [
@@ -19,8 +19,7 @@ const types = [
   "Basement",
 ];
 const Filters = () => {
-  const { typeSelect, setTypeSelect, setIsShowProperty, isShowProperty } =
-    useContext(ContextApiData);
+  const { setTypeSelect, setIsShowProperty } = useContext(ContextApiData);
 
   return (
     <FiltersStyle>

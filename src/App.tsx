@@ -36,6 +36,12 @@ import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
 import PropertyParent from "./Screens/ParentComponent/PropertyParent";
 import { ContextApiData } from "./utils/CreateContext";
 import useScrollToTop from "./hooks/useScrollToTop";
+import Login from "./Components/Login/Index";
+import RegisterPhone from "./Components/RegisterPhone/Index";
+import VerifyOtp from "./Screens/VerifyOtp/Index";
+import Register from "./Components/Register/Index";
+import UserProfile from "./Screens/UserProfile/Index";
+import Homepage from "./Screens/Homepage/Index";
 
 function App() {
   const { changeNavColor, scrollToTop } = useContext(ContextApiData);
@@ -61,13 +67,33 @@ function App() {
         <img onClick={scrollToTop} src={scroll_up} alt="scroll-up" />
       </span>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Homepage />}>
+          <Route index element={<Login />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="register-phone" element={<RegisterPhone />} />
+          <Route path="verify-otp" element={<VerifyOtp />} />
+          <Route path="editPhone" element={<EditPhone />} />
 
-        <Route path="editPhone" element={<EditPhone />} />
+          <Route path="find-home" element={<FindHome />} />
+          <Route path="property-details/:id" element={<PropertyDetails />} />
+          <Route path="become-professional" element={<BecomeProfessional />} />
+          <Route path="user-profile/:id" element={<UserProfile />} />
 
-        <Route path="find-home" element={<FindHome />} />
-        <Route path="property-details/:id" element={<PropertyDetails />} />
-        <Route path="become-professional" element={<BecomeProfessional />} />
+          <Route
+            path="professional-profile/:id"
+            element={<ProfessionalProfile />}
+          />
+        </Route>
+        <Route path="home" element={<Home />} />
+
+        {/* <Route path="parent-element" element={<ParentComponent />}>
+          <Route index element={<CreatePost />} />
+          <Route path="create-post-1" element={<CreatePost1 />} />
+          <Route path="create-post-2" element={<CreatePost2 />} />
+          <Route path="create-post-3" element={<CreatePost3 />} />
+          <Route path="create-post-4" element={<CreatePost4 />} />
+        </Route> */}
 
         <Route
           path="create-post"

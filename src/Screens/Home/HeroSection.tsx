@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { HeroSectionStyled } from "./style";
 import Navbar from "../../Components/Navbar/Index";
-import { Col, Container, Nav, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import search_icon from "../../assets/icons/ic_search.svg";
-import SocialFooter from "../../Components/SocialFooter/SocialFooter";
 import FormikController from "../../Components/FormControl";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -13,6 +12,8 @@ import { SelectProps } from "antd";
 
 const HeroSection = () => {
   const [apartment, setApartment] = useState("Rent");
+  const [cities, setCities] = useState<any>([]);
+  console.log({ cities });
 
   const { typeSelect, setIsShowProperty, isShowProperty } =
     useContext(ContextApiData);
@@ -64,6 +65,9 @@ const HeroSection = () => {
   const handleChange = (value: string | string[]) => {
     console.log(`Selected: ${value}`);
   };
+  const handleSubmit = (values: any) => {
+    console.log({ values }, "formik values");
+  };
 
   return (
     <>
@@ -79,7 +83,7 @@ const HeroSection = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          onSubmit={() => console.log("e")}
+          onSubmit={(values) => console.log(values)}
         >
           {(formik) => {
             return (
@@ -124,18 +128,16 @@ const HeroSection = () => {
                         <FormikController
                           control="multiSelect"
                           type="text"
-                          name="location1"
+                          name="location"
                           border="1px solid #EFEFF4"
                           // label="City, Area, etc"
                           placeholder="City, Area, etc"
-                          defaultValue={["Lahore"]}
+                          // defaultValue={["Lahore"]}
                           onChange={handleChange}
+                          formik={formik}
                           options={options}
-                          className={
-                            formik.errors.location && formik.touched.location
-                              ? "is-invalid"
-                              : "customInput"
-                          }
+                          setCities={setCities}
+                          className=""
                         />
                       </Col>
                       <Col
@@ -147,26 +149,22 @@ const HeroSection = () => {
                           <FormikController
                             control="input"
                             type="text"
-                            name="propertyType1"
+                            name="propertyType"
                             border="1px solid #EFEFF4"
                             // label="All Residentials"
                             placeholder="All Residentials"
                             value={typeSelect}
-                            defaultValue={typeSelect}
-                            className={
-                              formik.errors.propertyType &&
-                              formik.touched.propertyType
-                                ? "is-invalid"
-                                : "customInput"
-                            }
+                            // defaultValue={typeSelect}
+                            className=""
                           />
                         </div>
-                        <div
+                        <Button
+                          disabled={cities.length == 0 || !typeSelect}
                           onClick={() => setIsShowProperty((prev) => !prev)}
                           className="search-box ms-2 mt-3 d-flex justify-content-center align-items-center"
                         >
                           <img src={search_icon} alt="search" />
-                        </div>
+                        </Button>
                       </Col>
                     </Row>
                     <div

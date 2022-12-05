@@ -1,7 +1,7 @@
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Input } from "antd";
-import { CustomInputContainer } from "./style";
+import CustomInputStyle from "./style";
 const InputField = (props: any) => {
   const {
     label,
@@ -13,10 +13,22 @@ const InputField = (props: any) => {
     className,
     name,
     value,
+    padding = "8px 8px",
+    formik,
+    border = "none",
+    fontFamily = "EnnVisions",
+    showErrorMessage = true,
+    suffix = null,
+    bgColor = "white",
     ...rest
   } = props;
   return (
-    <CustomInputContainer>
+    <CustomInputStyle
+      fontFamily={fontFamily}
+      bgColor={bgColor}
+      border={border}
+      padding={padding}
+    >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>
         {({ field }: any) => (
@@ -31,11 +43,13 @@ const InputField = (props: any) => {
             defaultValue={defaultValue}
             {...field}
             value={value}
+            onChange={(e) => console.log(e)}
+            suffix={suffix}
           />
         )}
       </Field>
-      <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomInputContainer>
+      {showErrorMessage && <ErrorMessage name={name} component={ErrorMsg} />}
+    </CustomInputStyle>
   );
 };
 

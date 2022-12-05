@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import { WhyChooseUsStyled } from "./style";
@@ -37,31 +36,34 @@ const whyChooseUsData = [
   },
 ];
 const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
+  0: { items: 1.5 },
+  568: { items: 2.5 },
+  768: { items: 3 },
   1024: { items: 4 },
 };
 const items = [
-  ...whyChooseUsData.map(({ title, sub_title, sub_title1, img }) => (
-    <div className="pxp-services-container rounded-lg p-0">
-      <Link to="/properties" className="pxp-services-item">
-        <div className="pxp-services-item-fig">
-          <img src={img} alt="properties" />
-        </div>
-        <div className="pxp-services-item-text text-center">
-          <div className="pxp-services-item-text-title">{title}</div>
-          <div className="pxp-services-item-text-sub">
-            {sub_title}
-            <br />
-            {sub_title1}
+  ...whyChooseUsData.map(
+    ({ title, sub_title, sub_title1, img }: any, index: number) => (
+      <div key={index} className="pxp-services-container rounded-lg p-0">
+        <Link to="/properties" className="pxp-services-item">
+          <div className="pxp-services-item-fig">
+            <img src={img} alt="properties" />
           </div>
-        </div>
-        <div className="pxp-services-item-cta text-uppercase text-center">
-          Learn More
-        </div>
-      </Link>
-    </div>
-  )),
+          <div className="pxp-services-item-text text-center">
+            <div className="pxp-services-item-text-title">{title}</div>
+            <div className="pxp-services-item-text-sub">
+              {sub_title}
+              <br />
+              {sub_title1}
+            </div>
+          </div>
+          <div className="pxp-services-item-cta text-uppercase text-center">
+            Learn More
+          </div>
+        </Link>
+      </div>
+    )
+  ),
 ];
 const WhyChooseUs = () => {
   return (

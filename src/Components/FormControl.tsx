@@ -1,4 +1,3 @@
-import React from "react";
 import Input from "./CustomInput/Index";
 import Select from "./CustomSelect/Index";
 import Datepicker from "./CustomDatePicker/Index";
@@ -6,12 +5,18 @@ import CustomDateTimePicker from "./CustomDateTimePicker/Index";
 import Textarea from "./CustomTextArea/Index";
 import InputNumber from "./CustomInputNumber";
 // import Checkbox from "./Checkbox";
-import PasswordInput from "./CustomPasswordInput/Index";
 import CustomSearchSelect from "./CustomSearchSelect";
 import CustomMultiSelect from "./CustomMultiSelect/Index";
 import CustomLargeInput from "./CustomLargeInput/Index";
 import CustomLargeSelect from "./CustomLargeSelect/Index";
+import CustomPasswordInput from "./CustomPasswordInput/Index";
+import { Checkbox, Radio } from "antd";
 
+export interface FieldStyleBasicProps {
+  padding: string;
+  bgColor: string;
+  border: string;
+}
 const FormikController = (props: any) => {
   const { control, ...rest } = props;
   switch (control) {
@@ -23,10 +28,10 @@ const FormikController = (props: any) => {
       return <CustomSearchSelect {...rest} />;
     case "multiSelect":
       return <CustomMultiSelect {...rest} />;
-    // case "checkbox":
-    //   return <Checkbox {...rest} />;
+    case "checkbox":
+      return <Checkbox {...rest} />;
     case "password":
-      return <PasswordInput {...rest} />;
+      return <CustomPasswordInput {...rest} />;
     case "textarea":
       return <Textarea {...rest} />;
     case "inputNumber":
@@ -35,8 +40,8 @@ const FormikController = (props: any) => {
       return <CustomLargeInput {...rest} />;
     case "largeSelect":
       return <CustomLargeSelect {...rest} />;
-    // case "radio":
-    //   return <Radio {...rest} />;
+    case "radio":
+      return <Radio {...rest} />;
     case "date":
       return <Datepicker {...rest} />;
     case "dateTime":

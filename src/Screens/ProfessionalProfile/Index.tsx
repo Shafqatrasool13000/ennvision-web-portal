@@ -5,10 +5,11 @@ import HeadingViewMore from "../../Components/HeadingViewMore/Index";
 import ResourcesList from "./ResourcesList";
 import StoriesList from "./StoriesList";
 import PostList from "./Posts";
+import Properties from "../../Components/Properties/Index";
 
-const Index = () => {
+const ProfessionalProfileStyle = () => {
   return (
-    <ProfessionalProfileStyled>
+    <ProfessionalProfileStyled className="pb-3">
       <Container>
         <ProfileBox />
         <StoriesList />
@@ -18,18 +19,23 @@ const Index = () => {
             listing="VIEW MORE PROPERTIES"
           />
         </div>
-        {/* <div className="resources-listing">
-          <HeadingViewMore
-            title="Resources Listing"
-            listing="VIEW MORE RESOURCES"
-          />
-          <ResourcesList />
+        <Properties />
+        <div className="resources-listing">
+          <div className="mt-4">
+            <HeadingViewMore
+              title="Resources Listing"
+              listing="VIEW MORE RESOURCES"
+            />
+            <ResourcesList sm={6} md={4} />
+          </div>
+        </div>
+        <div className="mt-4">
           <HeadingViewMore title="Post Listing" listing="VIEW MORE POST" />
-        </div> */}
-        <PostList />
+          <PostList />
+        </div>
       </Container>
     </ProfessionalProfileStyled>
   );
 };
 
-export default Index;
+export default ProfessionalProfileStyle;

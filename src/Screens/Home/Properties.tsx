@@ -9,7 +9,7 @@ import property6 from "../../assets/Image/ic_property_6.png";
 import bedroomIcon from "../../assets/icons/ic_property_bed.svg";
 import bathIcon from "../../assets/icons/ic_property_bath.svg";
 import areaIcon from "../../assets/icons/ic_property_area.svg";
-import { MiniHeading } from "../../Components/GlobalStyle";
+import { MiniHeadingSecondary } from "../../Components/GlobalStyle";
 import { Col, Row } from "react-bootstrap";
 import ViewMore from "../../Components/ViewMoreProperties/Index";
 import { PropertiesStyled } from "./style";
@@ -74,17 +74,20 @@ const Properties = () => {
   };
   return (
     <PropertiesStyled>
-      <div className="properties pb-5">
+      <div className="properties pb-lg-5">
         <Row>
           {propertiesData.map(
-            ({ sub_title, area, bath, propertyImg, bed, title }, index) => (
-              <Col key={index} md={4}>
+            (
+              { sub_title, area, bath, propertyImg, bed, title }: any,
+              index: number
+            ) => (
+              <Col key={index} md={6} lg={4}>
                 <Card onClick={() => navigateToDetails(index)}>
                   <Card.Img variant="top" src={propertyImg} />
                   <Card.Body>
-                    <MiniHeading>{title}</MiniHeading>
+                    <MiniHeadingSecondary>{title}</MiniHeadingSecondary>
                     <Card.Text>
-                      <p className="sub-title">{sub_title}</p>
+                      <p className="sub-title fs-6">{sub_title}</p>
                     </Card.Text>
                     <div className="d-flex justify-content-between align-items-center property-description">
                       <Button variant="primary">For Sale</Button>

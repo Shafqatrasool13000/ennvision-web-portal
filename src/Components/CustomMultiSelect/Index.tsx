@@ -4,8 +4,17 @@ import { Select } from "antd";
 import { CustomSelectContainer } from "./style";
 
 const SelectComp = (props: any) => {
-  const { name, placeholder, onChange, defaultValue, label, options, ...rest } =
-    props;
+  const {
+    name,
+    placeholder,
+    onChange,
+    defaultValue,
+    label,
+    options,
+    formik,
+    setCities,
+    ...rest
+  } = props;
 
   return (
     <CustomSelectContainer>
@@ -28,7 +37,8 @@ const SelectComp = (props: any) => {
                 // You have to provide the onChange function and on changing the value you should call
                 // the setFieldValue function provided by the prop of "form"
                 onChange={(val, select) => {
-                  form.setFieldValue(name, select);
+                  formik.setFieldValue(name, select);
+                  setCities(select);
                 }}
                 options={options}
               />
@@ -39,7 +49,7 @@ const SelectComp = (props: any) => {
           );
         }}
       </Field>
-      <ErrorMessage name={name} component={ErrorMsg} />
+      {/* <ErrorMessage name={name} component={ErrorMsg} /> */}
     </CustomSelectContainer>
   );
 };

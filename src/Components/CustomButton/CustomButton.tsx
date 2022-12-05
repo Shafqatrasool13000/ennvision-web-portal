@@ -14,7 +14,7 @@ export type ButtonProps = {
   key?: string | number;
   fontSize: string;
   icon?: string | null;
-  fontFamily?: string;
+  fontFamily?: "EnnVisions" | "EnnVisionsMedium";
   margin?: string;
 };
 

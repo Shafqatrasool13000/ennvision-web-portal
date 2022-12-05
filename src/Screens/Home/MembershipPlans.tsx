@@ -81,18 +81,21 @@ const membershipData = [
   },
 ];
 const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
+  0: { items: 1.2 },
+  568: { items: 2.2 },
   1024: { items: 3 },
 };
 const items = [
   ...membershipData.map(({ plan_name, price, offers, selected }, index) => (
     <div className="card" key={index}>
-      <h6 className="heading">{plan_name}</h6>
-      <h5 className="price mb-0">{price}</h5>
+      <h6 className="heading text-center">{plan_name}</h6>
+      <h5 className="price mb-0 text-center">{price}</h5>
       <div className="offers">
-        {offers.map(({ title }) => (
-          <div className="offer d-flex align-items-center justify-content-center">
+        {offers.map(({ title }: any, index: number) => (
+          <div
+            key={index}
+            className="offer d-flex align-items-center justify-content-center"
+          >
             <img src={select} alt="select" />
             <p className="mb-0 offer-type">{title}</p>
           </div>

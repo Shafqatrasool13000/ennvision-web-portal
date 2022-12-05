@@ -3,7 +3,7 @@ import ExploreProperty from "./ExploreProperty";
 import FeatureProperties from "./FeatureProperties";
 import { Container } from "react-bootstrap";
 import WhyChooseUs from "./WhyChooseUs";
-import FindProfessional from "./FindProfessional";
+import FindProperties from "./FindProperties";
 import Professionals from "./Professionals";
 import WhoWeAre from "./WhoWeAre";
 import Testomonials from "./Testomonials";
@@ -22,7 +22,7 @@ const Home = () => {
         <FeatureProperties />
       </Container>
       <WhyChooseUs />
-      <FindProfessional />
+      <FindProperties />
       <Professionals />
       <WhoWeAre />
       <Testomonials />

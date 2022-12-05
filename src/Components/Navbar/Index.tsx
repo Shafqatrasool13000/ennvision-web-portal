@@ -35,9 +35,9 @@ function Navbar() {
               alt="logo"
             />
           </NavLink>
-          <AppBar.Brand href="#" className="d-lg-none">
+          <NavLink to="/login" className="d-lg-none navbar-brand">
             <img src={profile} alt="profile" />
-          </AppBar.Brand>
+          </NavLink>
           <AppBar.Collapse id="navbarScroll">
             <Nav className="mx-auto my-2 my-lg-0" navbarScroll>
               <NavLink
@@ -74,9 +74,9 @@ function Navbar() {
               </NavLink>
             </Nav>
           </AppBar.Collapse>
-          <AppBar.Brand href="#" className="d-none d-lg-block">
+          <NavLink to="/login" className="d-none d-lg-block navbar-brand">
             <img src={profile} alt="profile" />
-          </AppBar.Brand>
+          </NavLink>
         </Container>
       </AppBar>
     </NavbarStyle>

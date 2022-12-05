@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { backImageProps, ImgContainerProps } from "./GlobalTypes";
 
 export const BasicColor = "#C0922E";
 export const PrimaryColor = "#C7112B";
@@ -95,25 +96,69 @@ export const SecondaryHeading = styled.h5`
   color: ${pureDark};
   font-family: "EnnVisionsMedium";
   font-size: 40px;
+  @media screen and (max-width: 991px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 26px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 export const SecondaryHeadingMini = styled.h5`
   color: ${pureDark};
   font-family: "EnnVisionsMedium";
   font-size: 31px;
+  @media screen and (max-width: 991px) {
+    font-size: 26px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 export const TertiraryHeading = styled.h6`
   color: ${pureDark};
   font-size: 20px;
   font-family: "EnnVisionsMedium";
+  margin-bottom: 0;
+  @media screen and (max-width: 991px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 export const TertiraryHeading1 = styled.h6`
   color: ${lightDark};
   font-size: 20px;
+  @media screen and (max-width: 991px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 export const TertiraryHeadingMini = styled.h6`
   color: ${secondaryDark5};
   font-size: 18px;
   font-family: "EnnVisionsMedium";
+
+  @media screen and (max-width: 991px) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const TetraHeading = styled.div`
@@ -128,6 +173,17 @@ export const MiniHeading = styled.p`
   margin-bottom: 0;
 `;
 
+export const MiniHeadingSecondary = styled.p`
+  font-size: 16px;
+  color: ${pureDark};
+  font-family: "EnnVisionsMedium";
+  margin-bottom: 0;
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
+`;
+
 export const UnderlineRed = styled.hr`
   border-radius: 4px;
   border-top: 4px solid ${PrimaryColor};
@@ -135,6 +191,7 @@ export const UnderlineRed = styled.hr`
   display: inline-block;
   opacity: 1;
   margin-top: 0;
+  margin-bottom: 0;
 `;
 export const UnderlineBlue = styled.hr`
   border-radius: 4px;
@@ -143,6 +200,7 @@ export const UnderlineBlue = styled.hr`
   display: inline-block;
   opacity: 1;
   margin-top: 0;
+  margin-bottom: 0;
 `;
 export const BlackDot = styled.hr`
   border-radius: 4px;
@@ -152,4 +210,23 @@ export const BlackDot = styled.hr`
   display: inline-block;
   opacity: 1;
   margin-top: 0;
+  margin-bottom: 0;
+`;
+
+export const ImgContainer = styled.img<ImgContainerProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height}; ;
+`;
+
+export const BackgroundImage = styled.div<backImageProps>`
+  background-image: url(${(props) => `\" ${props.url} \"`});
+  background-repeat: ${(props) => props.repeat};
+  background-size: ${(props) => props.size};
+  background-blend-mode: hard-light;
+  background-position: ${(props) => props.postion};
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-position: bottom;
+  }
 `;

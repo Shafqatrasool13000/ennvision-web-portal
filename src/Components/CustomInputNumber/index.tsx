@@ -1,8 +1,7 @@
-import React from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { InputNumber } from "antd";
-import { CustomInputContainer } from "./style";
+import CustomInputStyle from "./style";
 const InputField = (props: any) => {
   const {
     label,
@@ -15,7 +14,7 @@ const InputField = (props: any) => {
     ...rest
   } = props;
   return (
-    <CustomInputContainer>
+    <CustomInputStyle>
       <label htmlFor={label}>{label}</label>
       <Field name={name} id={name}>
         {({ field }: any) => (
@@ -34,7 +33,7 @@ const InputField = (props: any) => {
         )}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomInputContainer>
+    </CustomInputStyle>
   );
 };
 

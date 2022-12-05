@@ -3,7 +3,6 @@ import {
   lightblue,
   lightColor1,
   lightGrey2,
-  lightGrey5,
   lightGrey8,
   PrimaryColor,
   pureDark,
@@ -17,16 +16,16 @@ import {
 export const ProfessionalProfileStyled = styled.div`
   background-color: ${tertiaryGrey8};
   height: 100%;
+  margin-top: 90px;
 `;
 
 export const ProfileBoxStyled = styled.div`
-  border: 1px solid ${tertiaryGrey8};
   padding-top: 16px;
   max-width: 1040px;
   margin: 0 auto;
   background: ${whiteColor};
   .owner-details {
-    border: 1px solid ${lightGrey5};
+    border: 1px solid ${lightColor1};
     border-radius: 5px;
     padding: 14px;
     margin-top: 22px;
@@ -127,7 +126,7 @@ export const PostsStyled = styled.div`
   }
 `;
 
-export const ResourcesListStyled = styled.div`
+export const ResourcesListStyled = styled.section`
   .card {
     border: 0.5px solid ${lightGrey2};
     border-radius: 3px;
@@ -141,19 +140,7 @@ export const ResourcesListStyled = styled.div`
     }
     &-body {
       padding-bottom: 8px;
-      .author-bio {
-        margin-top: 18px;
-        img {
-          height: 18px;
-          vertical-align: baseline;
-        }
-        .title {
-          font-family: "EnnVisionsMedium";
-          font-size: 14px;
-          margin-bottom: 0;
-          margin-left: 8px;
-        }
-      }
+
       .card-title {
         font-size: 16px;
         color: ${pureDark};
@@ -187,12 +174,13 @@ export const StoriesListStyled = styled.div`
       }
       .add-story-img {
         height: 120px;
-        width: 160px;
+        width: 100%;
         object-fit: cover;
       }
       .card-title {
         font-size: 12px;
         margin-top: 10px;
+        font-family: "EnnVisionsBold";
       }
     }
   }

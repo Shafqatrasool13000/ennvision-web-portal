@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {
   lightblue,
-  lightColor1,
   lightGrey2,
+  lightGrey5,
   PrimaryColor,
   pureDark,
   secondaryDark4,
@@ -11,19 +11,18 @@ import {
   whiteColor,
 } from "../../Components/GlobalStyle";
 
-export const ProfileBoxStyle = styled.div`
-  border: 1px solid ${tertiaryGrey8};
-  padding-top: 10px;
+export const ProfessionalProfileBoxStyle = styled.div`
+  border-radius: 6px;
+  padding-top: 16px;
   max-width: 1040px;
   margin: 0 auto;
-  margin-top: 40px;
-  border-radius: 6px;
-
+  background: ${whiteColor};
   .owner-details {
+    border: 1px solid ${lightGrey5};
     border-radius: 5px;
-    background: #ffffff;
-    padding: 14px;
-    border: 1px solid ${lightColor1};
+    padding: 10px 14px 0px 14px;
+    margin-top: 22px;
+
     .bio {
       h6 {
         font-size: 18px;
@@ -33,7 +32,6 @@ export const ProfileBoxStyle = styled.div`
       .branch {
         color: ${tertiaryGrey7};
         font-size: 16px;
-        font-family: "EnnVisionsMedium";
       }
       .location {
         color: ${secondaryDark4};
@@ -41,13 +39,12 @@ export const ProfileBoxStyle = styled.div`
       }
     }
     .sold-properties {
-      background: ${tertiaryGrey8};
       border: 1px solid ${tertiaryGrey8};
       border-radius: 5px;
 
       .properties {
         background: ${tertiaryGrey8};
-        border: 1px solid ${lightColor1};
+        border: 1px solid #f5f5f5;
         border-radius: 5px;
 
         .quantity {
@@ -113,4 +110,9 @@ export const ProInputsStyle = styled.div`
   label {
     margin-bottom: 6px;
   }
+`;
+
+export const BecomeProfessionalStyle = styled.div`
+  height: 100vh;
+  margin-top: 86px;
 `;

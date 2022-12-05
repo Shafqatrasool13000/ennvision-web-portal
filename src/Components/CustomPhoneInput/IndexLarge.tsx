@@ -1,12 +1,12 @@
 import React from "react";
 import CountryPhoneInput, { ConfigProvider } from "antd-country-phone-input";
-import { PhoneLargeInputStyled } from "./style";
+import { PhoneLargeInputStyle } from "./style";
 
-const Index = () => {
+const PhoneLargeInput = () => {
   const [value, setValue] = React.useState({ short: "US" });
 
   return (
-    <PhoneLargeInputStyled>
+    <PhoneLargeInputStyle>
       <ConfigProvider>
         <CountryPhoneInput
           value={value}
@@ -17,8 +17,8 @@ const Index = () => {
           className="your-custom-class w-100"
         />
       </ConfigProvider>
-    </PhoneLargeInputStyled>
+    </PhoneLargeInputStyle>
   );
 };
 
-export default Index;
+export default PhoneLargeInput;

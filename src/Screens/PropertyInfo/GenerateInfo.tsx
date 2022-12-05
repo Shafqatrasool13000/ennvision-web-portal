@@ -26,7 +26,6 @@ const GenerateInfo = () => {
     password: "",
   };
 
-  console.log({ additionalInputs });
   const validationSchema = Yup.object({
     password: Yup.string()
       .required("Password is required!")

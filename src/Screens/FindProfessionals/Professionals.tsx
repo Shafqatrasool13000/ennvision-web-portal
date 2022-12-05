@@ -57,56 +57,58 @@ const Professionals = () => {
     <ProfessionalStyled>
       <Container>
         <Row className="professionals justify-content-center">
-          {professionalsData.map(({ name, profession, img }) => (
-            <Col sm={6} md={4} lg={3}>
-              <div
-                className="professional-container"
-                style={{
-                  backgroundImage: `url(${img})`,
-                  backgroundRepeat: "no-repeat",
-                  position: "relative",
-                  height: "300px",
-                  backgroundSize: "cover",
-                  zIndex: "-1",
-                }}
-              />
-              <div className="d-flex justify-content-center">
-                <div className="detail-text">
-                  <h6 className="name">{name}</h6>
-                  <p className="profession">{profession}</p>
-                  <div className="contact-btns d-flex justify-content-center mt-3">
-                    <CustomButton
-                      bgcolor={PrimaryColor}
-                      color="white"
-                      padding="8px 8px"
-                      width="130px"
-                      type="submit"
-                      title="Chat"
-                      margin="auto"
-                      icon={img1}
-                      fontSize="16px"
-                      // clicked={() => editHandler(content)}
-                    />
-                    <div className="d-flex ms-2">
+          {professionalsData.map(
+            ({ name, profession, img }: any, index: number) => (
+              <Col key={index} sm={6} md={4} lg={3}>
+                <div
+                  className="professional-container"
+                  style={{
+                    backgroundImage: `url(${img})`,
+                    backgroundRepeat: "no-repeat",
+                    position: "relative",
+                    height: "300px",
+                    backgroundSize: "cover",
+                    zIndex: "-1",
+                  }}
+                />
+                <div className="d-flex justify-content-center">
+                  <div className="detail-text">
+                    <h6 className="name">{name}</h6>
+                    <p className="profession">{profession}</p>
+                    <div className="contact-btns d-flex justify-content-center mt-3">
                       <CustomButton
-                        bgcolor={greenishColor}
+                        bgcolor={PrimaryColor}
                         color="white"
                         padding="8px 8px"
                         width="130px"
                         type="submit"
-                        title="Call"
+                        title="Chat"
                         margin="auto"
-                        icon={img2}
+                        icon={img1}
                         fontSize="16px"
-
                         // clicked={() => editHandler(content)}
                       />
+                      <div className="d-flex ms-2">
+                        <CustomButton
+                          bgcolor={greenishColor}
+                          color="white"
+                          padding="8px 8px"
+                          width="130px"
+                          type="submit"
+                          title="Call"
+                          margin="auto"
+                          icon={img2}
+                          fontSize="16px"
+
+                          // clicked={() => editHandler(content)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          ))}
+              </Col>
+            )
+          )}
         </Row>
       </Container>
     </ProfessionalStyled>

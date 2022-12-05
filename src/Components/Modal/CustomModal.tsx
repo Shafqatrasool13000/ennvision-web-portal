@@ -1,12 +1,22 @@
 import { Modal } from "antd";
 
-const CustomModal = ({ children, isModalVisible, setIsModalVisible }: any) => {
+type CustomModalPropsTypes = {
+  children: React.ReactNode;
+  isModalVisible: boolean;
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const CustomModal = ({
+  children,
+  isModalVisible,
+  setIsModalVisible,
+}: CustomModalPropsTypes) => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
   return (
     <Modal
-      visible={isModalVisible}
+      open={isModalVisible}
       footer={null}
       onCancel={handleCancel}
       centered={true}

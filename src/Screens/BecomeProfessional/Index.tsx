@@ -1,13 +1,14 @@
 import Inputs from "./Inputs";
-import ProfileBox from "./EditProfessional";
+import ProfessionalProfileBox from "./ProfileBox";
+import { BecomeProfessionalStyle } from "./style";
 
-const Index = () => {
+const BecomeProfessional = () => {
   return (
-    <>
-    <ProfileBox/>
-   <Inputs/>
-    </>
-  )
-}
+    <BecomeProfessionalStyle>
+      <ProfessionalProfileBox />
+      <Inputs />
+    </BecomeProfessionalStyle>
+  );
+};
 
-export default Index
+export default BecomeProfessional;

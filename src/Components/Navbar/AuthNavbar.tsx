@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { AuthNavbarStyle } from "./style";
 import logo from "../../assets/icons/ic_add_property_payment_wallet.svg";
 import profile from "../../assets/icons/ic_profile_placeholder.svg";
+import DropDownMenu from "../DropDownMenu/Index";
 function AuthNavbar() {
   return (
     <AuthNavbarStyle>
@@ -33,9 +34,11 @@ function AuthNavbar() {
               </NavLink>
             </Nav>
           </Navbar.Collapse>
-          <Navbar.Brand href="#" className="d-none d-lg-block">
-            <img src={profile} alt="profile" />
-          </Navbar.Brand>
+          <div className="d-none d-lg-block navbar-brand pe-auto">
+            <DropDownMenu>
+              <img src={profile} alt="profile" />
+            </DropDownMenu>
+          </div>
         </Container>
       </Navbar>
     </AuthNavbarStyle>

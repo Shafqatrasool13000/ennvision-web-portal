@@ -1,12 +1,21 @@
-import React from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Select } from "antd";
-import { CustomSelectContainer } from "./style";
+import CustomSelectStyle from "./style";
 import dropDownArrow from "../../assets/icons/ic_add_property_dropdown.svg";
 const SelectComp = (props: any) => {
-  const { name, placeholder, onSelect, defaultValue, label, options, ...rest } =
-    props;
+  const {
+    name,
+    placeholder,
+    onSelect,
+    padding,
+    defaultValue,
+    label,
+    options,
+    bgColor,
+    border,
+    ...rest
+  } = props;
 
   const OptionsArr = options?.map((option: any) => {
     return (
@@ -17,7 +26,7 @@ const SelectComp = (props: any) => {
   });
 
   return (
-    <CustomSelectContainer>
+    <CustomSelectStyle padding={padding} bgColor={bgColor} border={border}>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {
@@ -56,7 +65,7 @@ const SelectComp = (props: any) => {
         }}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomSelectContainer>
+    </CustomSelectStyle>
   );
 };
 

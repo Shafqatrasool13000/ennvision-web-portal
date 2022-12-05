@@ -1,14 +1,24 @@
 import { DatePicker } from "antd";
 import { Field, ErrorMessage } from "formik";
-import { CustomDatePickerContainer } from "./style";
+import CustomDatePickerStyle from "./style";
 import ErrorMsg from "../ErrorMessage";
 import dateIcon from "../../assets/icons/ic_calendar.svg";
 
 const Index = (props: any) => {
-  const { name, placeholder, label, options, title, ...rest } = props;
+  const {
+    name,
+    placeholder,
+    label,
+    options,
+    bgColor = "white",
+    border = "1px solid #c6c6c8;",
+    padding = "4px",
+    title,
+    ...rest
+  } = props;
 
   return (
-    <CustomDatePickerContainer>
+    <CustomDatePickerStyle bgColor={bgColor} border={border} padding={padding}>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {
@@ -32,7 +42,7 @@ const Index = (props: any) => {
         }}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomDatePickerContainer>
+    </CustomDatePickerStyle>
   );
 };
 

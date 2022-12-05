@@ -12,6 +12,8 @@ import FormControl from "../../Components/FormControl";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import doc from "../../assets/icons/ic_add_property_add_card.svg";
+import { SelectOutlined } from "@ant-design/icons";
 
 const Inputs = () => {
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ const Inputs = () => {
   };
 
   return (
-    <ProInputsStyle>
+    <ProInputsStyle className="mt-3">
       <TertiraryHeading className="ms-3 mt-4">
         Become a Professional
       </TertiraryHeading>
@@ -42,7 +44,7 @@ const Inputs = () => {
         <UnderlineRed />
         <BlackDot />
       </div>
-      <div className="inputs">
+      <div className="inputs mt-3 mx-2">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -58,11 +60,12 @@ const Inputs = () => {
                 // validateMessages={validationSchema}
               >
                 <Row className="login-input-fields">
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
-                      control="input"
+                      control="select"
                       type="text"
                       name="lastName"
+                      padding="3px"
                       border={`1px solid ${lightGrey2}`}
                       label="Select a professions"
                       placeholder="Select a professions"
@@ -73,7 +76,7 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
                       control="input"
                       type="text"
@@ -88,7 +91,7 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
                       control="input"
                       type="email"
@@ -103,9 +106,9 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
-                      control="input"
+                      control="date"
                       type="text"
                       name="firstName"
                       border={`1px solid ${lightGrey2}`}
@@ -118,7 +121,7 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
                       control="input"
                       type="text"
@@ -133,14 +136,16 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4}>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
                       control="input"
-                      type="email"
+                      type="document"
                       name="email"
-                      border={`1px solid ${lightGrey2}`}
                       label="Document"
+                      padding="7px"
                       placeholder="Document"
+                      border={`1px solid ${lightGrey2}`}
+                      suffix={<SelectOutlined />}
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -148,12 +153,12 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <div className="mt-2 d-flex justify-content-sm-end justify-content-center">
+                  <div className="mt-2 d-flex justify-content-end">
                     <CustomButton
                       bgcolor={`${PrimaryColor}`}
                       color="white"
                       padding="7px 8px"
-                      width="30%"
+                      width="auto"
                       type="submit"
                       title="Become A Professional"
                       fontSize="16px"

@@ -1,15 +1,23 @@
-import React from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 
 import { Input } from "antd";
-import { InputStyleContainer } from "./Style";
+import CustomPasswordInputStyle from "./style";
 
-const PasswordField = (props: any) => {
-  const { label, className, placeholder, name, ...rest } = props;
+const CustomPasswordInput = (props: any) => {
+  const {
+    label,
+    className,
+    placeholder,
+    name,
+    fontFamily = "EnnVisions",
+    border = "1px solid #c6c6c8",
+    showErrorMessage = true,
+    ...rest
+  } = props;
   return (
-    <InputStyleContainer>
-      {/* <label htmlFor={name}>{label}</label> */}
+    <CustomPasswordInputStyle fontFamily={fontFamily} border={border}>
+      <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>
         {({ field, form, meta }: any) => (
           <Input.Password
@@ -27,9 +35,9 @@ const PasswordField = (props: any) => {
           />
         )}
       </Field>
-      <ErrorMessage name={name} component={ErrorMsg} />
-    </InputStyleContainer>
+      {showErrorMessage && <ErrorMessage name={name} component={ErrorMsg} />}
+    </CustomPasswordInputStyle>
   );
 };
 
-export default PasswordField;
+export default CustomPasswordInput;

@@ -1,12 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import CountryPhoneInput, { ConfigProvider } from "antd-country-phone-input";
-import { PhoneInputStyled } from "./style";
+import { PhoneInputStyle } from "./style";
 
-const Index = () => {
-  const [value, setValue] = React.useState({ short: "US" });
+const PhoneInput = () => {
+  const [value, setValue] = useState({ short: "US" });
 
   return (
-    <PhoneInputStyled>
+    <PhoneInputStyle>
       <ConfigProvider>
         <CountryPhoneInput
           value={value}
@@ -17,8 +17,8 @@ const Index = () => {
           className="your-custom-class w-100"
         />
       </ConfigProvider>
-    </PhoneInputStyled>
+    </PhoneInputStyle>
   );
 };
 
-export default Index;
+export default PhoneInput;

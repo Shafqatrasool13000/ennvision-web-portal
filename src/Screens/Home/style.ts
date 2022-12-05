@@ -127,6 +127,10 @@ export const ExplorePropertyStyled = styled.div`
       bottom: 3%;
       right: 0;
     }
+
+    @media screen and (max-width: 768px) {
+      font-size: 36px;
+    }
   }
 `;
 export const FeaturePropertiesStyled = styled.div`
@@ -154,6 +158,9 @@ export const PropertiesStyled = styled.div`
           font-size: 14px;
           border-radius: 3px;
           border: none;
+          @media screen and (max-width: 480px) {
+            font-family: "EnnVisionsMedium";
+          }
           /* &:hover {
             color: ${whiteColor};
             background-color: ${PrimaryColor};
@@ -188,6 +195,15 @@ export const WhyChooseUsStyled = styled.div`
       color: ${pureDark};
       font-size: 40px;
       font-family: "EnnVisionsMedium";
+      @media screen and (max-width: 991px) {
+        font-size: 30px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 26px;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 18px;
+      }
     }
     .pxp-text-light {
       font-size: 18px;
@@ -252,6 +268,15 @@ export const WhyChooseUsStyled = styled.div`
     color: ${pureDark};
     font-size: 22px;
     margin-bottom: 0.4rem;
+    @media screen and (max-width: 991px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 17px;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+    }
   }
   .pxp-dark-mode .pxp-services-item-text-title {
     color: #fff;
@@ -260,6 +285,10 @@ export const WhyChooseUsStyled = styled.div`
     color: ${secondaryDark4};
     font-size: 16px;
     line-height: 18px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+    }
   }
   .pxp-dark-mode .pxp-services-item-text-sub {
     color: #fff;
@@ -563,45 +592,88 @@ export const WhyChooseUsStyled = styled.div`
 `;
 export const FindProfessionalStyled = styled.div`
   margin-top: 150px;
+
+  .img1 {
+    grid-area: bigImg1;
+  }
+  .img2 {
+    grid-area: smallImg1;
+  }
+  .img3 {
+    grid-area: smallImg2;
+  }
+  .img4 {
+    grid-area: bigImg2;
+  }
+  .img5 {
+    grid-area: smallImg3;
+  }
+  .img6 {
+    grid-area: smallImg4;
+  }
+
   .areas {
     margin-top: 26px;
-    .areas-inner {
-      margin-top: 14px;
-      .area-container {
-        position: relative;
-      }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    grid-template-areas:
+      "bigImg1 smallImg1"
+      "bigImg1 smallImg2"
+      "smallImg3 bigImg2"
+      "smallImg4 bigImg2";
+    grid-gap: 6px;
 
-      .image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+    @media screen and (max-width: 991px) {
+      grid-template-areas:
+        "bigImg1 bigImg1"
+        "smallImg1 smallImg2"
+        "bigImg2 bigImg2"
+        "smallImg4 smallImg3";
+    }
 
-      .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        transition: 0.5s ease;
-        background-color: rgba(0, 0, 0, 0.36);
+    .area-container {
+      position: relative;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      transition: 0.5s ease;
+      background-color: rgba(0, 0, 0, 0.36);
+    }
+    .text {
+      color: white;
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: "EnnVisionsMedium";
+      width: 100%;
+
+      @media screen and (max-width: 991px) {
+        font-size: 24px;
       }
-      .text {
-        color: white;
-        font-size: 30px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-        font-family: "EnnVisionsMedium";
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
       }
-      .text-small {
-        font-size: 26px;
+      @media screen and (max-width: 480px) {
+        font-size: 16px;
       }
     }
   }
@@ -632,15 +704,25 @@ export const ProfessionalStyled = styled.div`
         margin: 0;
       }
     }
-    .load-more {
-      margin-top: 10px;
-    }
   }
 `;
 export const WhoWeAreStyled = styled.div`
   margin-top: 80px;
+  @media screen and (max-width: 991px) {
+    margin-top: 60px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: 40px;
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 30px;
+  }
+
   .inner-container {
     margin-top: 60px;
+  }
+  p {
+    color: #393939;
   }
 `;
 export const TestomonialStyled = styled.div`
@@ -657,6 +739,11 @@ export const TestomonialStyled = styled.div`
         margin-right: 25px;
         background: ${tertiaryGrey8};
         .profile-section {
+          @media screen and (max-width: 480px) {
+            border-bottom: 1px solid #707070;
+            padding-bottom: 12px;
+          }
+
           .name {
             font-size: 16px;
             font-family: "EnnVisionsMedium";
@@ -668,7 +755,7 @@ export const TestomonialStyled = styled.div`
           &-text {
             font-size: 16px;
           }
-          &-line {
+          .line {
             border-bottom: 1px solid ${secondaryDark5};
           }
           .further-details {
@@ -683,12 +770,21 @@ export const TestomonialStyled = styled.div`
   }
 `;
 export const MembershipPlansStyled = styled.div`
-  padding: 80px 0 110px 0;
+  padding: 80px 0 20px 0;
   background-color: ${tertiaryGrey8};
+
+  @media screen and (max-width: 991px) {
+    padding: 60px 0 110px 0;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 80px 0 150px 0;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 80px 0 50px 0;
+  }
 
   .cards {
     margin-top: 20px;
-    text-align: center;
     .card {
       border: none;
       padding: 10px;
@@ -697,12 +793,26 @@ export const MembershipPlansStyled = styled.div`
       .heading {
         color: ${tertiaryGrey7};
         font-size: 24px;
+        @media screen and (max-width: 991px) {
+          font-size: 20px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 18px;
+        }
       }
       .price {
         color: ${pureDark};
         font-size: 32px;
         margin-top: 12px;
         font-family: "EnnVisionsMedium";
+        margin-top: 0;
+        @media screen and (max-width: 991px) {
+          font-size: 26px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 22px;
+        }
       }
       .offers {
         .offer {

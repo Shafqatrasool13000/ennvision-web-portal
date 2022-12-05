@@ -1,16 +1,22 @@
 import styled from "styled-components";
 import { BasicColor } from "../GlobalStyle";
 
-export const InputStyleContainer = styled.div`
+export const CustomPasswordInputStyle = styled.div<any>`
+  label {
+    font-family: ${(props) => props.fontFamily};
+  }
+
   .customPasswordInput {
     background: white;
     border: 1px solid #c6c6c8;
     border-radius: 4px;
-
-    input{
+    margin-top: 7px;
+    input {
       border: none;
       outline: none;
       width: 83%;
+      font-family: ${(props) => props.fontFamily};
+      font-family: ${(props) => props.border};
     }
   }
 
@@ -18,6 +24,8 @@ export const InputStyleContainer = styled.div`
     font-size: 12px;
     font-weight: normal;
     color: ${BasicColor};
+    cursor: pointer;
   }
-
 `;
+
+export default CustomPasswordInputStyle;

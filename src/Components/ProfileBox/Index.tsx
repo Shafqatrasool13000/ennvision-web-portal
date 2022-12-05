@@ -1,34 +1,36 @@
 import profileImg from "../../assets/Property Details/Owner.png";
 import soldPropertyIcon from "../../assets/icons/ic_professional_post.svg";
 import availabeBuildingIcon from "../../assets/icons/ic_property_detail_sold.svg";
-import { ProfileBoxStyle } from "./style";
+import person from "../../assets/icons/ic_professional_meet_peron.svg";
+import avatar from "../../assets/icons/ic_professional_meet_virtual.svg";
+import UserProfileBoxStyle from "./style";
 import { Col, Row } from "react-bootstrap";
-import {
-  BlackDot,
-  TertiraryHeading,
-  UnderlineRed,
-} from "../../Components/GlobalStyle";
-import verifiedIcon from "../../assets/icons/ic_verifed.svg";
+import { BlackDot, TertiraryHeading, UnderlineRed } from "../GlobalStyle";
+import verfiedIcon from "../../assets/icons/ic_verifed.svg";
 
-const ProfileBox = () => {
+const UserProfileBox = () => {
   return (
-    <ProfileBoxStyle>
-      <TertiraryHeading className="ms-3">Adnan Qureshi</TertiraryHeading>
-      <div className="ms-3">
+    <UserProfileBoxStyle>
+      <TertiraryHeading>Denzel Washington</TertiraryHeading>
+      <div>
         <UnderlineRed />
         <BlackDot />
       </div>
       <div className="owner-details">
         <Row>
           <Col md={6} lg={8}>
-            <div className="d-flex">
+            <div className="d-flex justify-content-sm-start justify-content-center align-items-center flex-wrap ">
               <img src={profileImg} alt="profile" className="profile-img" />
-              <div className="bio ms-3 mt-2">
+              <div className="bio ms-3 mt-2 mt-sm-0">
                 <h6>
-                  <span className="align-text-bottom me-1">
-                    <img src={verifiedIcon} alt="img" />
+                  <span>
+                    <img
+                      className="align-baseline me-1"
+                      src={verfiedIcon}
+                      alt="verified"
+                    />
                   </span>
-                  Adnan Qureshi
+                  Denzel Washington
                 </h6>
                 <p className="branch mt-2 mb-2">adnan.qureshi@gmail.com</p>
                 <p className="location mb-0">+1617045420</p>
@@ -54,23 +56,19 @@ const ProfileBox = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2">
+                  <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2 mt-2">
                     <span>
-                      <img
-                        className="mb-1"
-                        src={availabeBuildingIcon}
-                        alt="building"
-                      />
+                      <img className="mb-1" src={person} alt="building" />
                     </span>
-                    <p className="quantity ms-2 mb-0">22</p>
+                    <p className="quantity ms-2 mb-0">42</p>
                     <div className="d-flex justify-content-center">
                       <p className="title text-center text-md-start ms-2 mb-0">
-                        Available
+                        In Person
                       </p>
                     </div>
                   </div>
                 </Col>
-                <Col md={6} className="p-0">
+                <Col md={6} className="p-0 mt-2 mt-md-0">
                   <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2">
                     <span>
                       <img className="mb-1" src={soldPropertyIcon} alt="" />
@@ -80,13 +78,14 @@ const ProfileBox = () => {
                       Sold
                     </p>
                   </div>
-                  <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2">
+
+                  <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2 mt-2">
                     <span>
-                      <img className="mb-1" src={soldPropertyIcon} alt="" />
+                      <img className="mb-1" src={avatar} alt="" />
                     </span>
-                    <p className="quantity ms-2 mb-0">47</p>
+                    <p className="quantity ms-2 mb-0">12</p>
                     <p className="title text-center text-md-start ms-2 mb-0">
-                      Sold
+                      Virtual
                     </p>
                   </div>
                 </Col>
@@ -95,8 +94,8 @@ const ProfileBox = () => {
           </Col>
         </Row>
       </div>
-    </ProfileBoxStyle>
+    </UserProfileBoxStyle>
   );
 };
 
-export default ProfileBox;
+export default UserProfileBox;

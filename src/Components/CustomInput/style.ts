@@ -1,17 +1,32 @@
 import styled from "styled-components";
+import { FieldStyleBasicProps } from "../FormControl";
 
-export const CustomInputContainer = styled.div`
+interface InputStyleProps extends FieldStyleBasicProps {
+  fontFamily: string;
+  border: string;
+  padding: string;
+}
+const CustomInputStyle = styled.div<InputStyleProps>`
   width: 100%;
-  margin-bottom: 10px;
 
   label {
     font-size: 14px;
     text-transform: capitalize;
     display: block;
-    margin-bottom: 10px;
     color: #1b283f;
+    font-family: ${(props) => props.fontFamily};
   }
   .ant-input {
-    padding: 8px 8px !important;
+    padding: ${(props) => props.padding} !important;
+    border: ${(props) => props.border};
+  }
+  .ant-input-affix-wrapper {
+    padding: 0;
+    border: ${(props) => props.border};
+  }
+  .ant-input-suffix {
+    margin-right: 10px;
   }
 `;
+
+export default CustomInputStyle;

@@ -13,11 +13,12 @@ import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import AliceCarousel from "react-alice-carousel";
 
 const responsive = {
-  0: { items: 2 },
-  568: { items: 3 },
-  1024: { items: 5 },
-  1200: { items: 7 },
-  1400: { items: 9 },
+  0: { items: 2.2 },
+  568: { items: 3.2 },
+  768: { items: 4.2 },
+  1024: { items: 5.2 },
+  1200: { items: 7.2 },
+  1400: { items: 9.2 },
 };
 const storiesData = [
   { title: "Morgan Freeman", img: stroy1 },
@@ -72,12 +73,6 @@ const StoriesList = () => {
         paddingLeft={20}
         paddingRight={20}
       />
-
-      {/* <div className="stories-list">
-        {
-         
-        }
-      </div> */}
     </StoriesListStyled>
   );
 };

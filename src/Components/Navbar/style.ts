@@ -29,6 +29,9 @@ const NavbarStyle = styled.div`
         margin-left: 27px;
       }
     }
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   .nav-link-dark {
     color: ${tertiaryGrey7} !important;
@@ -52,10 +55,14 @@ export const AuthNavbarStyle = styled.div`
   }
   .nav-link {
     color: ${tertiaryGrey7} !important;
+    font-size: 15px;
     @media screen and (min-width: 991px) {
       &:not(:first-child) {
         margin-left: 27px;
       }
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
     }
   }
 `;

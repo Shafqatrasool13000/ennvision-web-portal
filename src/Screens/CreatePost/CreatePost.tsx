@@ -20,11 +20,7 @@ const CreatePost1 = ({ setIsPost1Modal, setIsPost2Modal }: any) => {
         <div className="choose-section d-flex flex-wrap justify-content-between">
           <p className="gallery mt-1">Create Post</p>
           <div className="choose-section-icons mt-xs-2 mt-sm-0">
-            <img
-              src={icon1}
-              onClick={() => navigate("/create-post-1")}
-              alt=""
-            />
+            <img src={icon1} onClick={() => navigate("create-post-1")} alt="" />
             <img src={icon2} alt="" />
           </div>
         </div>
@@ -48,7 +44,7 @@ const CreatePost1 = ({ setIsPost1Modal, setIsPost2Modal }: any) => {
               margin="auto"
               fontSize="18px"
               fontFamily="EnnVisionsMedium"
-              clicked={() => navigate("/create-post-4")}
+              clicked={() => navigate("create-post-4")}
             />
           </div>
         </div>

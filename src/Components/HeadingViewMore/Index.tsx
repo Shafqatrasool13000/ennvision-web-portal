@@ -5,7 +5,7 @@ import {
 } from "../../Components/GlobalStyle";
 import ViewMore from "../../Components/ViewMoreProperties/Index";
 
-const Index = ({
+const HeadingViewMore = ({
   title = null,
   listing,
 }: {
@@ -16,7 +16,7 @@ const Index = ({
     <>
       <div className="d-flex justify-content-between align-items-center flex-wrap">
         <div className="d-flex flex-column">
-          <TertiraryHeading>{title}</TertiraryHeading>
+          <TertiraryHeading className="mb-0">{title}</TertiraryHeading>
           <div>
             <UnderlineRed />
             <BlackDot />
@@ -28,4 +28,4 @@ const Index = ({
   );
 };
 
-export default Index;
+export default HeadingViewMore;
