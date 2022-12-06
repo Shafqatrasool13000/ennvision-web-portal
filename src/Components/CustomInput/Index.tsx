@@ -15,11 +15,12 @@ const InputField = (props: any) => {
     value,
     padding = "8px 8px",
     formik,
-    border = "none",
+    border = "1px solid #d9d9d9",
     fontFamily = "EnnVisions",
     showErrorMessage = true,
     suffix = null,
     bgColor = "white",
+    labelMarginBottom = "10px",
     ...rest
   } = props;
   return (
@@ -28,6 +29,7 @@ const InputField = (props: any) => {
       bgColor={bgColor}
       border={border}
       padding={padding}
+      labelMarginBottom={labelMarginBottom}
     >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>

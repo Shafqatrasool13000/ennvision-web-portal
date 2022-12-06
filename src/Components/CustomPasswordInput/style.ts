@@ -4,6 +4,7 @@ import { BasicColor } from "../GlobalStyle";
 export const CustomPasswordInputStyle = styled.div<any>`
   label {
     font-family: ${(props) => props.fontFamily};
+    margin-bottom: ${(props) => props.labelMarginBottom};
   }
 
   .customPasswordInput {

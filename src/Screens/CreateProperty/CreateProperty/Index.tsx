@@ -58,7 +58,7 @@ const CreateProperty = () => {
         <Row>
           <Col md={6} className="left-side">
             <TertiraryHeading>List a Property</TertiraryHeading>
-            <div className="d-flex">
+            <div className="d-flex mt-2 mb-3">
               <UnderlineRed />
               <BlackDot />
             </div>
@@ -98,6 +98,7 @@ const CreateProperty = () => {
                           //     ? "is-invalid"
                           //     : "customInput"
                           // }
+                          fontFamily="EnnVisionsMedium"
                           icon={searchIcon}
                         />
                         <div>
@@ -107,6 +108,7 @@ const CreateProperty = () => {
                             name="streetNumber"
                             label="Street Number"
                             placeholder="Street Number"
+                            fontFamily="EnnVisionsMedium"
                             // className={
                             //   formik.errors.name && formik.touched.name
                             //     ? "is-invalid"
@@ -114,33 +116,39 @@ const CreateProperty = () => {
                             // }
                           />
                         </div>
-                        <FormControl
-                          control="input"
-                          name="streetName"
-                          label="Street Name"
-                          placeholder="Street Name"
-                          // handleSelectValue={handleSelectCountry}
-                          // className={
-                          //   formik.errors.countryId && formik.touched.countryId
-                          //     ? "is-invalid"
-                          //     : "customPasswordInput"
-                          // }
-                          defaultValue={locationsId !== "createNew"}
-                        />
-                        <FormControl
-                          control="input"
-                          label="Postal Code"
-                          name="postalCode"
-                          placeholder="Postal Code"
-                          // handleSelectValue={handleSelectedState}
-                          // className={
-                          //   formik.errors.stateId && formik.touched.stateId
-                          //     ? "is-invalid"
-                          //     : "customInput"
-                          // }
-                          defaultValue={locationsId !== "createNew"}
-                        />
-                        <div>
+                        <div className="mt-2">
+                          <FormControl
+                            control="input"
+                            name="streetName"
+                            label="Street Name"
+                            placeholder="Street Name"
+                            fontFamily="EnnVisionsMedium"
+                            // handleSelectValue={handleSelectCountry}
+                            // className={
+                            //   formik.errors.countryId && formik.touched.countryId
+                            //     ? "is-invalid"
+                            //     : "customPasswordInput"
+                            // }
+                            defaultValue={locationsId !== "createNew"}
+                          />
+                        </div>
+                        <div className="mt-2">
+                          <FormControl
+                            control="input"
+                            label="Postal Code"
+                            name="postalCode"
+                            placeholder="Postal Code"
+                            fontFamily="EnnVisionsMedium"
+                            // handleSelectValue={handleSelectedState}
+                            // className={
+                            //   formik.errors.stateId && formik.touched.stateId
+                            //     ? "is-invalid"
+                            //     : "customInput"
+                            // }
+                            defaultValue={locationsId !== "createNew"}
+                          />
+                        </div>
+                        <div className="mt-3">
                           <CustomButton
                             bgcolor={PrimaryColor}
                             color="white"

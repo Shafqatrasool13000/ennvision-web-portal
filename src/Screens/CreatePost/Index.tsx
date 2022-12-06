@@ -22,7 +22,10 @@ const Index = () => {
 
   return (
     <div>
-      <CustomModal isModal={isPostModal} setIsModalVisible={setIsPostModal}>
+      <CustomModal
+        isModalVisible={isPostModal}
+        setIsModalVisible={setIsPostModal}
+      >
         <EditPost />
       </CustomModal>
       <CustomModal

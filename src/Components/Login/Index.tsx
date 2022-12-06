@@ -9,7 +9,6 @@ import { Helmet } from "react-helmet";
 import scroll_up from "../../assets/icons/ic_scroll_to_top .svg";
 import ic_logo from "../../assets/icons/ic_logo.svg";
 import LoginStyle from "./style";
-import Navbar from "../Navbar/Index";
 import AuthNavbar from "../Navbar/AuthNavbar";
 
 let initialValues = {
@@ -70,6 +69,7 @@ const Login = () => {
                           label="Email"
                           placeholder="Email Address"
                           fontFamily="EnnVisionsMedium"
+                          labelMarginBottom="8px"
                           className={
                             formik.errors.email && formik.touched.email
                               ? "is-invalid"
@@ -85,6 +85,7 @@ const Login = () => {
                           label="Password"
                           placeholder="Password"
                           fontFamily="EnnVisionsMedium"
+                          labelMarginBottom="8px"
                           className={
                             formik.errors.password && formik.touched.password
                               ? "is-invalid"

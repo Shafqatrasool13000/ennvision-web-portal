@@ -13,7 +13,8 @@ const SelectComp = (props: any) => {
     label,
     options,
     bgColor,
-    border,
+    border = "1px solid #d9d9d9",
+
     ...rest
   } = props;
 

@@ -5,6 +5,7 @@ interface InputStyleProps extends FieldStyleBasicProps {
   fontFamily: string;
   border: string;
   padding: string;
+  labelMarginBottom: string;
 }
 const CustomInputStyle = styled.div<InputStyleProps>`
   width: 100%;
@@ -15,6 +16,7 @@ const CustomInputStyle = styled.div<InputStyleProps>`
     display: block;
     color: #1b283f;
     font-family: ${(props) => props.fontFamily};
+    margin-bottom: ${(props) => props.labelMarginBottom};
   }
   .ant-input {
     padding: ${(props) => props.padding} !important;

@@ -13,10 +13,15 @@ const CustomPasswordInput = (props: any) => {
     fontFamily = "EnnVisions",
     border = "1px solid #c6c6c8",
     showErrorMessage = true,
+    labelMarginBottom = "10px",
     ...rest
   } = props;
   return (
-    <CustomPasswordInputStyle fontFamily={fontFamily} border={border}>
+    <CustomPasswordInputStyle
+      fontFamily={fontFamily}
+      border={border}
+      labelMarginBottom={labelMarginBottom}
+    >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>
         {({ field, form, meta }: any) => (

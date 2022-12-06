@@ -6,11 +6,11 @@ type CustomModalPropsTypes = {
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const CustomModal = ({
+const CustomModal: React.FC<CustomModalPropsTypes> = ({
   children,
   isModalVisible,
   setIsModalVisible,
-}: CustomModalPropsTypes) => {
+}) => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };

@@ -10,7 +10,7 @@ import PropertyDetails from "./Screens/PropertyDetails/Index";
 import FindProfessionals from "./Screens/FindProfessionals/Index";
 import ParentComponent from "./Screens/ParentComponent/Index";
 import Resources from "./Screens/Resources/Index";
-import Error from "./Components/Error/Error";
+import Error from "./Components/404Page/404Page";
 
 import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
 import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
