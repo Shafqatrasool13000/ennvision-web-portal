@@ -215,7 +215,7 @@ export const BlackDot = styled.hr`
 
 export const ImgContainer = styled.img<ImgContainerProps>`
   width: ${(props) => props.width};
-  height: ${(props) => props.height}; ;
+  height: ${(props) => props.height};
 `;
 
 export const BackgroundImage = styled.div<backImageProps>`
@@ -225,8 +225,11 @@ export const BackgroundImage = styled.div<backImageProps>`
   background-blend-mode: hard-light;
   background-position: ${(props) => props.postion};
   transition: all 1s ease-in-out;
+  background-color: ${(props) => props.bgColor};
+  background-blend-mode: ${(props) => props.blendMode};
   cursor: pointer;
   &:hover {
     background-position: bottom;
+    color: ${(props) => props.hoverBgColor};
   }
 `;

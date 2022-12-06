@@ -83,7 +83,8 @@ export const HeroSectionStyled = styled.div`
           background-color: ${PrimaryColor};
           border-radius: 4px;
           padding: 12px;
-          height: 40px;
+          height: 39px;
+          margin-top: 30px;
           cursor: pointer;
 
           img {

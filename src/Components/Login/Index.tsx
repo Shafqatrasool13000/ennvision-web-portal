@@ -37,9 +37,9 @@ const Login = () => {
         <title>Login</title>
       </Helmet>
       <AuthNavbar />
-      <span className="arrow-box">
+      {/* <span className="arrow-box">
         <img src={scroll_up} alt="scroll-up" />
-      </span>
+      </span> */}
       <LoginStyle>
         <div className="login-container-card">
           <div className="login-container-card-logo">

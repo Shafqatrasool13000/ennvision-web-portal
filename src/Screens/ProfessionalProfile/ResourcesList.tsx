@@ -3,9 +3,9 @@ import { ResourcesListStyled } from "./style";
 import property1 from "../../assets/Property Details/Property Details (1).png";
 import property2 from "../../assets/Property Details/Property Details (2).png";
 import property3 from "../../assets/Property Details/Property Details (3).png";
-import profileIcon from "../../assets/icons/ic_professional_meet_peron.svg";
-import blogIcon from "../../assets/icons/ic_blog_tag.svg";
 import IconWithText from "../../Components/IconText/Index";
+import user from "../../assets/icons/ic_blog_user.svg";
+import calender from "../../assets/icons/ic_blog_calender.svg";
 
 type resoucesListTypes = {
   md: number;
@@ -27,7 +27,18 @@ const ResourcesList: React.FC<resoucesListTypes> = ({ md, sm }) => {
                 <Card.Title>
                   How to Choose the Right Franchise for You
                 </Card.Title>
-                <IconWithText marginTop="18px" />
+                <div className="d-flex justify-content-between">
+                  <IconWithText
+                    icon={calender}
+                    title="August 20, 2021"
+                    marginTop="10px"
+                  />
+                  <IconWithText
+                    icon={user}
+                    title="John Smith"
+                    marginTop="10px"
+                  />
+                </div>
                 <Card.Text>
                   I neglect my talents Far far away, behind the word mountains,
                   far from the countries Vokalia and Consonantia, there live the

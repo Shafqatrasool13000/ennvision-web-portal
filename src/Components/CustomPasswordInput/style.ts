@@ -11,7 +11,6 @@ export const CustomPasswordInputStyle = styled.div<any>`
     background: white;
     border: 1px solid #c6c6c8;
     border-radius: 4px;
-    margin-top: 7px;
     input {
       border: none;
       outline: none;

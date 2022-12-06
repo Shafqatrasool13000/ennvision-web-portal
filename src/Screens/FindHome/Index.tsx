@@ -17,7 +17,7 @@ const Index = () => {
         {/* <SocialFooter /> */}
         <Container>
           <Filters />
-          <MapBox width="1320px" height="347px" />
+          <MapBox width="100%" height="347px" />
           <Properties />
         </Container>
       </FindHomeStyled>

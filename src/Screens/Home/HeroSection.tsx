@@ -154,14 +154,15 @@ const HeroSection = () => {
                             // label="All Residentials"
                             placeholder="All Residentials"
                             value={typeSelect}
-                            // defaultValue={typeSelect}
+                            defaultValue={[]}
                             className=""
+                            showErrorMessage={false}
                           />
                         </div>
                         <Button
                           disabled={cities.length == 0 || !typeSelect}
                           onClick={() => setIsShowProperty((prev) => !prev)}
-                          className="search-box ms-2 mt-3 d-flex justify-content-center align-items-center"
+                          className="search-box ms-2 d-flex justify-content-center align-items-center"
                         >
                           <img src={search_icon} alt="search" />
                         </Button>

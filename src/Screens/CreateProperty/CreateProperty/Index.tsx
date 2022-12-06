@@ -170,7 +170,7 @@ const CreateProperty = () => {
             </div>
           </Col>
           <Col md={6} className="right-side mt-3 mt-md-0">
-            <MapBox width="640px" height="500px" />
+            <MapBox width="100%" height="500px" />
           </Col>
         </Row>
       </Container>

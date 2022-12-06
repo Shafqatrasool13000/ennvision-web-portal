@@ -5,10 +5,14 @@ import ProfessionalHeroSection from "../../Components/ProfessionalHeroSection/In
 import RedUnderline from "../../Components/RedBlackUnderline/RedUnderline";
 import ResourcesList from "../ProfessionalProfile/ResourcesList";
 import RecentSources from "./RecentSources";
+import ResourcesCategory from "./ResourcesCategory";
+import ShowCase from "./ShowCase";
+import ResourcesTags from "./Tags";
+import TextWidget from "./TextWidget";
 
 const Resources = () => {
   return (
-    <>
+    <div className="pb-3">
       <Helmet>
         <title>Resources</title>
       </Helmet>
@@ -16,18 +20,22 @@ const Resources = () => {
       <Container>
         <Row className="mt-5">
           <Col md={7}>
+            <ShowCase />
             <ResourcesList md={6} sm={12} />
           </Col>
           <Col md={5}>
             <Heading title="Recent Resources" />
             <RecentSources />
             <Heading title="Text Widget" />
+            <TextWidget />
             <Heading title="Resources Tags" />
+            <ResourcesTags />
             <Heading title="Resources Category" />
+            <ResourcesCategory />
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

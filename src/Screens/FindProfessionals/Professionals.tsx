@@ -6,8 +6,8 @@ import professional4 from "../../assets/Image/ic_professional_4.png";
 import { Col, Container, Row } from "react-bootstrap";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { greenishColor, PrimaryColor } from "../../Components/GlobalStyle";
-import img1 from "../../assets/icons/ic_add_property_add_card.svg";
-import img2 from "../../assets/icons/ic_add_property_additional.svg";
+import chat from "../../assets/icons/ic_property_detail_chat.svg";
+import phone from "../../assets/icons/ic_property_detail_call.svg";
 
 const professionalsData = [
   {
@@ -79,12 +79,12 @@ const Professionals = () => {
                       <CustomButton
                         bgcolor={PrimaryColor}
                         color="white"
-                        padding="8px 8px"
+                        padding="6px 8px"
                         width="130px"
                         type="submit"
                         title="Chat"
                         margin="auto"
-                        icon={img1}
+                        icon={<img className="me-2" src={chat} alt="chat" />}
                         fontSize="16px"
                         // clicked={() => editHandler(content)}
                       />
@@ -92,14 +92,15 @@ const Professionals = () => {
                         <CustomButton
                           bgcolor={greenishColor}
                           color="white"
-                          padding="8px 8px"
+                          padding="6px 8px"
                           width="130px"
                           type="submit"
                           title="Call"
                           margin="auto"
-                          icon={img2}
                           fontSize="16px"
-
+                          icon={
+                            <img className="me-2" src={phone} alt="phone" />
+                          }
                           // clicked={() => editHandler(content)}
                         />
                       </div>

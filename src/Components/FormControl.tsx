@@ -17,7 +17,30 @@ export interface FieldStyleBasicProps {
   bgColor: string;
   border: string;
 }
-const FormikController = (props: any) => {
+
+export interface FieldStyleBasicProps {
+  padding: string;
+  bgColor: string;
+  border: string;
+}
+
+type FormControllerProps = {
+  control:
+    | "inout"
+    | "select"
+    | "searchSelect"
+    | "multiSelect"
+    | "checkbox"
+    | "password"
+    | "textarea"
+    | "inputNumber"
+    | "largeInput"
+    | "largeSelect"
+    | "radio"
+    | "date"
+    | "dateTime";
+} & React.ComponentProps<any>;
+const FormController: React.FC<FormControllerProps> = (props) => {
   const { control, ...rest } = props;
   switch (control) {
     case "input":
@@ -51,4 +74,4 @@ const FormikController = (props: any) => {
   }
 };
 
-export default FormikController;
+export default FormController;

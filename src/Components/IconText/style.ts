@@ -8,7 +8,6 @@ const IconWithTextStyle = styled.div<any>`
       vertical-align: baseline;
     }
     .title {
-      font-family: "EnnVisionsMedium";
       font-size: 14px;
       margin-bottom: 0;
       margin-left: 8px;

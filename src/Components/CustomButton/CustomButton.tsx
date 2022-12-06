@@ -1,4 +1,5 @@
 import { Button } from "antd";
+import { PrimaryColor } from "../GlobalStyle";
 import CustormButtonStyle from "./style";
 
 export type ButtonProps = {
@@ -13,9 +14,10 @@ export type ButtonProps = {
   form?: any;
   key?: string | number;
   fontSize: string;
-  icon?: string | null;
   fontFamily?: "EnnVisions" | "EnnVisionsMedium";
   margin?: string;
+  icon?: React.ReactNode | null;
+  border?: string;
 };
 
 const CustomButton = ({
@@ -33,6 +35,7 @@ const CustomButton = ({
   icon = null,
   fontFamily = "EnnVisions",
   margin = "auto",
+  border = `1px solid ${PrimaryColor}`,
 }: ButtonProps) => {
   return (
     <CustormButtonStyle
@@ -43,6 +46,7 @@ const CustomButton = ({
       fontSize={fontSize}
       fontFamily={fontFamily}
       margin={margin}
+      border={border}
     >
       <Button
         disabled={disabled}
@@ -50,13 +54,8 @@ const CustomButton = ({
         key={key}
         onClick={clicked}
         htmlType={type}
+        icon={icon}
       >
-        {icon && (
-          <span className="me-2">
-            <img src={icon} alt={icon} />
-          </span>
-        )}
-
         {title}
       </Button>
     </CustormButtonStyle>

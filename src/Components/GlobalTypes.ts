@@ -8,4 +8,7 @@ export type backImageProps = {
   size: string;
   repeat: string;
   postion: string;
+  blendMode?: string | "unset";
+  bgColor?: string | "unset";
+  hoverBgColor?: string | "white";
 };
