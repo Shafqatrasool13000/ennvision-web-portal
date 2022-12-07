@@ -287,7 +287,7 @@ const PropertyDetails = () => {
             </div>
           </div>
           <div className="mt-4">
-            <Map height="347px" width="1320px" />
+            <Map height="347px" width="100%" />
           </div>
         </Container>
         {/* <SocialFooter /> */}

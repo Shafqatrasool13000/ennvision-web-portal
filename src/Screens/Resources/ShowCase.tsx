@@ -15,7 +15,7 @@ const ShowCase = () => {
         <TertiaryHeading>
           How to Choose the Right Franchise for You
         </TertiaryHeading>
-        <div className="d-flex justify-content-between flex-wrap">
+        <div className="d-flex justify-content-between flex-wraps">
           <IconWithText
             marginTop="10px"
             icon={calender}

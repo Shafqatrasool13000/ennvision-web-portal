@@ -48,6 +48,7 @@ export const tertiaryGrey19 = "#EBEBEB";
 
 export const lightColor1 = "#F5F5F5";
 
+export const secondaryBlue = "#0A84FF";
 export const lightblue = "#04A4D8";
 export const lightblue2 = "#049CCE";
 

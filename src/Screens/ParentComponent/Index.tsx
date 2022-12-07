@@ -11,8 +11,7 @@ const ParentComponent = ({ children }: any) => {
         <title>List Property</title>
       </Helmet>
       <Navbar />
-      <Outlet />
-      {/* {children} */}
+      {children}
       {/* <SocialFooter /> */}
     </ParentComponentStyle>
   );

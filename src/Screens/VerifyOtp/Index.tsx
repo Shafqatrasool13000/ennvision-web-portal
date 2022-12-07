@@ -46,6 +46,7 @@ const VerifyOtp = () => {
                 fontSize="14px"
                 fontFamily="EnnVisionsMedium"
                 clicked={navigateToVerifyOtp}
+                border="none"
               />
             </span>
           </p>
@@ -87,6 +88,7 @@ const VerifyOtp = () => {
               margin="auto"
               fontSize="14px"
               fontFamily="EnnVisionsMedium"
+              border="none"
               clicked={() => console.log("resend")}
             />
           </span>

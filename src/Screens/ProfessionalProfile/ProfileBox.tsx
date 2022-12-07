@@ -5,10 +5,15 @@ import { ProfileBoxStyled } from "./style";
 import { Col, Row } from "react-bootstrap";
 import {
   BlackDot,
+  greenishColor,
+  PrimaryColor,
   TertiraryHeading,
   UnderlineRed,
 } from "../../Components/GlobalStyle";
 import verfiedIcon from "../../assets/icons/ic_verifed.svg";
+import CustomButton from "../../Components/CustomButton/CustomButton";
+import chat from "../../assets/icons/ic_property_detail_chat.svg";
+import phone from "../../assets/icons/ic_property_detail_call.svg";
 
 const ProfileBox = () => {
   return (
@@ -60,12 +65,20 @@ const ProfileBox = () => {
                       </p>
                     </div>
                   </div>
-                  <button className="call-btn mt-3 mx-auto">
-                    <span>
-                      <img src="" alt="" />
-                    </span>{" "}
-                    Call Now
-                  </button>
+
+                  <CustomButton
+                    bgcolor={PrimaryColor}
+                    color="white"
+                    padding="4px 8px"
+                    width="130px"
+                    type="submit"
+                    title="Chat"
+                    margin="auto"
+                    border="none"
+                    icon={<img className="me-2" src={chat} alt="chat" />}
+                    fontSize="16px"
+                    // clicked={() => editHandler(content)}
+                  />
                 </Col>
                 <Col md={6} className="p-0">
                   <div className="properties d-flex align-items-center justify-content-center justify-content-md-start p-2">
@@ -77,14 +90,19 @@ const ProfileBox = () => {
                       Sold
                     </p>
                   </div>
-
-                  <button className="chat-btn mt-3 mx-auto">
-                    {" "}
-                    <span>
-                      <img src="" alt="" />
-                    </span>{" "}
-                    Start Chat
-                  </button>
+                  <CustomButton
+                    bgcolor={greenishColor}
+                    color="white"
+                    padding="4px 8px"
+                    width="130px"
+                    type="submit"
+                    title="Call"
+                    margin="auto"
+                    fontSize="16px"
+                    border="none"
+                    icon={<img className="me-2" src={phone} alt="phone" />}
+                    // clicked={() => editHandler(content)}
+                  />
                 </Col>
               </Row>
             </div>

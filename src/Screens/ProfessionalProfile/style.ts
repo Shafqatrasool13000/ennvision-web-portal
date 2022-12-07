@@ -14,7 +14,6 @@ import {
 } from "../../Components/GlobalStyle";
 
 export const ProfessionalProfileStyled = styled.div`
-  background-color: ${tertiaryGrey8};
   height: 100%;
   margin-top: 90px;
 `;
@@ -157,7 +156,6 @@ export const ResourcesListStyled = styled.section`
 
 export const StoriesListStyled = styled.div`
   display: flex;
-  margin-top: 22px;
   column-gap: 16px;
   .add-story-container {
     .card {

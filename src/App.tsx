@@ -42,6 +42,8 @@ import VerifyOtp from "./Screens/VerifyOtp/Index";
 import Register from "./Components/Register/Index";
 import UserProfile from "./Screens/UserProfile/Index";
 import Homepage from "./Screens/Homepage/Index";
+import ExploreNearby from "./Screens/ExploreNearby/Index";
+import Story from "./Screens/Story/Index";
 
 function App() {
   const { changeNavColor, scrollToTop } = useContext(ContextApiData);
@@ -84,6 +86,9 @@ function App() {
             path="professional-profile/:id"
             element={<ProfessionalProfile />}
           />
+
+          <Route path="explore-nearby" element={<ExploreNearby />} />
+          <Route path="story" element={<Story />} />
         </Route>
         <Route path="home" element={<Home />} />
 

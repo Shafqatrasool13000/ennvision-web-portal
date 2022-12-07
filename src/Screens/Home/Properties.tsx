@@ -74,7 +74,7 @@ const Properties = () => {
   };
   return (
     <PropertiesStyled>
-      <div className="properties pb-lg-5">
+      <div className="properties">
         <Row>
           {propertiesData.map(
             (

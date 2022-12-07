@@ -6,7 +6,6 @@ import FormControl from "../../Components/FormControl";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { PrimaryColor } from "../../Components/GlobalStyle";
 import { Helmet } from "react-helmet";
-import scroll_up from "../../assets/icons/ic_scroll_to_top .svg";
 import ic_logo from "../../assets/icons/ic_logo.svg";
 import LoginStyle from "./style";
 import AuthNavbar from "../Navbar/AuthNavbar";

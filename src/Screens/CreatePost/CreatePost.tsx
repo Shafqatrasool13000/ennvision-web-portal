@@ -5,7 +5,6 @@ import icon1 from "../../assets/icons/ic_newsfeed_like.svg";
 import icon2 from "../../assets/icons/ic_newsfeed_saved.svg";
 import closeIcon from "../../assets/icons/ic_story_close.svg";
 import { CreatePostStyle } from "./style";
-import navigate from "../../assets/hooks/useNavigation";
 import { useNavigate } from "react-router-dom";
 
 const CreatePost1 = ({ setIsPost1Modal, setIsPost2Modal }: any) => {
