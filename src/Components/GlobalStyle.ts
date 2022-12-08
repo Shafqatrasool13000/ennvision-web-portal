@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { string } from "yup";
 import { backImageProps, ImgContainerProps } from "./GlobalTypes";
 
 export const BasicColor = "#C0922E";
@@ -45,6 +46,7 @@ export const tertiaryGrey16 = "#F8F8F8";
 export const tertiaryGrey17 = "#D1D1D6";
 export const tertiaryGrey18 = "#F3F3F3";
 export const tertiaryGrey19 = "#EBEBEB";
+export const tertiaryGrey20 = "#606060";
 
 export const lightColor1 = "#F5F5F5";
 
@@ -215,6 +217,19 @@ export const BlackDot = styled.hr`
 `;
 
 export const ImgContainer = styled.img<ImgContainerProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  border-radius: ${(props) => props.borderRadius};
+`;
+
+type profileMiniImgProps = {
+  borderRadius: string;
+  width: string;
+  height: string;
+};
+
+export const ProfileMiniImg = styled.img<profileMiniImgProps>`
+  border-radius: ${(props) => props.borderRadius};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 `;

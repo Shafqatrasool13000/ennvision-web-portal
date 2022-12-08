@@ -1,6 +1,7 @@
 export type ImgContainerProps = {
   height: string;
   width: string;
+  borderRadius?: string;
 };
 
 export type backImageProps = {

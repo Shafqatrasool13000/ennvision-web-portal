@@ -1,11 +1,14 @@
 import Card from "react-bootstrap/Card";
 import property1 from "../../assets/Image/ic_property_1.png";
+import property2 from "../../assets/Image/ic_property_2.png";
+import property3 from "../../assets/Image/ic_property_3.png";
 import bedroomIcon from "../../assets/icons/ic_property_bed.svg";
 import bathIcon from "../../assets/icons/ic_property_bath.svg";
 import areaIcon from "../../assets/icons/ic_property_area.svg";
 import {
   ImgContainer,
   MiniHeadingSecondary,
+  PrimaryColor,
   ProfileMiniImg,
   secondaryBlue,
   tertiaryGrey20,
@@ -16,13 +19,28 @@ import sent from "../../assets/icons/ic_newsfeed_sent.svg";
 import comment from "../../assets/icons/ic_newsfeed_comment.svg";
 import save from "../../assets/icons/ic_newsfeed_saved.svg";
 import profile from "../../assets/Image/ic_professional_1.png";
-import { PostsStyle } from "./style";
+import { Posts2Style } from "./style";
 import CustomLink from "../../Components/CustomLink/Index";
 import newFeed from "../../assets/icons/ic_newsfeed_more.svg";
+import AliceCarousel from "react-alice-carousel";
 
-const Posts = () => {
+const Posts2 = () => {
+  const responsive = {
+    0: { items: 1 },
+    //   568: { items: 3.2 },
+    //   768: { items: 4.2 },
+    //   1024: { items: 5.2 },
+    //   1200: { items: 7.2 },
+    //   1400: { items: 9.2 },
+  };
+
+  const items = [
+    <img className="w-100" src={property1} alt="property" />,
+    <img className="w-100" src={property2} alt="property" />,
+    <img className="w-100" src={property3} alt="property" />,
+  ];
   return (
-    <PostsStyle>
+    <Posts2Style>
       <div className="post-owner-section">
         <div className="d-flex justify-content-end  mb-1">
           <img className="view-more-icon" src={newFeed} alt="newFeed" />
@@ -52,11 +70,14 @@ const Posts = () => {
         </div>
       </div>
       <Card>
-        <img src={property1} alt="property" />
-        <div className=" visited-text d-flex justify-content-between w-100 align-items-center">
-          <h6 className="mb-0 text-light">Visited Now</h6>
-          <span className="fs-3">&#8250;</span>
-        </div>
+        <AliceCarousel
+          mouseTracking
+          items={items}
+          responsive={responsive}
+          controlsStrategy="alternate"
+          disableButtonsControls
+        />
+
         <Card.Body>
           <MiniHeadingSecondary>
             831 Maidstone Drive Bungalow
@@ -88,13 +109,25 @@ const Posts = () => {
               <p className="text">8x10 m²</p>
             </div>
           </div>
-          <div className="react d-flex justify-content-between">
+          <div className="react d-flex justify-content-between align-items-center">
             <div className="react-icons mt-xs-2 mt-sm-0">
-              <img src={like} alt="" />
-              <img src={comment} alt="" />
-              <img src={sent} alt="" />
+              <img src={like} alt="like" />
+              <img src={comment} alt="comment" />
+              <img src={sent} alt="send" />
             </div>
-            <img src={save} alt="" />
+            <div className="d-flex align-items-center">
+              <CustomLink
+                fontSize="14px"
+                color={PrimaryColor}
+                link="/"
+                title="Promotion"
+                textDecoration="none"
+                fontFamily="EnnVisionsMedium"
+              />
+              <span>
+                <img className="ms-2" src={save} alt="save" />
+              </span>
+            </div>
           </div>
           <p className="views my-1 fw-bold">60 Views</p>
           <div className="caption-section">
@@ -112,9 +145,6 @@ const Posts = () => {
               </p>
             </div>
             <p className="post-caption mb-1">
-              Executive Greengard-built most sought-after neighborhood in
-              Central Erin Mills. This Family home is bright, spacious and
-              features 3 plus bedroom and 3 bathrooms.
               <br />
               <strong> Maqsood </strong> Awesome property on premium location
             </p>
@@ -128,8 +158,8 @@ const Posts = () => {
           </div>
         </Card.Body>
       </Card>
-    </PostsStyle>
+    </Posts2Style>
   );
 };
 
-export default Posts;
+export default Posts2;
