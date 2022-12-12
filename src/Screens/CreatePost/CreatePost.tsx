@@ -43,7 +43,7 @@ const CreatePost1 = ({ setIsPost1Modal, setIsPost2Modal }: any) => {
               margin="auto"
               fontSize="18px"
               fontFamily="EnnVisionsMedium"
-              clicked={() => navigate("create-post-4")}
+              clicked={() => navigate("/create-post-4")}
             />
           </div>
         </div>

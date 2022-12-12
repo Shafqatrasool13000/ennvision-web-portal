@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CustomButton from "../../../Components/CustomButton/CustomButton";
 import { Formik } from "formik";
-import { Form, Modal } from "antd";
+import { Form, Modal, SelectProps } from "antd";
 import ic_logo from "../../../assets/icons/ic_logo(1).svg";
 import { useNavigate, useParams } from "react-router-dom";
 import FormControl from "../../../Components/FormControl";
@@ -27,6 +27,37 @@ const initialValues = {
   stateId: "",
   address: "",
 };
+
+const options = [
+  {
+    id: "Lahore",
+    name: "Lahore",
+  },
+  {
+    id: "Islamabad",
+    name: "Islamabad",
+  },
+  {
+    id: "Rawalpindi",
+    name: "Rawalpindi",
+  },
+  {
+    id: "Karachi",
+    name: "Karachi",
+  },
+  {
+    id: "Okara",
+    name: "Okara",
+  },
+  {
+    id: "Chakwal",
+    name: "Chakwal",
+  },
+  {
+    id: "Chunian",
+    name: "Chunian",
+  },
+];
 
 const CreateProperty = () => {
   const { locationsId } = useParams();
@@ -89,7 +120,7 @@ const CreateProperty = () => {
                         }}
                       >
                         <FormControl
-                          control="searchSelect"
+                          control="select"
                           type="input"
                           name="name"
                           placeholder="Location name"
@@ -99,7 +130,9 @@ const CreateProperty = () => {
                           //     : "customInput"
                           // }
                           fontFamily="EnnVisionsMedium"
+                          options={options}
                           icon={searchIcon}
+                          padding="0px"
                         />
                         <div>
                           <FormControl

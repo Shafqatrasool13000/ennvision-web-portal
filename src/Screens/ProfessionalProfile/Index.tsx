@@ -3,7 +3,7 @@ import ProfileBox from "./ProfileBox";
 import { ProfessionalProfileStyled } from "./style";
 import HeadingViewMore from "../../Components/HeadingViewMore/Index";
 import ResourcesList from "./ResourcesList";
-import StoriesList from "./StoriesList";
+import StoriesList from "../../Components/StoriesList/StoriesList";
 import PostList from "./Posts";
 import Properties from "../../Components/Properties/Index";
 

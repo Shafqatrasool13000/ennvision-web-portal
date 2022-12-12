@@ -123,7 +123,7 @@ const storiesData = [
   // <MiniStory img={story4} className="miniImg4" />,
 ];
 
-const NextArrowHandler = ({ isDisabled, index }: any) => (
+const NextArrowHandler = ({ isDisabled }: any) => (
   <span
     style={{ opacity: isDisabled ? "0.5" : 1 }}
     className="d-none d-sm-inline"
@@ -135,7 +135,7 @@ const NextArrowHandler = ({ isDisabled, index }: any) => (
     />
   </span>
 );
-const PrevArrowHandler = ({ isDisabled, index }: any) => (
+const PrevArrowHandler = ({ isDisabled }: any) => (
   <span
     style={{ opacity: isDisabled ? "0.5" : 1 }}
     className="d-none d-sm-inline"
@@ -173,7 +173,7 @@ const Story = () => {
           <div className="inner-container">
             {stories.map(
               ({ component: Component, cClass, img }, index: number) => (
-                <div key={index} onClick={() => handleImageChanger(index)}>
+                <div key={index}>
                   <Component img={img} className={cClass} />
                 </div>
               )

@@ -1,5 +1,5 @@
 import { Suspense, useContext, useEffect } from "react";
-import lazyLoad from "./LazyLoad";
+// import lazyLoad from "./LazyLoad";
 import { ToastContainer } from "react-toastify";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -7,89 +7,89 @@ import "./App.css";
 import { ContextApiData } from "./utils/CreateContext";
 import scroll_up from "./assets/icons/ic_scroll_to_top .svg";
 import useScrollToTop from "./hooks/useScrollToTop";
-// import Home from "./Screens/Home/Index";
-// import FindHome from "./Screens/FindHome/Index";
-// import PropertyDetails from "./Screens/PropertyDetails/Index";
-// import FindProfessionals from "./Screens/FindProfessionals/Index";
-// import ParentComponent from "./Screens/ParentComponent/Index";
-// import Resources from "./Screens/Resources/Index";
-// import Error from "./Components/404Page/404Page";
+import Home from "./Screens/Home/Index";
+import FindHome from "./Screens/FindHome/Index";
+import PropertyDetails from "./Screens/PropertyDetails/Index";
+import FindProfessionals from "./Screens/FindProfessionals/Index";
+import ParentComponent from "./Screens/ParentComponent/Index";
+import Resources from "./Screens/Resources/Index";
+import Error from "./Components/404Page/404Page";
 
-// import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
-// import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
-// import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
+import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
+import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
+import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
 
-// import PaymentInfo from "./Screens/BillSummary/Index";
-// import PropertyInfo from "./Screens/PropertyInfo/Index";
-// import EditPhone from "./Screens/CreateProfessional/EditPhone";
+import PaymentInfo from "./Screens/BillSummary/Index";
+import PropertyInfo from "./Screens/PropertyInfo/Index";
+import EditPhone from "./Screens/CreateProfessional/EditPhone";
 
-// import BecomeProfessional from "./Screens/BecomeProfessional/Index";
+import BecomeProfessional from "./Screens/BecomeProfessional/Index";
 
-// import CreatePost from "./Screens/CreatePost/CreatePost";
-// import CreatePost1 from "./Screens/CreatePost/CreatePost1";
-// import CreatePost2 from "./Screens/CreatePost/CreatePost2";
-// import CreatePost3 from "./Screens/CreatePost/CreatePost3";
-// import CreatePost4 from "./Screens/CreatePost/CreatePost4";
+import CreatePost from "./Screens/CreatePost/CreatePost";
+import CreatePost1 from "./Screens/CreatePost/CreatePost1";
+import CreatePost2 from "./Screens/CreatePost/CreatePost2";
+import CreatePost3 from "./Screens/CreatePost/CreatePost3";
+import CreatePost4 from "./Screens/CreatePost/CreatePost4";
 
-// import PostList from "./Screens/CreatePost/Index";
+import PostList from "./Screens/CreatePost/Index";
 
-// import Confirmed from "./Components/Confirmed/Index";
+import Confirmed from "./Components/Confirmed/Index";
 
-// import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
-// import PropertyParent from "./Screens/ParentComponent/PropertyParent";
-// import Login from "./Components/Login/Index";
-// import RegisterPhone from "./Components/RegisterPhone/Index";
-// import VerifyOtp from "./Screens/VerifyOtp/Index";
-// import Register from "./Components/Register/Index";
-// import UserProfile from "./Screens/UserProfile/Index";
-// import Homepage from "./Screens/Homepage/Index";
-// import ExploreNearby from "./Screens/ExploreNearby/Index";
-// import Story from "./Screens/Story/Index";
+import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
+import PropertyParent from "./Screens/ParentComponent/PropertyParent";
+import Login from "./Components/Login/Index";
+import RegisterPhone from "./Components/RegisterPhone/Index";
+import VerifyOtp from "./Screens/VerifyOtp/Index";
+import Register from "./Components/Register/Index";
+import UserProfile from "./Screens/UserProfile/Index";
+import Homepage from "./Screens/Homepage/Index";
+import ExploreNearby from "./Screens/ExploreNearby/Index";
+import Story from "./Screens/Story/Index";
 
-const Home = lazyLoad("./Screens/Home/Index");
-const FindHome = lazyLoad("./Screens/FindHome/Index");
-const PropertyDetails = lazyLoad("./Screens/PropertyDetails/Index");
-const FindProfessionals = lazyLoad("./Screens/FindProfessionals/Index");
-const ParentComponent = lazyLoad("./Screens/ParentComponent/Index");
-const Resources = lazyLoad("./Screens/Resources/Index");
-const Error = lazyLoad("./Components/404Page/404Page");
+// const Home = lazyLoad("./Screens/Home/Index");
+// const FindHome = lazyLoad("./Screens/FindHome/Index");
+// const PropertyDetails = lazyLoad("./Screens/PropertyDetails/Index");
+// const FindProfessionals = lazyLoad("./Screens/FindProfessionals/Index");
+// const ParentComponent = lazyLoad("./Screens/ParentComponent/Index");
+// const Resources = lazyLoad("./Screens/Resources/Index");
+// const Error = lazyLoad("./Components/404Page/404Page");
 
-const CreateProperty = lazyLoad(
-  "./Screens/CreateProperty/CreateProperty/Index"
-);
-const CreateProperty1 = lazyLoad(
-  "./Screens/CreateProperty/CreateProperty1/Index"
-);
-const CreateProperty2 = lazyLoad(
-  "./Screens/CreateProperty/CreateProperty2/Index"
-);
+// const CreateProperty = lazyLoad(
+//   "./Screens/CreateProperty/CreateProperty/Index"
+// );
+// const CreateProperty1 = lazyLoad(
+//   "./Screens/CreateProperty/CreateProperty1/Index"
+// );
+// const CreateProperty2 = lazyLoad(
+//   "./Screens/CreateProperty/CreateProperty2/Index"
+// );
 
-const PaymentInfo = lazyLoad("./Screens/BillSummary/Index");
-const PropertyInfo = lazyLoad("./Screens/PropertyInfo/Index");
-const EditPhone = lazyLoad("./Screens/CreateProfessional/EditPhone");
+// const PaymentInfo = lazyLoad("./Screens/BillSummary/Index");
+// const PropertyInfo = lazyLoad("./Screens/PropertyInfo/Index");
+// const EditPhone = lazyLoad("./Screens/CreateProfessional/EditPhone");
 
-const BecomeProfessional = lazyLoad("./Screens/BecomeProfessional/Index");
+// const BecomeProfessional = lazyLoad("./Screens/BecomeProfessional/Index");
 
-const CreatePost = lazyLoad("./Screens/CreatePost/CreatePost");
-const CreatePost1 = lazyLoad("./Screens/CreatePost/CreatePost1");
-const CreatePost2 = lazyLoad("./Screens/CreatePost/CreatePost2");
-const CreatePost3 = lazyLoad("./Screens/CreatePost/CreatePost3");
-const CreatePost4 = lazyLoad("./Screens/CreatePost/CreatePost4");
+// const CreatePost = lazyLoad("./Screens/CreatePost/CreatePost");
+// const CreatePost1 = lazyLoad("./Screens/CreatePost/CreatePost1");
+// const CreatePost2 = lazyLoad("./Screens/CreatePost/CreatePost2");
+// const CreatePost3 = lazyLoad("./Screens/CreatePost/CreatePost3");
+// const CreatePost4 = lazyLoad("./Screens/CreatePost/CreatePost4");
 
-const PostList = lazyLoad("./Screens/CreatePost/Index");
+// const PostList = lazyLoad("./Screens/CreatePost/Index");
 
-const Confirmed = lazyLoad("./Components/Confirmed/Index");
+// const Confirmed = lazyLoad("./Components/Confirmed/Index");
 
-const ProfessionalProfile = lazyLoad("./Screens/ProfessionalProfile/Index");
-const PropertyParent = lazyLoad("./Screens/ParentComponent/PropertyParent");
-const Login = lazyLoad("./Components/Login/Index");
-const RegisterPhone = lazyLoad("./Components/RegisterPhone/Index");
-const VerifyOtp = lazyLoad("./Screens/VerifyOtp/Index");
-const Register = lazyLoad("./Components/Register/Index");
-const UserProfile = lazyLoad("./Screens/UserProfile/Index");
-const Homepage = lazyLoad("./Screens/Homepage/Index");
-const ExploreNearby = lazyLoad("./Screens/ExploreNearby/Index");
-const Story = lazyLoad("./Screens/Story/Index");
+// const ProfessionalProfile = lazyLoad("./Screens/ProfessionalProfile/Index");
+// const PropertyParent = lazyLoad("./Screens/ParentComponent/PropertyParent");
+// const Login = lazyLoad("./Components/Login/Index");
+// const RegisterPhone = lazyLoad("./Components/RegisterPhone/Index");
+// const VerifyOtp = lazyLoad("./Screens/VerifyOtp/Index");
+// const Register = lazyLoad("./Components/Register/Index");
+// const UserProfile = lazyLoad("./Screens/UserProfile/Index");
+// const Homepage = lazyLoad("./Screens/Homepage/Index");
+// const ExploreNearby = lazyLoad("./Screens/ExploreNearby/Index");
+// const Story = lazyLoad("./Screens/Story/Index");
 
 function App() {
   const { changeNavColor, scrollToTop } = useContext(ContextApiData);

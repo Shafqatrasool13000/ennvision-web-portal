@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import { StoriesListStyled } from "./style";
+import StoriesListStyle from "./style";
 import stroy1 from "../../assets/Professional/Professional (1).png";
 import stroy2 from "../../assets/Professional/Professional (2).png";
 import stroy3 from "../../assets/Professional/Professional (3).png";
@@ -13,14 +13,6 @@ import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 
-// const responsive = {
-//   0: { items: 2.2 },
-//   568: { items: 3.2 },
-//   768: { items: 4.2 },
-//   1024: { items: 5.2 },
-//   1200: { items: 7.2 },
-//   1400: { items: 9.2 },
-// };
 const storiesData = [
   { title: "Morgan Freeman", img: stroy1 },
   { title: "Tom Hanks", img: stroy2 },
@@ -65,7 +57,7 @@ const items = [
 
 const StoriesList = ({ responsive }: any) => {
   return (
-    <StoriesListStyled>
+    <StoriesListStyle>
       <AliceCarousel
         mouseTracking
         items={items}
@@ -76,7 +68,7 @@ const StoriesList = ({ responsive }: any) => {
         paddingLeft={20}
         paddingRight={20}
       />
-    </StoriesListStyled>
+    </StoriesListStyle>
   );
 };
 

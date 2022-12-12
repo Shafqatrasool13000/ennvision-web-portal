@@ -1,5 +1,5 @@
 import ExploreNearbyStyle from "./style";
-import StoriesList from "../ProfessionalProfile/StoriesList";
+import StoriesList from "../../Components/StoriesList/StoriesList";
 import Suggestions from "./Suggestion";
 import Posts from "./Posts";
 import { Col, Container, Row } from "react-bootstrap";

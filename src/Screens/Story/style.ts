@@ -39,7 +39,7 @@ const StoryStyle = styled.div`
       background-color: #c7112b;
     }
     .indicator-null {
-      background-color: blue;
+      background-color: ${tertiaryDark2};
     }
   }
 
