@@ -9,10 +9,12 @@ import * as Yup from "yup";
 import Filters from "../../Components/Filters/Index";
 import { ContextApiData } from "../../utils/CreateContext";
 import { SelectProps } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [apartment, setApartment] = useState("Rent");
   const [cities, setCities] = useState<any>([]);
+  const navigate = useNavigate();
   console.log({ cities });
 
   const { typeSelect, setIsShowProperty, isShowProperty } =
@@ -161,7 +163,7 @@ const HeroSection = () => {
                         </div>
                         <Button
                           disabled={cities.length == 0 || !typeSelect}
-                          onClick={() => setIsShowProperty((prev) => !prev)}
+                          onClick={() => navigate("/find-home")}
                           className="search-box ms-2 d-flex justify-content-center align-items-center"
                         >
                           <img src={search_icon} alt="search" />

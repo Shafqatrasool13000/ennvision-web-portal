@@ -19,8 +19,8 @@ import {
 } from "../../Components/GlobalStyle";
 
 const responsive = {
-  0: { items: 2.3 },
-  //   568: { items: 3.2 },
+  0: { items: 1.3 },
+  568: { items: 2.3 },
   //   768: { items: 4.2 },
   //   1024: { items: 5.2 },
   //   1200: { items: 7.2 },

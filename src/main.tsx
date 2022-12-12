@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-alice-carousel/lib/alice-carousel.css";
 import CreateContext from "./utils/CreateContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

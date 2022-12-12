@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Form } from "antd";
@@ -9,6 +9,8 @@ import { Helmet } from "react-helmet";
 import ic_logo from "../../assets/icons/ic_logo.svg";
 import LoginStyle from "./style";
 import AuthNavbar from "../Navbar/AuthNavbar";
+import { ContextApiData } from "../../utils/CreateContext";
+import { useContext } from "react";
 
 let initialValues = {
   email: "",
@@ -17,18 +19,24 @@ let initialValues = {
 
 const validationSchema = Yup.object({
   password: Yup.string().required("Password is required!"),
-  email: Yup.string()
-    .email("Email should be valid")
-    .required("Email is required"),
+  email: Yup.string().email("Email should be valid"),
 });
 
 const Login = () => {
   const navigate = useNavigate();
   const onSubmit = (value: any) => {};
+  const { isLoggedIn, setIsLoggedIn } = useContext(ContextApiData);
+
+  console.log({ isLoggedIn });
 
   const navigateToDashboard = () => {
-    navigate("/");
+    setIsLoggedIn(true);
+    navigate("/explore-nearby");
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/explore-nearby" />;
+  }
 
   return (
     <>

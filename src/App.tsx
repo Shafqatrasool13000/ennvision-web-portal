@@ -1,49 +1,95 @@
-import { useContext, useEffect } from "react";
-import "./App.css";
-import scroll_up from "./assets/icons/ic_scroll_to_top .svg";
-import { Routes, Route } from "react-router-dom";
+import { Suspense, useContext, useEffect } from "react";
+import lazyLoad from "./LazyLoad";
 import { ToastContainer } from "react-toastify";
-import Home from "./Screens/Home/Index";
-import "react-alice-carousel/lib/alice-carousel.css";
-import FindHome from "./Screens/FindHome/Index";
-import PropertyDetails from "./Screens/PropertyDetails/Index";
-import FindProfessionals from "./Screens/FindProfessionals/Index";
-import ParentComponent from "./Screens/ParentComponent/Index";
-import Resources from "./Screens/Resources/Index";
-import Error from "./Components/404Page/404Page";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
-import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
-import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
-import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
-
-import PaymentInfo from "./Screens/BillSummary/Index";
-import PropertyInfo from "./Screens/PropertyInfo/Index";
-import EditPhone from "./Screens/CreateProfessional/EditPhone";
-
-import BecomeProfessional from "./Screens/BecomeProfessional/Index";
-
-import CreatePost from "./Screens/CreatePost/CreatePost";
-import CreatePost1 from "./Screens/CreatePost/CreatePost1";
-import CreatePost2 from "./Screens/CreatePost/CreatePost2";
-import CreatePost3 from "./Screens/CreatePost/CreatePost3";
-import CreatePost4 from "./Screens/CreatePost/CreatePost4";
-
-import PostList from "./Screens/CreatePost/Index";
-
-import Confirmed from "./Components/Confirmed/Index";
-
-import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
-import PropertyParent from "./Screens/ParentComponent/PropertyParent";
 import { ContextApiData } from "./utils/CreateContext";
+import scroll_up from "./assets/icons/ic_scroll_to_top .svg";
 import useScrollToTop from "./hooks/useScrollToTop";
-import Login from "./Components/Login/Index";
-import RegisterPhone from "./Components/RegisterPhone/Index";
-import VerifyOtp from "./Screens/VerifyOtp/Index";
-import Register from "./Components/Register/Index";
-import UserProfile from "./Screens/UserProfile/Index";
-import Homepage from "./Screens/Homepage/Index";
-import ExploreNearby from "./Screens/ExploreNearby/Index";
-import Story from "./Screens/Story/Index";
+// import Home from "./Screens/Home/Index";
+// import FindHome from "./Screens/FindHome/Index";
+// import PropertyDetails from "./Screens/PropertyDetails/Index";
+// import FindProfessionals from "./Screens/FindProfessionals/Index";
+// import ParentComponent from "./Screens/ParentComponent/Index";
+// import Resources from "./Screens/Resources/Index";
+// import Error from "./Components/404Page/404Page";
+
+// import CreateProperty from "./Screens/CreateProperty/CreateProperty/Index";
+// import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
+// import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
+
+// import PaymentInfo from "./Screens/BillSummary/Index";
+// import PropertyInfo from "./Screens/PropertyInfo/Index";
+// import EditPhone from "./Screens/CreateProfessional/EditPhone";
+
+// import BecomeProfessional from "./Screens/BecomeProfessional/Index";
+
+// import CreatePost from "./Screens/CreatePost/CreatePost";
+// import CreatePost1 from "./Screens/CreatePost/CreatePost1";
+// import CreatePost2 from "./Screens/CreatePost/CreatePost2";
+// import CreatePost3 from "./Screens/CreatePost/CreatePost3";
+// import CreatePost4 from "./Screens/CreatePost/CreatePost4";
+
+// import PostList from "./Screens/CreatePost/Index";
+
+// import Confirmed from "./Components/Confirmed/Index";
+
+// import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
+// import PropertyParent from "./Screens/ParentComponent/PropertyParent";
+// import Login from "./Components/Login/Index";
+// import RegisterPhone from "./Components/RegisterPhone/Index";
+// import VerifyOtp from "./Screens/VerifyOtp/Index";
+// import Register from "./Components/Register/Index";
+// import UserProfile from "./Screens/UserProfile/Index";
+// import Homepage from "./Screens/Homepage/Index";
+// import ExploreNearby from "./Screens/ExploreNearby/Index";
+// import Story from "./Screens/Story/Index";
+
+const Home = lazyLoad("./Screens/Home/Index");
+const FindHome = lazyLoad("./Screens/FindHome/Index");
+const PropertyDetails = lazyLoad("./Screens/PropertyDetails/Index");
+const FindProfessionals = lazyLoad("./Screens/FindProfessionals/Index");
+const ParentComponent = lazyLoad("./Screens/ParentComponent/Index");
+const Resources = lazyLoad("./Screens/Resources/Index");
+const Error = lazyLoad("./Components/404Page/404Page");
+
+const CreateProperty = lazyLoad(
+  "./Screens/CreateProperty/CreateProperty/Index"
+);
+const CreateProperty1 = lazyLoad(
+  "./Screens/CreateProperty/CreateProperty1/Index"
+);
+const CreateProperty2 = lazyLoad(
+  "./Screens/CreateProperty/CreateProperty2/Index"
+);
+
+const PaymentInfo = lazyLoad("./Screens/BillSummary/Index");
+const PropertyInfo = lazyLoad("./Screens/PropertyInfo/Index");
+const EditPhone = lazyLoad("./Screens/CreateProfessional/EditPhone");
+
+const BecomeProfessional = lazyLoad("./Screens/BecomeProfessional/Index");
+
+const CreatePost = lazyLoad("./Screens/CreatePost/CreatePost");
+const CreatePost1 = lazyLoad("./Screens/CreatePost/CreatePost1");
+const CreatePost2 = lazyLoad("./Screens/CreatePost/CreatePost2");
+const CreatePost3 = lazyLoad("./Screens/CreatePost/CreatePost3");
+const CreatePost4 = lazyLoad("./Screens/CreatePost/CreatePost4");
+
+const PostList = lazyLoad("./Screens/CreatePost/Index");
+
+const Confirmed = lazyLoad("./Components/Confirmed/Index");
+
+const ProfessionalProfile = lazyLoad("./Screens/ProfessionalProfile/Index");
+const PropertyParent = lazyLoad("./Screens/ParentComponent/PropertyParent");
+const Login = lazyLoad("./Components/Login/Index");
+const RegisterPhone = lazyLoad("./Components/RegisterPhone/Index");
+const VerifyOtp = lazyLoad("./Screens/VerifyOtp/Index");
+const Register = lazyLoad("./Components/Register/Index");
+const UserProfile = lazyLoad("./Screens/UserProfile/Index");
+const Homepage = lazyLoad("./Screens/Homepage/Index");
+const ExploreNearby = lazyLoad("./Screens/ExploreNearby/Index");
+const Story = lazyLoad("./Screens/Story/Index");
 
 function App() {
   const { changeNavColor, scrollToTop } = useContext(ContextApiData);
@@ -63,33 +109,107 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<h6>Loading...</h6>}>
       <ToastContainer />
       <span className={`arrow-box ${changeNavColor ? "d-block" : "d-none"}`}>
         <img onClick={scrollToTop} src={scroll_up} alt="scroll-up" />
       </span>
       <Routes>
-        <Route path="/" element={<Homepage />}>
-          <Route index element={<Login />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="register-phone" element={<RegisterPhone />} />
-          <Route path="verify-otp" element={<VerifyOtp />} />
-          <Route path="editPhone" element={<EditPhone />} />
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={
+            <Homepage>
+              <Login />
+            </Homepage>
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <Homepage>
+              <Register />
+            </Homepage>
+          }
+        />
+        <Route
+          path="register-phone"
+          element={
+            <Homepage>
+              <RegisterPhone />
+            </Homepage>
+          }
+        />
+        <Route
+          path="verify-otp"
+          element={
+            <Homepage>
+              <VerifyOtp />
+            </Homepage>
+          }
+        />
+        <Route
+          path="editPhone"
+          element={
+            <Homepage>
+              <EditPhone />
+            </Homepage>
+          }
+        />
 
-          <Route path="find-home" element={<FindHome />} />
-          <Route path="property-details/:id" element={<PropertyDetails />} />
-          <Route path="become-professional" element={<BecomeProfessional />} />
-          <Route path="user-profile/:id" element={<UserProfile />} />
+        <Route
+          path="find-home"
+          element={
+            <Homepage>
+              <FindHome />
+            </Homepage>
+          }
+        />
+        <Route
+          path="property-details/:id"
+          element={
+            <Homepage>
+              <PropertyDetails />
+            </Homepage>
+          }
+        />
+        <Route
+          path="become-professional"
+          element={
+            <Homepage>
+              <BecomeProfessional />
+            </Homepage>
+          }
+        />
+        <Route
+          path="user-profile/:id"
+          element={
+            <Homepage>
+              <UserProfile />
+            </Homepage>
+          }
+        />
 
-          <Route
-            path="professional-profile/:id"
-            element={<ProfessionalProfile />}
-          />
+        <Route
+          path="professional-profile/:id"
+          element={
+            <Homepage>
+              <ProfessionalProfile />
+            </Homepage>
+          }
+        />
 
-          <Route path="explore-nearby" element={<ExploreNearby />} />
-          <Route path="story" element={<Story />} />
-        </Route>
+        <Route
+          path="explore-nearby"
+          element={
+            <Homepage>
+              <ExploreNearby />
+            </Homepage>
+          }
+        />
+        <Route path="story" element={<Story />} />
+
+        <Route path="/user" element={<Homepage />}></Route>
         <Route path="home" element={<Home />} />
 
         {/* <Route path="parent-element" element={<ParentComponent />}>
@@ -196,7 +316,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </>
+    </Suspense>
   );
 }
 

@@ -7,12 +7,17 @@ import Posts2 from "./Post2";
 import SuggestedStories from "./SuggestedStories";
 
 const ExploreNearby = () => {
+  const responsive = {
+    0: { items: 2.2 },
+    568: { items: 3.2 },
+    1400: { items: 4.2 },
+  };
   return (
     <ExploreNearbyStyle>
       <Container>
         <Row>
           <Col md={7}>
-            <StoriesList />
+            <StoriesList responsive={responsive} />
             <Posts />
             <Posts2 />
             <SuggestedStories />

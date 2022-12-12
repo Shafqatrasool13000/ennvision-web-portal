@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 import AuthNavbar from "../../Components/Navbar/AuthNavbar";
 
-const Homepage = () => {
+const Homepage = ({ children }: any) => {
   return (
     <>
       <AuthNavbar />
-      <Outlet />
+      {children}
     </>
   );
 };

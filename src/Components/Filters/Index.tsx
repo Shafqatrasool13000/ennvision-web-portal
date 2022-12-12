@@ -63,6 +63,7 @@ const Filters = () => {
             title="Cancel"
             fontSize="16px"
             clicked={() => setIsShowProperty(false)}
+            border="none"
           />
         </div>
         <div className="me-2 mb-3">
@@ -74,6 +75,7 @@ const Filters = () => {
             type="button"
             fontSize="16px"
             title="Apply"
+            border="none"
             clicked={() => setIsShowProperty(false)}
           />
         </div>

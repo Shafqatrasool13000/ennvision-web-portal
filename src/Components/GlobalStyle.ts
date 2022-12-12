@@ -14,6 +14,7 @@ export const secondaryDark3 = "#1B283F";
 export const secondaryDark4 = "#4F5460";
 export const secondaryDark5 = "#393939";
 export const tertiaryDark = "#1A1B1E";
+export const tertiaryDark2 = "#1A1A1A";
 export const lightGrey = "#909090";
 export const lightGrey2 = "#EFEFF4";
 export const lightGrey3 = "#707070";

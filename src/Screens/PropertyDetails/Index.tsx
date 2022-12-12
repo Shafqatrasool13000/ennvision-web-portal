@@ -1,13 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {
+  greenishColor,
+  PrimaryColor,
   SecondaryHeadingMini,
   TertiraryHeading1,
 } from "../../Components/GlobalStyle";
 import propertPic1 from "../../assets/Property Details/Property Details (3).png";
 import propertPic2 from "../../assets/Property Details/Property Details (1).png";
 import propertPic3 from "../../assets/Property Details/Property Details (2).png";
-import Navbar from "../../Components/Navbar/Index";
-import SocialFooter from "../../Components/SocialFooter/SocialFooter";
+import chat from "../../assets/icons/ic_property_detail_chat.svg";
+import phone from "../../assets/icons/ic_property_detail_call.svg";
 import bedroomIcon from "../../assets/icons/ic_property_bed.svg";
 import bathIcon from "../../assets/icons/ic_property_bath.svg";
 import areaIcon from "../../assets/icons/ic_property_area.svg";
@@ -21,6 +23,7 @@ import lightTickIcon from "../../assets/icons/ic_property_detail_status.svg";
 import PropertyDetailsStyle from "./style";
 import Map from "../../Components/MapBox/Index";
 import AuthNavbar from "../../Components/Navbar/AuthNavbar";
+import CustomButton from "../../Components/CustomButton/CustomButton";
 
 const propertyDetailsData = [
   {
@@ -174,13 +177,19 @@ const PropertyDetails = () => {
                         <p className="quantity ms-2 mb-0">47</p>
                       </div>
                       <div className="d-flex justify-content-center mt-3">
-                        <button className="chat-btn">
-                          {" "}
-                          <span>
-                            <img src="" alt="" />
-                          </span>{" "}
-                          Start Chat
-                        </button>
+                        <CustomButton
+                          bgcolor={PrimaryColor}
+                          color="white"
+                          padding="6px 8px"
+                          width="100%"
+                          type="submit"
+                          title="Chat"
+                          margin="auto"
+                          icon={<img className="me-2" src={chat} alt="chat" />}
+                          fontSize="16px"
+                          border="none"
+                          // clicked={() => editHandler(content)}
+                        />
                       </div>
                     </Col>
                     <Col md={6} className="mt-3 mt-md-0">
@@ -194,12 +203,21 @@ const PropertyDetails = () => {
                         <p className="quantity ms-2 mb-0">22</p>
                       </div>
                       <div className="d-flex justify-content-center mt-3">
-                        <button className="call-btn">
-                          <span>
-                            <img src="" alt="" />
-                          </span>{" "}
-                          Call Now
-                        </button>
+                        <CustomButton
+                          bgcolor={greenishColor}
+                          color="white"
+                          padding="6px 8px"
+                          width="100%"
+                          type="submit"
+                          title="Call"
+                          margin="auto"
+                          fontSize="16px"
+                          border="none"
+                          icon={
+                            <img className="me-2" src={phone} alt="phone" />
+                          }
+                          // clicked={() => editHandler(content)}
+                        />
                       </div>
                     </Col>
                   </Row>

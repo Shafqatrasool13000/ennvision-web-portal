@@ -11,15 +11,16 @@ import stroy8 from "../../assets/Professional/Professional (8).png";
 import addStoryImg from "../../assets/Professional/Professional (10).png";
 import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import AliceCarousel from "react-alice-carousel";
+import { Link } from "react-router-dom";
 
-const responsive = {
-  0: { items: 2.2 },
-  568: { items: 3.2 },
-  768: { items: 4.2 },
-  1024: { items: 5.2 },
-  1200: { items: 7.2 },
-  1400: { items: 9.2 },
-};
+// const responsive = {
+//   0: { items: 2.2 },
+//   568: { items: 3.2 },
+//   768: { items: 4.2 },
+//   1024: { items: 5.2 },
+//   1200: { items: 7.2 },
+//   1400: { items: 9.2 },
+// };
 const storiesData = [
   { title: "Morgan Freeman", img: stroy1 },
   { title: "Tom Hanks", img: stroy2 },
@@ -46,21 +47,23 @@ const items = [
     </Card>
   </div>,
   ...storiesData.map(({ title, img }, index) => (
-    <Card className="story-card" key={index}>
-      <Card.Img
-        variant="top"
-        src={img}
-        className="position-relative"
-        alt={stroy1}
-      />
-      <Card.Body className="position-absolute bottom-0">
-        <Card.Title>{title}</Card.Title>
-      </Card.Body>
-    </Card>
+    <Link to="/story">
+      <Card className="story-card" key={index}>
+        <Card.Img
+          variant="top"
+          src={img}
+          className="position-relative"
+          alt={stroy1}
+        />
+        <Card.Body className="position-absolute bottom-0">
+          <Card.Title>{title}</Card.Title>
+        </Card.Body>
+      </Card>
+    </Link>
   )),
 ];
 
-const StoriesList = () => {
+const StoriesList = ({ responsive }: any) => {
   return (
     <StoriesListStyled>
       <AliceCarousel

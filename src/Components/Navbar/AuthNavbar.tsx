@@ -35,9 +35,9 @@ function AuthNavbar() {
             </Nav>
           </Navbar.Collapse>
           <div className="d-none d-lg-block navbar-brand pe-auto">
-            <DropDownMenu>
-              <img src={profile} alt="profile" />
-            </DropDownMenu>
+            <img src={profile} alt="profile" />
+            {/* <DropDownMenu>
+            </DropDownMenu> */}
           </div>
         </Container>
       </Navbar>

@@ -334,6 +334,7 @@ const Index = () => {
               type="submit"
               title="Draft"
               margin="auto"
+              border="none"
               fontSize="18px"
             />
           </Col>

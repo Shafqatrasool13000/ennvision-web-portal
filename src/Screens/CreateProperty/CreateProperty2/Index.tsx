@@ -84,6 +84,7 @@ const CreateProperty2 = () => {
                 title="SKIP"
                 margin="auto"
                 fontSize="16px"
+                border="none"
                 fontFamily="EnnVisionsMedium"
               />
             </div>
@@ -97,6 +98,7 @@ const CreateProperty2 = () => {
               margin="auto"
               fontSize="16px"
               fontFamily="EnnVisionsMedium"
+              border="none"
               clicked={() => navigate("/bill-info")}
             />
           </div>
@@ -123,6 +125,7 @@ const CreateProperty2 = () => {
                     margin="auto"
                     fontSize="16px"
                     fontFamily="EnnVisionsMedium"
+                    border="none"
                   />
                 </div>
               </div>
