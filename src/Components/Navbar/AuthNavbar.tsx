@@ -7,8 +7,11 @@ import logo from "../../assets/icons/ic_add_property_payment_wallet.svg";
 import profile from "../../assets/icons/ic_profile_placeholder.svg";
 import DropDownMenu from "../DropDownMenu/Index";
 import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
+import { useContext } from "react";
+import { ContextApiData } from "../../utils/CreateContext";
 
 function AuthNavbar() {
+  const { isLoggedIn } = useContext(ContextApiData);
   return (
     <AuthNavbarStyle>
       <Navbar expand="lg" fixed="top">
@@ -38,13 +41,15 @@ function AuthNavbar() {
           </Navbar.Collapse>
           <div className="d-none d-lg-block navbar-brand pe-auto">
             <div className="d-flex align-items-center">
-              <Link to="/create-post" className="mb-4">
-                <img
-                  src={plusIcon}
-                  className="position-absolute p-1 bg-warning"
-                  alt="plus"
-                />
-              </Link>
+              {isLoggedIn && (
+                <Link to="/create-post" className="mb-4">
+                  <img
+                    src={plusIcon}
+                    className="position-absolute p-1 bg-warning"
+                    alt="plus"
+                  />
+                </Link>
+              )}
               <img className="ms-5" src={profile} alt="profile" />
             </div>
             {/* <DropDownMenu>

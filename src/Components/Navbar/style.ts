@@ -50,6 +50,9 @@ export const AuthNavbarStyle = styled.div`
     background: ${whiteColor};
     box-shadow: 0px 0px 3px #00000029;
   }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
   .active {
     font-family: "EnnVisionsMedium";
   }

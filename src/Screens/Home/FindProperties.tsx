@@ -72,7 +72,6 @@ const FindProperties = () => {
                 size="cover"
                 postion="center"
                 bgColor="#222"
-                blendMode="hard-light"
                 hoverBgColor="#999"
               >
                 <h6 className="text">{title}</h6>

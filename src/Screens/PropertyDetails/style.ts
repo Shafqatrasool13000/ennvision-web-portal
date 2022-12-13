@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   greenishColor,
+  lightGrey10,
   lightGrey4,
   lightGrey5,
   lightGrey6,
@@ -25,35 +26,30 @@ const PropertyDetailsStyle = styled.div`
     color: ${PrimaryColor};
     font-family: "EnnVisionsMedium";
   }
+  .bg-img {
+    grid-area: bg-img;
+  }
+  .sm-img {
+    grid-area: sm-img;
+  }
+  .sm-img1 {
+    grid-area: sm-img1;
+  }
   .imgs-gallery {
-    margin-top: 10px;
-    img {
-      margin-top: 10px;
-      height: 245px;
-    }
-    .img-large {
-      height: 550px;
-    }
-    @media screen and (min-width: 576px) {
-      img {
-        height: 245px;
-      }
-      .img-large {
-        height: 500px;
-      }
-    }
-    @media screen and (max-width: 576px) {
-      img {
-        height: 245px;
-        width: 100%;
-      }
-    }
+    display: grid;
+    grid-template-rows: repeat(2, 260px);
+    gap: 10px;
+    grid-template-areas:
+      "bg-img bg-img sm-img"
+      "bg-img bg-img sm-img1"
+      "bg-img bg-img sm-img1";
   }
   .property-details {
     margin-top: 24px;
     background: ${whiteColor};
     border: 1px solid ${lightGrey5};
     border-radius: 5px;
+    max-width: 850px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     @media screen and (max-width: 1366px) {
@@ -76,7 +72,7 @@ const PropertyDetailsStyle = styled.div`
         border-right: 1px solid ${tertiaryGrey5};
       }
       &-inner {
-        padding: 20px;
+        padding: 10px 20px;
         .name {
           color: ${tertiaryGrey7};
         }
@@ -92,6 +88,7 @@ const PropertyDetailsStyle = styled.div`
     border-radius: 5px;
     padding: 14px;
     margin-top: 22px;
+    max-width: 850px;
     .listed-by {
       color: ${tertiaryGrey7};
       font-size: 16px;
@@ -221,6 +218,22 @@ const PropertyDetailsStyle = styled.div`
     background: lightpink;
     margin-top: 32px;
   }
+  .map-box {
+    max-width: 850px;
+  }
 `;
 
 export default PropertyDetailsStyle;
+
+export const HomeTourStyle = styled.div`
+  border: 1px solid ${lightGrey10};
+  padding: 16px;
+  width: 380px;
+
+  .title {
+    font-family: "EnnVisionsMedium";
+  }
+  .price-text {
+    font-size: 14px;
+  }
+`;

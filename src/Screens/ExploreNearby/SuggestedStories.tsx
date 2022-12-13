@@ -8,8 +8,6 @@ import stroy5 from "../../assets/Professional/Professional (5).png";
 import stroy6 from "../../assets/Professional/Professional (6).png";
 import stroy7 from "../../assets/Professional/Professional (7).png";
 import stroy8 from "../../assets/Professional/Professional (8).png";
-import addStoryImg from "../../assets/Professional/Professional (10).png";
-import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import AliceCarousel from "react-alice-carousel";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import {

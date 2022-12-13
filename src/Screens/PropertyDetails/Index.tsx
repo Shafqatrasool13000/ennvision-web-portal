@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {
+  BackgroundImage,
   greenishColor,
   PrimaryColor,
   SecondaryHeadingMini,
@@ -24,6 +25,7 @@ import PropertyDetailsStyle from "./style";
 import Map from "../../Components/MapBox/Index";
 import AuthNavbar from "../../Components/Navbar/AuthNavbar";
 import CustomButton from "../../Components/CustomButton/CustomButton";
+import HomeTour from "./HomeTour";
 
 const propertyDetailsData = [
   {
@@ -120,20 +122,35 @@ const PropertyDetails = () => {
             </TertiraryHeading1>
             <h4 className="property-price">$746,000.00</h4>
           </div>
-          <div className="imgs-gallery">
-            <Row>
-              <Col sm={6} lg={8}>
-                <img
-                  src={propertPic1}
-                  alt="peroperty-pic"
-                  className="img-large"
-                />
-              </Col>
-              <Col sm={6} lg={4}>
-                <img src={propertPic2} alt="property2" />
-                <img src={propertPic3} alt="property3" />
-              </Col>
-            </Row>
+          <div className="imgs-gallery mt-2">
+            <BackgroundImage
+              postion="center"
+              repeat="no-repeat"
+              size="cover"
+              url={propertPic1}
+              className="bg-img"
+            />
+            <BackgroundImage
+              postion="center"
+              repeat="no-repeat"
+              size="cover"
+              url={propertPic2}
+              className="sm-img"
+            />
+            <BackgroundImage
+              postion="center"
+              repeat="no-repeat"
+              size="cover"
+              url={propertPic3}
+              className="sm-img1"
+            />
+
+            {/* <div >
+              <img src={propertPic2} alt="property2" />
+            </div>
+            <div >
+              <img src={propertPic3} alt="property3" />
+            </div> */}
           </div>
           <div className="property-details">
             {propertyDetailsData.map(({ name, img, quantity }, index) => (
@@ -148,12 +165,13 @@ const PropertyDetails = () => {
               </div>
             ))}
           </div>
+
           <div className="owner-details">
             <p className="listed-by text-center text-md-start">
               Listed by Property owner
             </p>
             <Row>
-              <Col md={6} lg={8}>
+              <Col md={6} lg={6}>
                 <div className="d-flex">
                   <img src={profileImg} alt="profile" className="profile-img" />
                   <div className="bio ms-3">
@@ -163,12 +181,12 @@ const PropertyDetails = () => {
                   </div>
                 </div>
               </Col>
-              <Col md={6} lg={4} className="mt-3 mt-md-0">
+              <Col md={6} lg={6} className="mt-3 mt-md-0">
                 <div className="sold-properties">
                   <Row>
                     <Col md={6}>
                       <p className="title text-center text-md-start">
-                        Sold Properties{" "}
+                        Sold Properties
                       </p>
                       <div className="properties d-flex align-items-center justify-content-center justify-content-md-start">
                         <span>
@@ -181,7 +199,7 @@ const PropertyDetails = () => {
                           bgcolor={PrimaryColor}
                           color="white"
                           padding="6px 8px"
-                          width="100%"
+                          width="86%"
                           type="submit"
                           title="Chat"
                           margin="auto"
@@ -207,7 +225,7 @@ const PropertyDetails = () => {
                           bgcolor={greenishColor}
                           color="white"
                           padding="6px 8px"
-                          width="100%"
+                          width="86%"
                           type="submit"
                           title="Call"
                           margin="auto"
@@ -304,7 +322,7 @@ const PropertyDetails = () => {
               </Row>
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 map-box">
             <Map height="347px" width="100%" />
           </div>
         </Container>

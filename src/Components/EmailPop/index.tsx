@@ -6,8 +6,6 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import { Form, Modal } from "antd";
 import CustomButton from "../CustomButton/CustomButton";
-import { API_URL } from "../../Services/config";
-import axios from "axios";
 import SuccessfullModal from "../Delete/SuccessfullModal";
 
 const initialValues = {

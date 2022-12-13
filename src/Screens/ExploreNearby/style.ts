@@ -19,6 +19,26 @@ const ExploreNearbyStyle = styled.div`
 export default ExploreNearbyStyle;
 
 export const SuggestionStyle = styled.div`
+  position: sticky;
+  top: 11%;
+
+  .main-profile-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+  }
+  .profile-details {
+    margin-left: 14px;
+    &-title {
+      font-family: "EnnVisionsMedium";
+      font-size: 14px;
+    }
+    &-sub-title {
+      color: ${tertiaryGrey14};
+      font-size: 14px;
+    }
+  }
+
   .title {
     font-size: 15px;
     color: ${tertiaryGrey14};
@@ -28,7 +48,7 @@ export const SuggestionStyle = styled.div`
     width: 34px;
     height: 34px;
   }
-  .profile-details {
+  .suggestion-profile-details {
     margin-left: 10px;
     &-title {
       font-family: "EnnVisionsMedium";

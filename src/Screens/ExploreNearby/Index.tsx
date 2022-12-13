@@ -10,22 +10,21 @@ const ExploreNearby = () => {
   const responsive = {
     0: { items: 2.2 },
     568: { items: 3.2 },
-    1400: { items: 4.2 },
+    768: { items: 4.2 },
+    1024: { items: 5.2 },
   };
   return (
     <ExploreNearbyStyle>
       <Container>
         <Row>
-          <Col md={7}>
+          <Col md={7} className="mt-3 order-1 order-md-0">
             <StoriesList responsive={responsive} />
             <Posts />
             <Posts2 />
             <SuggestedStories />
           </Col>
-          <Col md={5}>
-            <div className="mt-3">
-              <Suggestions />
-            </div>
+          <Col md={5} className="mt-3 order-0 order-md-1">
+            <Suggestions />
           </Col>
         </Row>
       </Container>

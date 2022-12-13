@@ -40,17 +40,19 @@ const items = [
   </div>,
   ...storiesData.map(({ title, img }, index) => (
     <Link to="/story">
-      <Card className="story-card" key={index}>
-        <Card.Img
-          variant="top"
-          src={img}
-          className="position-relative"
-          alt={stroy1}
-        />
-        <Card.Body className="position-absolute bottom-0">
-          <Card.Title>{title}</Card.Title>
-        </Card.Body>
-      </Card>
+      <div id="overlay">
+        <Card className="story-card" key={index}>
+          <Card.Img
+            variant="top"
+            src={img}
+            className="position-relative"
+            alt={stroy1}
+          />
+          <Card.Body className="position-absolute bottom-0">
+            <Card.Title>{title}</Card.Title>
+          </Card.Body>
+        </Card>
+      </div>
     </Link>
   )),
 ];

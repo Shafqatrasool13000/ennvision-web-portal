@@ -35,17 +35,22 @@ const StoriesListStyle = styled.div`
     border-radius: 4px;
     margin-top: 20px;
     margin-left: 16px;
+    border: 0.5px solid #efeff4;
 
     img {
       height: 166px;
       object-fit: cover;
     }
     .card-body {
-      padding-bottom: 8px;
+      padding-bottom: 4px;
+      width: 100%;
+
+      border-radius: 4px;
       .card-title {
         font-size: 14px;
         color: ${whiteColor};
         margin-bottom: 6px;
+        font-family: "EnnVisionsMedium";
       }
     }
   }

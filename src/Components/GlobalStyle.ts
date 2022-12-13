@@ -244,6 +244,7 @@ export const BackgroundImage = styled.div<backImageProps>`
   transition: all 1s ease-in-out;
   background-color: ${(props) => props.bgColor};
   background-blend-mode: ${(props) => props.blendMode};
+  height: ${(props) => props.height};
   cursor: pointer;
   &:hover {
     background-position: bottom;
