@@ -1,18 +1,44 @@
 import styled from "styled-components";
-import { tertiaryGrey7 } from "../GlobalStyle";
+import { lightGrey10 } from "../GlobalStyle";
 
-export const DropDownMenuStyle = styled.div`
-  .menu-overlay {
-    background-color: red;
-    a {
-      font-size: 15px;
-      color: ${tertiaryGrey7};
-      list-style: none;
+const BecomeProfesionalOptionsStyle = styled.div`
+  width: 256px;
+  background: var(--unnamed-color-fcfbfb) 0% 0% no-repeat padding-box;
+  background: #fcfbfb;
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: 0px 0px 3px #00000029;
+
+  .options {
+    .option {
+      padding: 12px;
+      border-bottom: 1px solid ${lightGrey10};
+      .link {
+        color: #232837;
+        font-size: 15px;
+        text-decoration: none;
+      }
     }
   }
-  .ant-dropdown-menu-title-content {
-    font-size: 15px;
-    color: ${tertiaryGrey7} !important;
-    list-style: none;
+`;
+
+export default BecomeProfesionalOptionsStyle;
+
+export const UpgradeAccountStyle = styled.div`
+  width: 256px;
+  background: var(--unnamed-color-fcfbfb) 0% 0% no-repeat padding-box;
+  background: #fcfbfb;
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: 0px 0px 3px #00000029;
+
+  .options {
+    .option {
+      padding: 12px;
+      border-bottom: 1px solid ${lightGrey10};
+      .link {
+        color: #232837;
+        font-size: 15px;
+        text-decoration: none;
+      }
+    }
   }
 `;

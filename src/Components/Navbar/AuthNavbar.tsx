@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthNavbarStyle } from "./style";
 import logo from "../../assets/icons/ic_add_property_payment_wallet.svg";
 import profile from "../../assets/icons/ic_profile_placeholder.svg";
-import DropDownMenu from "../DropDownMenu/Index";
+import DropDownMenu from "../DropDownMenu/UpgradeAccount";
 import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import { useContext } from "react";
 import { ContextApiData } from "../../utils/CreateContext";
