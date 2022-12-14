@@ -23,7 +23,7 @@ const BecomeProfesionalOptionsStyle = styled.div`
 
 export default BecomeProfesionalOptionsStyle;
 
-export const UpgradeAccountStyle = styled.div`
+export const UpgradeAccountMenuStyle = styled.div`
   width: 256px;
   background: var(--unnamed-color-fcfbfb) 0% 0% no-repeat padding-box;
   background: #fcfbfb;

@@ -9,8 +9,6 @@ import WhoWeAre from "./WhoWeAre";
 import Testomonials from "./Testomonials";
 import MembershipPlans from "./MembershipPlans";
 import { Helmet } from "react-helmet";
-import DropDownMenu from "../../Components/DropDownMenu/UpgradeAccount";
-import MyProfile from "../MyProfile/MyProfile";
 
 const Home = () => {
   return (
@@ -29,8 +27,6 @@ const Home = () => {
       <WhoWeAre />
       <Testomonials />
       <MembershipPlans />
-      <DropDownMenu />
-      <MyProfile />
     </>
   );
 };

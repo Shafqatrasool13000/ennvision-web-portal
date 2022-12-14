@@ -16,9 +16,7 @@ const ResourcesList: React.FC<resoucesListTypes> = ({ md, sm }) => {
   const properties = [property1, property2, property3];
   return (
     <ResourcesListStyled>
-      <Row
-        className={`${properties.length % 2 !== 0 && "justify-content-center"}`}
-      >
+      <Row>
         {properties.map((img, index) => (
           <Col key={index} sm={sm} md={md}>
             <Card>

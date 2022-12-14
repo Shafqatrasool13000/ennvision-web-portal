@@ -1,14 +1,17 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ContextApiData } from "../../utils/CreateContext";
 import CustomButton from "../CustomButton/CustomButton";
 import { PrimaryColor } from "../GlobalStyle";
-import { UpgradeAccountStyle } from "./style";
+import BecomeProfesionalMenuStyle from "./style";
 
-const UpgradeAccount = () => {
+const BecomeProfesionalMenu = () => {
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useContext(ContextApiData);
 
-  const options = ["Upgrade Account", "Edit Profile", "Delete Profile"];
+  const options = ["Become a Professional", "Edit Profile", "Delete Profile"];
   return (
-    <UpgradeAccountStyle>
+    <BecomeProfesionalMenuStyle>
       <div className="options">
         {options.map((title, index) => (
           <div className="option" key={index}>
@@ -17,7 +20,6 @@ const UpgradeAccount = () => {
             </Link>
           </div>
         ))}
-
         <div className="option">
           <CustomButton
             bgcolor="transparent"
@@ -29,12 +31,15 @@ const UpgradeAccount = () => {
             fontSize="16px"
             fontFamily="EnnVisionsMedium"
             border="none"
-            clicked={() => navigate("/")}
+            clicked={() => {
+              setIsLoggedIn((prev) => !prev);
+              navigate("/login");
+            }}
           />
         </div>
       </div>
-    </UpgradeAccountStyle>
+    </BecomeProfesionalMenuStyle>
   );
 };
 
-export default UpgradeAccount;
+export default BecomeProfesionalMenu;

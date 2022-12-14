@@ -5,13 +5,18 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthNavbarStyle } from "./style";
 import logo from "../../assets/icons/ic_add_property_payment_wallet.svg";
 import profile from "../../assets/icons/ic_profile_placeholder.svg";
-import DropDownMenu from "../DropDownMenu/UpgradeAccount";
 import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import { useContext } from "react";
 import { ContextApiData } from "../../utils/CreateContext";
+import BecomeProfesionalMenu from "../DropDownMenu/BecomeProfessionalMenu";
 
 function AuthNavbar() {
-  const { isLoggedIn } = useContext(ContextApiData);
+  const {
+    isLoggedIn,
+    isShowProfessionalOptions,
+    setIsShowProfessionalOptions,
+  } = useContext(ContextApiData);
+  console.log({ isShowProfessionalOptions });
   return (
     <AuthNavbarStyle>
       <Navbar expand="lg" fixed="top">
@@ -40,7 +45,7 @@ function AuthNavbar() {
             </Nav>
           </Navbar.Collapse>
           <div className="d-none d-lg-block navbar-brand pe-auto">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center position-relative">
               {isLoggedIn && (
                 <Link to="/create-post" className="mb-4">
                   <img
@@ -50,10 +55,24 @@ function AuthNavbar() {
                   />
                 </Link>
               )}
-              <img className="ms-5" src={profile} alt="profile" />
+              <img
+                className="ms-5"
+                onClick={() => setIsShowProfessionalOptions((prev) => !prev)}
+                src={profile}
+                alt="profile"
+              />
+              <div
+                className={`position-absolute ${
+                  isShowProfessionalOptions ? "d-block" : "d-none"
+                }`}
+                style={{
+                  zIndex: 24,
+                  top: "100%",
+                }}
+              >
+                <BecomeProfesionalMenu />
+              </div>
             </div>
-            {/* <DropDownMenu>
-            </DropDownMenu> */}
           </div>
         </Container>
       </Navbar>

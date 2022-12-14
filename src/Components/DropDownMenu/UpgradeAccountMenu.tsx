@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import CustomButton from "../CustomButton/CustomButton";
 import { PrimaryColor } from "../GlobalStyle";
-import BecomeProfesionalOptionsStyle from "./style";
+import { UpgradeAccountMenuStyle } from "./style";
 
-const BecomeProfesionalStyle = () => {
+const UpgradeAccountMenu = () => {
   const navigate = useNavigate();
 
-  const options = ["Become a Professional", "Edit Profile", "Delete Profile"];
+  const options = ["Upgrade Account", "Edit Profile", "Delete Profile"];
   return (
-    <BecomeProfesionalOptionsStyle>
+    <UpgradeAccountMenuStyle>
       <div className="options">
         {options.map((title, index) => (
           <div className="option" key={index}>
@@ -17,6 +17,7 @@ const BecomeProfesionalStyle = () => {
             </Link>
           </div>
         ))}
+
         <div className="option">
           <CustomButton
             bgcolor="transparent"
@@ -32,8 +33,8 @@ const BecomeProfesionalStyle = () => {
           />
         </div>
       </div>
-    </BecomeProfesionalOptionsStyle>
+    </UpgradeAccountMenuStyle>
   );
 };
 
-export default BecomeProfesionalStyle;
+export default UpgradeAccountMenu;

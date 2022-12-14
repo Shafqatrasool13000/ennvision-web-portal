@@ -45,6 +45,8 @@ import UserProfile from "./Screens/UserProfile/Index";
 import Homepage from "./Screens/Homepage/Index";
 import ExploreNearby from "./Screens/ExploreNearby/Index";
 import Story from "./Screens/Story/Index";
+import MyProfile from "./Screens/MyProfile/MyProfile";
+import ProfessionalPackages from "./Screens/ProfessionalPackages/ProfessionalPackages";
 
 // const Home = lazyLoad("./Screens/Home/Index");
 // const FindHome = lazyLoad("./Screens/FindHome/Index");
@@ -195,6 +197,24 @@ function App() {
           element={
             <Homepage>
               <ProfessionalProfile />
+            </Homepage>
+          }
+        />
+
+        <Route
+          path="my-profile"
+          element={
+            <Homepage>
+              <MyProfile />
+            </Homepage>
+          }
+        />
+
+        <Route
+          path="professinal-packages"
+          element={
+            <Homepage>
+              <ProfessionalPackages />
             </Homepage>
           }
         />

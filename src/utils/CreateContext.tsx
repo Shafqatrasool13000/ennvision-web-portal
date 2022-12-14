@@ -10,6 +10,10 @@ export type ContextApiType = {
   setIsShowProperty: React.Dispatch<React.SetStateAction<boolean>>;
   isLoggedIn: boolean;
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+  isShowProfessionalOptions: boolean;
+  setIsShowProfessionalOptions: React.Dispatch<React.SetStateAction<boolean>>;
+  isShowUpgradeAccountOptions: boolean;
+  setIsShowUpgradeAccountOptions: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type ScrollContextProps = {
@@ -25,6 +29,10 @@ const CreateContext: React.FC<ScrollContextProps> = ({ children }) => {
   const [typeSelect, setTypeSelect] = useState<null | string>("All");
   const [isShowProperty, setIsShowProperty] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isShowProfessionalOptions, setIsShowProfessionalOptions] =
+    useState(false);
+  const [isShowUpgradeAccountOptions, setIsShowUpgradeAccountOptions] =
+    useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -50,6 +58,10 @@ const CreateContext: React.FC<ScrollContextProps> = ({ children }) => {
         setIsShowProperty,
         isLoggedIn,
         setIsLoggedIn,
+        isShowProfessionalOptions,
+        setIsShowProfessionalOptions,
+        isShowUpgradeAccountOptions,
+        setIsShowUpgradeAccountOptions,
       }}
     >
       {children}
