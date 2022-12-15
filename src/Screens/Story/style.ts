@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { tertiaryDark2 } from "../../Components/GlobalStyle";
+import { tertiaryDark2, tertiaryGrey10 } from "../../Components/GlobalStyle";
 
 const StoryStyle = styled.div`
   height: 100vh;
@@ -36,7 +36,7 @@ const StoryStyle = styled.div`
       }
     }
     .indicator-fill {
-      background-color: #c7112b;
+      background-color: ${tertiaryGrey10};
     }
     .indicator-null {
       background-color: ${tertiaryDark2};
@@ -161,7 +161,6 @@ export const MiniStoryStyle = styled.div`
     }
   }
   .story {
-    height: 242px;
     margin-right: 10px;
     position: relative;
     .profile-details {

@@ -20,13 +20,18 @@ function AuthNavbar() {
   return (
     <AuthNavbarStyle>
       <Navbar expand="lg" fixed="top">
-        <Container>
+        <Container className="position-relative">
           <Navbar.Toggle aria-controls="navbarScroll" />
           <NavLink to="/">
             <img className="logo" src={logo} alt="logo" />
           </NavLink>
           <Navbar.Brand href="#" className="d-lg-none">
-            <img src={profile} alt="profile" />
+            <img
+              className="cursor-pointer"
+              onClick={() => setIsShowProfessionalOptions((prev) => !prev)}
+              src={profile}
+              alt="profile"
+            />
           </Navbar.Brand>
           <Navbar.Collapse id="navbarScroll">
             <Nav className="mx-auto my-2 my-lg-0" navbarScroll>
@@ -56,23 +61,24 @@ function AuthNavbar() {
                 </Link>
               )}
               <img
-                className="ms-5"
+                className="ms-5 cursor-pointer"
                 onClick={() => setIsShowProfessionalOptions((prev) => !prev)}
                 src={profile}
                 alt="profile"
               />
-              <div
-                className={`position-absolute ${
-                  isShowProfessionalOptions ? "d-block" : "d-none"
-                }`}
-                style={{
-                  zIndex: 24,
-                  top: "100%",
-                }}
-              >
-                <BecomeProfesionalMenu />
-              </div>
             </div>
+          </div>
+          <div
+            className={`position-absolute ${
+              isShowProfessionalOptions && isLoggedIn ? "d-block" : "d-none"
+            }`}
+            style={{
+              zIndex: 24,
+              top: "100%",
+              right: "2%",
+            }}
+          >
+            <BecomeProfesionalMenu />
           </div>
         </Container>
       </Navbar>

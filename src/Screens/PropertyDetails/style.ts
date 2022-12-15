@@ -17,6 +17,12 @@ import {
 const PropertyDetailsStyle = styled.div`
   padding-top: 100px;
   padding-bottom: 120px;
+
+  .home-tour {
+    right: 17%;
+    top: 50%;
+    z-index: -1;
+  }
   .for-sale {
     font-size: 19px;
     color: ${tertiaryGrey7};
@@ -49,7 +55,8 @@ const PropertyDetailsStyle = styled.div`
     background: ${whiteColor};
     border: 1px solid ${lightGrey5};
     border-radius: 5px;
-    max-width: 850px;
+    max-width: 66%;
+
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     @media screen and (max-width: 1366px) {
@@ -60,6 +67,7 @@ const PropertyDetailsStyle = styled.div`
     }
     @media screen and (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      max-width: 100%;
     }
     @media screen and (max-width: 480px) {
       grid-template-columns: repeat(1, 1fr);
@@ -88,7 +96,11 @@ const PropertyDetailsStyle = styled.div`
     border-radius: 5px;
     padding: 14px;
     margin-top: 22px;
-    max-width: 850px;
+    max-width: 66%;
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
+
     .listed-by {
       color: ${tertiaryGrey7};
       font-size: 16px;
@@ -148,7 +160,11 @@ const PropertyDetailsStyle = styled.div`
     }
   }
   .about-property {
-    max-width: 850px;
+    max-width: 66%;
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
+
     border: 1px solid ${lightGrey5};
     border-radius: 5px;
     margin-top: 22px;

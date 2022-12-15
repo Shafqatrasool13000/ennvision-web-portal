@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ContextApiData } from "../../utils/CreateContext";
 import CustomButton from "../CustomButton/CustomButton";
 import { PrimaryColor } from "../GlobalStyle";
 import { UpgradeAccountMenuStyle } from "./style";
 
 const UpgradeAccountMenu = () => {
   const navigate = useNavigate();
+  const { setIsLoggedIn } = useContext(ContextApiData);
 
   const options = ["Upgrade Account", "Edit Profile", "Delete Profile"];
   return (
@@ -29,7 +32,10 @@ const UpgradeAccountMenu = () => {
             fontSize="16px"
             fontFamily="EnnVisionsMedium"
             border="none"
-            clicked={() => navigate("/")}
+            clicked={() => {
+              setIsLoggedIn(false);
+              navigate("/login");
+            }}
           />
         </div>
       </div>

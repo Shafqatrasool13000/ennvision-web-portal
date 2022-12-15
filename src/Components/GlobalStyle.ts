@@ -242,11 +242,16 @@ export const BackgroundImage = styled.div<backImageProps>`
   background-size: ${(props) => props.size};
   background-position: ${(props) => props.postion};
   transition: all 1s ease-in-out;
-  background-color: ${(props) => props.bgColor};
   height: ${(props) => props.height};
   cursor: pointer;
-  &:hover {
-    background-position: bottom;
-    color: ${(props) => props.hoverBgColor};
-  }
+`;
+
+export const BackgroundImageLight = styled.div<backImageProps>`
+  background: url(${(props) => `\" ${props.url} \"`});
+  background-repeat: ${(props) => props.repeat};
+  background-size: ${(props) => props.size};
+  background-position: ${(props) => props.postion};
+  transition: all 1s ease-in-out;
+  height: ${(props) => props.height};
+  cursor: pointer;
 `;

@@ -21,18 +21,26 @@ const MiniStory = ({ img, className }: any) => {
   return (
     <MiniStoryStyle>
       <div className={`story ${className}`}>
-        <img className="big-img" src={img} alt="story" />
-        <div className="profile-details position-absolute">
-          <ProfileMiniImg
-            className="mini-img"
-            src={img}
-            alt="story"
-            borderRadius="7px"
-            height="31px"
-            width="31px"
-          />
-          <p className="title mt-2 mb-2">Morgan Freeman</p>
-        </div>
+        <BackgroundImage
+          className="big-img"
+          postion="top"
+          repeat="no-repeat"
+          size="cover"
+          url={img}
+          height="242px"
+        >
+          <div className="profile-details position-absolute">
+            <ProfileMiniImg
+              className="mini-img"
+              src={img}
+              alt="story"
+              borderRadius="7px"
+              height="31px"
+              width="31px"
+            />
+            <p className="title mt-2 mb-2">Morgan Freeman</p>
+          </div>
+        </BackgroundImage>
       </div>
     </MiniStoryStyle>
   );

@@ -71,8 +71,6 @@ const FindProperties = () => {
                 url={img}
                 size="cover"
                 postion="center"
-                bgColor="#222"
-                hoverBgColor="#999"
               >
                 <h6 className="text">{title}</h6>
               </BackgroundImage>

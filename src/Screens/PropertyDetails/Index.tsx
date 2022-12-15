@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {
-  BackgroundImage,
+  BackgroundImageLight,
   greenishColor,
   PrimaryColor,
   SecondaryHeadingMini,
@@ -109,6 +109,10 @@ const PropertyDetails = () => {
     <>
       <AuthNavbar />
       <PropertyDetailsStyle>
+        <div className="position-fixed home-tour d-sm-none d-md-block">
+          <HomeTour />
+        </div>
+
         <Container>
           <div className="d-flex justify-content-between align-items-center">
             <SecondaryHeadingMini>
@@ -123,34 +127,51 @@ const PropertyDetails = () => {
             <h4 className="property-price">$746,000.00</h4>
           </div>
           <div className="imgs-gallery mt-2">
-            <BackgroundImage
+            <BackgroundImageLight
               postion="center"
               repeat="no-repeat"
               size="cover"
               url={propertPic1}
               className="bg-img"
             />
-            <BackgroundImage
+            <BackgroundImageLight
               postion="center"
               repeat="no-repeat"
               size="cover"
               url={propertPic2}
               className="sm-img"
             />
-            <BackgroundImage
+            <BackgroundImageLight
               postion="center"
               repeat="no-repeat"
               size="cover"
               url={propertPic3}
-              className="sm-img1"
-            />
-
-            {/* <div >
-              <img src={propertPic2} alt="property2" />
-            </div>
-            <div >
-              <img src={propertPic3} alt="property3" />
-            </div> */}
+              className="sm-img1 position-relative"
+            >
+              <div
+                className="d-flex justify-content-end align-items-center"
+                style={{
+                  position: "absolute",
+                  right: "4%",
+                  width: "100%",
+                  bottom: "4%",
+                }}
+              >
+                <CustomButton
+                  bgcolor={PrimaryColor}
+                  color="white"
+                  padding="6px 8px"
+                  width="140px"
+                  type="submit"
+                  title="More"
+                  margin="auto"
+                  fontSize="16px"
+                  border="none"
+                  icon={<img className="me-2" src={phone} alt="phone" />}
+                  // clicked={() => editHandler(content)}
+                />
+              </div>
+            </BackgroundImageLight>
           </div>
           <div className="property-details">
             {propertyDetailsData.map(({ name, img, quantity }, index) => (
@@ -165,7 +186,6 @@ const PropertyDetails = () => {
               </div>
             ))}
           </div>
-
           <div className="owner-details">
             <p className="listed-by text-center text-md-start">
               Listed by Property owner

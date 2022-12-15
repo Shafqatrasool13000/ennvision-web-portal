@@ -7,7 +7,8 @@ import BecomeProfesionalMenuStyle from "./style";
 
 const BecomeProfesionalMenu = () => {
   const navigate = useNavigate();
-  const { setIsLoggedIn } = useContext(ContextApiData);
+  const { setIsLoggedIn, setIsShowProfessionalOptions } =
+    useContext(ContextApiData);
 
   const options = ["Become a Professional", "Edit Profile", "Delete Profile"];
   return (
@@ -32,7 +33,8 @@ const BecomeProfesionalMenu = () => {
             fontFamily="EnnVisionsMedium"
             border="none"
             clicked={() => {
-              setIsLoggedIn((prev) => !prev);
+              setIsLoggedIn(false);
+              setIsShowProfessionalOptions(false);
               navigate("/login");
             }}
           />

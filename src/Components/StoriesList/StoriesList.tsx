@@ -12,6 +12,7 @@ import addStoryImg from "../../assets/Professional/Professional (10).png";
 import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
+import { BackgroundImage } from "../GlobalStyle";
 
 const storiesData = [
   { title: "Morgan Freeman", img: stroy1 },
@@ -42,12 +43,21 @@ const items = [
     <Link to="/story">
       <div id="overlay">
         <Card className="story-card" key={index}>
-          <Card.Img
+          <BackgroundImage
+            key={index}
+            className="card-img-top"
+            repeat="no-repeat"
+            url={img}
+            size="cover"
+            postion="center"
+            height="170px"
+          />
+          {/* <Card.Img
             variant="top"
             src={img}
             className="position-relative"
             alt={stroy1}
-          />
+          /> */}
           <Card.Body className="position-absolute bottom-0">
             <Card.Title>{title}</Card.Title>
           </Card.Body>

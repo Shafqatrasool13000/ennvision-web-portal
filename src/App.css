@@ -57,6 +57,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .mobile-nav-title {
   display: flex;
   align-items: center;
