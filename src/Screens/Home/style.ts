@@ -591,7 +591,7 @@ export const WhyChooseUsStyled = styled.div`
     margin-left: 20px;
   }
 `;
-export const FindProfessionalStyled = styled.div`
+export const FindPropertiesStyle = styled.div`
   margin-top: 150px;
 
   .img1 {
@@ -616,13 +616,13 @@ export const FindProfessionalStyled = styled.div`
   .areas {
     margin-top: 26px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 200px);
     grid-template-areas:
-      "bigImg1 smallImg1"
-      "bigImg1 smallImg2"
-      "smallImg3 bigImg2"
-      "smallImg4 bigImg2";
+      "bigImg1 bigImg1 smallImg1"
+      "bigImg1 bigImg1 smallImg2"
+      "smallImg3 bigImg2 bigImg2"
+      "smallImg4 bigImg2 bigImg2";
     grid-gap: 6px;
 
     @media screen and (max-width: 991px) {

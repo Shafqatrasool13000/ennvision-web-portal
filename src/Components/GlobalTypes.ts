@@ -13,4 +13,5 @@ export type backImageProps = {
   blendMode?: string | "unset";
   bgColor?: string | "unset";
   hoverBgColor?: string | "white";
+  linearGradient?: string;
 };

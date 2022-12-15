@@ -236,14 +236,13 @@ export const ProfileMiniImg = styled.img<profileMiniImgProps>`
 `;
 
 export const BackgroundImage = styled.div<backImageProps>`
-  background-image: url(${(props) => `\" ${props.url} \"`});
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.36)),
+    url(${(props) => `\" ${props.url} \"`});
   background-repeat: ${(props) => props.repeat};
   background-size: ${(props) => props.size};
-  background-blend-mode: hard-light;
   background-position: ${(props) => props.postion};
   transition: all 1s ease-in-out;
   background-color: ${(props) => props.bgColor};
-  background-blend-mode: ${(props) => props.blendMode};
   height: ${(props) => props.height};
   cursor: pointer;
   &:hover {

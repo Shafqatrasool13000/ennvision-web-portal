@@ -3,7 +3,7 @@ import {
   SecondaryHeading,
   TertiraryHeadingMini,
 } from "../../Components/GlobalStyle";
-import { FindProfessionalStyled } from "./style";
+import { FindPropertiesStyle } from "./style";
 import property1 from "../../assets/Image/ic_property_1.png";
 import property2 from "../../assets/Image/ic_property_2.png";
 import property3 from "../../assets/Image/ic_property_3.png";
@@ -50,7 +50,7 @@ const FindProperties = () => {
     },
   ];
   return (
-    <FindProfessionalStyled>
+    <FindPropertiesStyle>
       <SecondaryHeading className="text-center">
         Find Properties
       </SecondaryHeading>
@@ -78,11 +78,10 @@ const FindProperties = () => {
               </BackgroundImage>
             )
           )}
-
           <ViewMore />
         </div>
       </Container>
-    </FindProfessionalStyled>
+    </FindPropertiesStyle>
   );
 };
 
