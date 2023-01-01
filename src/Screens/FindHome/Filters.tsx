@@ -42,6 +42,20 @@ const Index = ({ logIn }: any) => {
     "Propsure Verified",
     "All Filters",
   ];
+  const options = [
+    {
+      value: "text 1",
+      label: "text 1",
+    },
+    {
+      value: "text 2",
+      label: "text 2",
+    },
+    {
+      value: "text 3",
+      label: "text 3",
+    },
+  ];
 
   return (
     <Container
@@ -79,10 +93,7 @@ const Index = ({ logIn }: any) => {
                             ? "is-invalid"
                             : "customInput"
                         }
-                        options={[
-                          { id: "0", name: "City 1" },
-                          { id: "1", name: "City 2" },
-                        ]}
+                        options={options}
                       />
                     </div>
                   )),

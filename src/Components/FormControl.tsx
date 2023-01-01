@@ -1,14 +1,13 @@
-import Input from "./CustomInput/Index";
-import Select from "./CustomSelect/Index";
+import Input from "./CustomInput/CustomInput";
+import Select from "./CustomSelect/CustomSelect";
 import Datepicker from "./CustomDatePicker/Index";
 import CustomDateTimePicker from "./CustomDateTimePicker/Index";
 import Textarea from "./CustomTextArea/Index";
-import InputNumber from "./CustomInputNumber";
 // import Checkbox from "./Checkbox";
 import CustomSearchSelect from "./CustomSearchSelect";
 import CustomMultiSelect from "./CustomMultiSelect/Index";
-import CustomLargeInput from "./CustomLargeInput/Index";
-import CustomLargeSelect from "./CustomLargeSelect/Index";
+import CustomLargeInput from "./CustomLargeInput/CustomLargeInput";
+import CustomLargeSelect from "./CustomLargeSelect/CustomLargeInput";
 import CustomPasswordInput from "./CustomPasswordInput/Index";
 import { Checkbox, Radio } from "antd";
 
@@ -26,7 +25,7 @@ export interface FieldStyleBasicProps {
 
 type FormControllerProps = {
   control:
-    | "inout"
+    | "input"
     | "select"
     | "searchSelect"
     | "multiSelect"
@@ -57,8 +56,6 @@ const FormController: React.FC<FormControllerProps> = (props) => {
       return <CustomPasswordInput {...rest} />;
     case "textarea":
       return <Textarea {...rest} />;
-    case "inputNumber":
-      return <InputNumber {...rest} />;
     case "largeInput":
       return <CustomLargeInput {...rest} />;
     case "largeSelect":

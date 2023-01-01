@@ -1,10 +1,11 @@
+import { useContext } from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Input } from "antd";
 import CustomInputStyle from "./style";
 import { ContextApiData } from "../../utils/CreateContext";
-import { useContext } from "react";
-const InputField: React.FC<any> = ({
+
+const CustomInput: React.FC<any> = ({
   label,
   prefix,
   defaultValue,
@@ -15,13 +16,13 @@ const InputField: React.FC<any> = ({
   name,
   onFocus = false,
   value,
-  padding = "8px 8px",
   formik,
-  border = "1px solid #d9d9d9",
   fontFamily = "EnnVisions",
+  bgColor = "white",
+  border = "1px solid #d9d9d9",
+  padding = "8px 8px",
   showErrorMessage = true,
   suffix = null,
-  bgColor = "white",
   labelMarginBottom = "10px",
   ...rest
 }: any) => {
@@ -59,4 +60,4 @@ const InputField: React.FC<any> = ({
   );
 };
 
-export default InputField;
+export default CustomInput;

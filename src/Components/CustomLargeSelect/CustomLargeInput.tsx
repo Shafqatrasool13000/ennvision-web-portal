@@ -1,22 +1,11 @@
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Select } from "antd";
-import CustomSelectStyle from "./style";
-import dropDownArrow from "../../assets/icons/ic_add_property_dropdown.svg";
-const SelectComp = (props: any) => {
-  const {
-    name,
-    placeholder,
-    onSelect,
-    padding,
-    defaultValue,
-    label,
-    options,
-    bgColor,
-    border = "1px solid #d9d9d9",
-
-    ...rest
-  } = props;
+import CustomLargeSelectStyle from "./style";
+import ic_drop_down from "../../assets/icons/ic_drop_down.svg";
+const CustomLargeSelect = (props: any) => {
+  const { name, placeholder, onSelect, defaultValue, label, options, ...rest } =
+    props;
 
   const OptionsArr = options?.map((option: any) => {
     return (
@@ -27,7 +16,7 @@ const SelectComp = (props: any) => {
   });
 
   return (
-    <CustomSelectStyle padding={padding} bgColor={bgColor} border={border}>
+    <CustomLargeSelectStyle>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {
@@ -39,22 +28,14 @@ const SelectComp = (props: any) => {
                 className="customSelect"
                 name={name}
                 id={name}
-                suffixIcon={
-                  <img
-                    style={{
-                      height: "6px",
-                    }}
-                    src={dropDownArrow}
-                    alt="arrow"
-                  />
-                }
                 defaultValue={defaultValue}
                 {...rest}
                 onSelect={(val, event) => onSelect(val, event.key)}
                 placeholder={placeholder}
                 // You have to provide the onChange function and on changing the value you should call
                 // the setFieldValue function provided by the prop of "form"
-                onChange={(val: any) => {
+                suffixIcon={<img src={ic_drop_down} alt="dropdown" />}
+                onChange={(val) => {
                   form.setFieldValue(name, val);
                 }}
               >
@@ -66,8 +47,8 @@ const SelectComp = (props: any) => {
         }}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomSelectStyle>
+    </CustomLargeSelectStyle>
   );
 };
 
-export default SelectComp;
+export default CustomLargeSelect;

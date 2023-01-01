@@ -1,8 +1,8 @@
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { InputNumber } from "antd";
-import CustomInputStyle from "./style";
-const InputField = (props: any) => {
+import CustomInputNumberStyle from "./style";
+const CustomInputNumber = (props: any) => {
   const {
     label,
     prefix,
@@ -14,7 +14,7 @@ const InputField = (props: any) => {
     ...rest
   } = props;
   return (
-    <CustomInputStyle>
+    <CustomInputNumberStyle>
       <label htmlFor={label}>{label}</label>
       <Field name={name} id={name}>
         {({ field }: any) => (
@@ -33,8 +33,8 @@ const InputField = (props: any) => {
         )}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomInputStyle>
+    </CustomInputNumberStyle>
   );
 };
 
-export default InputField;
+export default CustomInputNumber;

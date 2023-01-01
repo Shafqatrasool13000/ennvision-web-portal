@@ -18,10 +18,41 @@ import { SelectOutlined } from "@ant-design/icons";
 const Inputs = () => {
   const navigate = useNavigate();
 
-  let initialValues = {
+  const initialValues = {
     email: "",
     password: "",
   };
+
+  const options = [
+    {
+      value: "Lahore",
+      label: "Lahore",
+    },
+    {
+      value: "Islamabad",
+      label: "Islamabad",
+    },
+    {
+      value: "Rawalpindi",
+      label: "Rawalpindi",
+    },
+    {
+      value: "Karachi",
+      label: "Karachi",
+    },
+    {
+      value: "Okara",
+      label: "Okara",
+    },
+    {
+      value: "Chakwal",
+      label: "Chakwal",
+    },
+    {
+      value: "Chunian",
+      label: "Chunian",
+    },
+  ];
 
   const validationSchema = Yup.object({
     // password: Yup.string()
@@ -74,6 +105,7 @@ const Inputs = () => {
                           ? "is-invalid"
                           : "customInput"
                       }
+                      options={options}
                     />
                   </Col>
                   <Col sm={6} md={4} className="mt-1 mt-sm-0">

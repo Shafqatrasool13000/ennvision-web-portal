@@ -30,32 +30,32 @@ const initialValues = {
 
 const options = [
   {
-    id: "Lahore",
-    name: "Lahore",
+    value: "Lahore",
+    label: "Lahore",
   },
   {
-    id: "Islamabad",
-    name: "Islamabad",
+    value: "Islamabad",
+    label: "Islamabad",
   },
   {
-    id: "Rawalpindi",
-    name: "Rawalpindi",
+    value: "Rawalpindi",
+    label: "Rawalpindi",
   },
   {
-    id: "Karachi",
-    name: "Karachi",
+    value: "Karachi",
+    label: "Karachi",
   },
   {
-    id: "Okara",
-    name: "Okara",
+    value: "Okara",
+    label: "Okara",
   },
   {
-    id: "Chakwal",
-    name: "Chakwal",
+    value: "Chakwal",
+    label: "Chakwal",
   },
   {
-    id: "Chunian",
-    name: "Chunian",
+    value: "Chunian",
+    label: "Chunian",
   },
 ];
 

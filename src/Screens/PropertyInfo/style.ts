@@ -1,23 +1,26 @@
 import styled from "styled-components";
 import {
-  lightblue2,
   lightGrey,
   lightGrey2,
   lightGrey4,
   lightGrey5,
   lightGrey6,
-  PrimaryColor,
   secondaryDark4,
   tertiaryGrey14,
   tertiaryGrey15,
   tertiaryGrey16,
   tertiaryGrey7,
-  whiteColor,
 } from "../../Components/GlobalStyle";
 
-export const PropertyInfoStyled = styled.div`
+export const PropertyInfoStyle = styled.div`
   padding: 100px 0;
   background-color: #ffffff;
+
+  .arithmetic-icon {
+    width: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
 
   .inner-section {
     border: 1px solid ${lightGrey5};
@@ -47,39 +50,17 @@ export const PropertyInfoStyled = styled.div`
       color: ${tertiaryGrey7};
       font-family: "EnnVisionsMedium";
     }
-    .purchase-btns {
-      margin-top: 12px;
-      background-color: ${whiteColor};
-      border-radius: 7px;
-      height: 44px;
-      padding: 3px;
-      border: 1px solid #f5f5f5;
-      border-radius: 4px;
 
-      .active {
-        background-color: ${PrimaryColor};
-        height: 100%;
-        border-radius: 4px;
-        color: ${whiteColor};
-      }
-      button {
-        background: transparent;
-        font-size: 16px;
-      }
-    }
-    .generate-btn {
-      background: ${PrimaryColor};
-      border-radius: 3px;
-      margin-top: 37px;
-      padding: 7px 10px;
-      color: white;
-      font-size: 18px;
-      font-family: "EnnVisionsMedium";
+    .generate-btn:hover button {
+      background: transparent;
+
+      color: black;
+      border: 1px solid black;
     }
   }
 
   .property-types {
-    margin-top: 40px;
+    margin-top: 30px;
     border-radius: 7px;
     padding: 3px;
     border-radius: 4px;
@@ -99,15 +80,7 @@ export const PropertyInfoStyled = styled.div`
   }
 
   .place-located {
-    margin-top: 46px;
-  }
-
-  .address-details {
-    .col-md-4,
-    .col-sm-6,
-    .col {
-      margin-top: 16px;
-    }
+    margin-top: 16px;
   }
 `;
 export const AdditionalDetailGalleryStyled = styled.div`
@@ -153,6 +126,30 @@ export const AdditionalDetailGalleryStyled = styled.div`
       @media screen and (max-width: 768px) {
         width: 100%;
       }
+
+      .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .btn {
+        border: none;
+        padding: 8px 20px;
+        border-radius: 8px;
+        color: ${tertiaryGrey14} !important;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .upload-btn-wrapper input[type="file"] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
       .add-img {
         margin-top: 14px;
         background: ${tertiaryGrey15};
@@ -182,7 +179,7 @@ export const AdditionalDetailGalleryStyled = styled.div`
   }
 `;
 
-export const FeatureDetailsStyled = styled.div`
+export const FeatureDetailsStyle = styled.div`
   .key-features {
     border-bottom: 1px solid ${lightGrey4};
     padding-bottom: 12px;
@@ -220,9 +217,6 @@ export const FeatureDetailsStyled = styled.div`
   }
 `;
 
-export const GenerateInfoStyled = styled.div`
+export const GenerateInfoStyle = styled.div`
   margin-top: 57px;
-  .input-section {
-    margin-top: 18px;
-  }
 `;

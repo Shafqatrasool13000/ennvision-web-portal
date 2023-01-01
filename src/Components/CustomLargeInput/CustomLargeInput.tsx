@@ -1,9 +1,8 @@
-import React from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Input } from "antd";
-import { CustomlargeInputStyled } from "./style";
-const InputField = (props: any) => {
+import CustomlargeInputStyle from "./style";
+const CustomLargeInput = (props: any) => {
   const {
     label,
     prefix,
@@ -16,7 +15,7 @@ const InputField = (props: any) => {
     ...rest
   } = props;
   return (
-    <CustomlargeInputStyled>
+    <CustomlargeInputStyle>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>
         {({ field }: any) => (
@@ -33,9 +32,9 @@ const InputField = (props: any) => {
           />
         )}
       </Field>
-      {/* <ErrorMessage name={name} component={ErrorMsg} /> */}
-    </CustomlargeInputStyled>
+      <ErrorMessage name={name} component={ErrorMsg} />
+    </CustomlargeInputStyle>
   );
 };
 
-export default InputField;
+export default CustomLargeInput;

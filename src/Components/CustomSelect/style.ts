@@ -8,7 +8,6 @@ type CustomSelectProps = {
 };
 
 export const CustomSelectStyle = styled.div<CustomSelectProps>`
-  margin-bottom: 10px;
   width: 100%;
 
   label {

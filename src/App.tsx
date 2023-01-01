@@ -20,7 +20,7 @@ import CreateProperty1 from "./Screens/CreateProperty/CreateProperty1/Index";
 import CreateProperty2 from "./Screens/CreateProperty/CreateProperty2/Index";
 
 import PaymentInfo from "./Screens/BillSummary/Index";
-import PropertyInfo from "./Screens/PropertyInfo/Index";
+import PropertyInfo from "./Screens/PropertyInfo/PropertyInfo";
 import EditPhone from "./Screens/CreateProfessional/EditPhone";
 
 import BecomeProfessional from "./Screens/BecomeProfessional/Index";

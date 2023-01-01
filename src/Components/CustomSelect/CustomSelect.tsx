@@ -1,23 +1,24 @@
-import React from "react";
 import { Field, ErrorMessage } from "formik";
 import ErrorMsg from "../ErrorMessage";
 import { Select } from "antd";
-import { CustomSelectContainer } from "./style";
-import ic_drop_down from "../../assets/icons/ic_drop_down.svg";
-const SelectComp = (props: any) => {
-  const { name, placeholder, onSelect, defaultValue, label, options, ...rest } =
-    props;
-
-  const OptionsArr = options?.map((option: any) => {
-    return (
-      <Select.Option key={option.id} value={option.name}>
-        {option.name}
-      </Select.Option>
-    );
-  });
+import CustomSelectStyle from "./style";
+import dropDownArrow from "../../assets/icons/ic_add_property_dropdown.svg";
+const CustomSelect = (props: any) => {
+  const {
+    name,
+    placeholder,
+    onSelect,
+    padding,
+    defaultValue,
+    label,
+    options,
+    bgColor,
+    border = "1px solid #d9d9d9",
+    ...rest
+  } = props;
 
   return (
-    <CustomSelectContainer>
+    <CustomSelectStyle padding={padding} bgColor={bgColor} border={border}>
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {
@@ -29,27 +30,34 @@ const SelectComp = (props: any) => {
                 className="customSelect"
                 name={name}
                 id={name}
+                suffixIcon={
+                  <img
+                    style={{
+                      height: "6px",
+                    }}
+                    src={dropDownArrow}
+                    alt="arrow"
+                  />
+                }
                 defaultValue={defaultValue}
                 {...rest}
-                onSelect={(val, event) => onSelect(val, event.key)}
+                // onSelect={(val, event) => onSelect(val, event.key)}
                 placeholder={placeholder}
                 // You have to provide the onChange function and on changing the value you should call
                 // the setFieldValue function provided by the prop of "form"
-                suffixIcon={<img src={ic_drop_down} alt="dropdown" />}
-                onChange={(val) => {
+                onChange={(val: any) => {
                   form.setFieldValue(name, val);
                 }}
-              >
-                {OptionsArr}
-              </Select>
+                options={options}
+              />
             </div>
             // </Form.Item>
           );
         }}
       </Field>
       <ErrorMessage name={name} component={ErrorMsg} />
-    </CustomSelectContainer>
+    </CustomSelectStyle>
   );
 };
 
-export default SelectComp;
+export default CustomSelect;
