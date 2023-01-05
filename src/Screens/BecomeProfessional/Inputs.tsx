@@ -12,47 +12,32 @@ import FormControl from "../../Components/FormControl";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import doc from "../../assets/icons/ic_add_property_add_card.svg";
 import { SelectOutlined } from "@ant-design/icons";
+import { ContextApiData } from "../../utils/CreateContext";
+import { useContext } from "react";
 
+const options = [
+  {
+    value: "text 1",
+    label: "text 2",
+  },
+  {
+    value: "text 2",
+    label: "text 2",
+  },
+  {
+    value: "text 3",
+    label: "text 3",
+  },
+];
 const Inputs = () => {
   const navigate = useNavigate();
+  const { setIsProfessional } = useContext(ContextApiData);
 
   const initialValues = {
     email: "",
     password: "",
   };
-
-  const options = [
-    {
-      value: "Lahore",
-      label: "Lahore",
-    },
-    {
-      value: "Islamabad",
-      label: "Islamabad",
-    },
-    {
-      value: "Rawalpindi",
-      label: "Rawalpindi",
-    },
-    {
-      value: "Karachi",
-      label: "Karachi",
-    },
-    {
-      value: "Okara",
-      label: "Okara",
-    },
-    {
-      value: "Chakwal",
-      label: "Chakwal",
-    },
-    {
-      value: "Chunian",
-      label: "Chunian",
-    },
-  ];
 
   const validationSchema = Yup.object({
     // password: Yup.string()
@@ -93,13 +78,47 @@ const Inputs = () => {
                 <Row className="login-input-fields">
                   <Col sm={6} md={4} className="mt-1 mt-sm-0">
                     <FormControl
-                      control="select"
+                      control="input"
+                      type="text"
+                      name="firstName"
+                      border={`1px solid ${lightGrey2}`}
+                      label="First Name"
+                      placeholder="First Name"
+                      labelFamily="EnnVisionsMedium"
+                      className={
+                        formik.errors.email && formik.touched.email
+                          ? "is-invalid"
+                          : "customInput"
+                      }
+                    />
+                  </Col>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
+                    <FormControl
+                      control="input"
                       type="text"
                       name="lastName"
+                      border={`1px solid ${lightGrey2}`}
+                      label="Last Name"
+                      placeholder="Last Name.."
+                      labelFamily="EnnVisionsMedium"
+                      className={
+                        formik.errors.email && formik.touched.email
+                          ? "is-invalid"
+                          : "customInput"
+                      }
+                    />
+                  </Col>
+                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
+                    <FormControl
+                      control="select"
+                      type="text"
+                      name="selectProfession"
+                      labelMarginBottom="10px"
                       padding="3px"
                       border={`1px solid ${lightGrey2}`}
-                      label="Select a professions"
+                      label="Select Profession"
                       placeholder="Select a professions"
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -108,14 +127,15 @@ const Inputs = () => {
                       options={options}
                     />
                   </Col>
-                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
+                  <Col sm={6} md={4} className="mt-2">
                     <FormControl
                       control="input"
                       type="text"
-                      name="firstName"
+                      name="businessName"
                       border={`1px solid ${lightGrey2}`}
                       label="Business Name"
                       placeholder="Business Name"
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -123,14 +143,15 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
+                  <Col sm={6} md={4} className="mt-2">
                     <FormControl
                       control="input"
-                      type="email"
-                      name="email"
+                      type="text"
+                      name="website"
                       label="Website"
                       border={`1px solid ${lightGrey2}`}
                       placeholder="Website"
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -138,14 +159,16 @@ const Inputs = () => {
                       }
                     />
                   </Col>
-                  <Col sm={6} md={4} className="mt-1 mt-sm-0">
+                  <Col sm={6} md={4} className="mt-2">
                     <FormControl
                       control="date"
                       type="text"
-                      name="firstName"
+                      padding="6.5px"
+                      name="bussinessStarted"
                       border={`1px solid ${lightGrey2}`}
                       label="Business started"
                       placeholder="Business started"
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -157,10 +180,11 @@ const Inputs = () => {
                     <FormControl
                       control="input"
                       type="text"
-                      name="lastName"
+                      name="qualifications"
                       border={`1px solid ${lightGrey2}`}
                       label="Qualifications"
                       placeholder="Qualifications"
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -172,12 +196,13 @@ const Inputs = () => {
                     <FormControl
                       control="input"
                       type="document"
-                      name="email"
+                      name="document"
                       label="Document"
                       padding="7px"
                       placeholder="Document"
                       border={`1px solid ${lightGrey2}`}
                       suffix={<SelectOutlined />}
+                      labelFamily="EnnVisionsMedium"
                       className={
                         formik.errors.email && formik.touched.email
                           ? "is-invalid"
@@ -194,7 +219,9 @@ const Inputs = () => {
                       type="submit"
                       title="Become A Professional"
                       fontSize="16px"
-                      clicked={navigateToProList}
+                      clicked={() => {
+                        navigate("/professinal-packages");
+                      }}
                     />
                   </div>
                 </Row>

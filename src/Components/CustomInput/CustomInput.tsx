@@ -23,7 +23,9 @@ const CustomInput: React.FC<any> = ({
   padding = "8px 8px",
   showErrorMessage = true,
   suffix = null,
+  readyOnly = false,
   labelMarginBottom = "10px",
+  labelFamily = "EnnVisions",
   ...rest
 }: any) => {
   const { setIsShowProperty } = useContext(ContextApiData);
@@ -34,6 +36,7 @@ const CustomInput: React.FC<any> = ({
       border={border}
       padding={padding}
       labelMarginBottom={labelMarginBottom}
+      labelFamily={labelFamily}
     >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name}>
@@ -43,6 +46,7 @@ const CustomInput: React.FC<any> = ({
             prefix={prefix}
             className={className}
             type="text"
+            readOnly={readyOnly}
             maxLength={maxLength}
             onFocus={() => setIsShowProperty((prev) => !prev)}
             {...rest}

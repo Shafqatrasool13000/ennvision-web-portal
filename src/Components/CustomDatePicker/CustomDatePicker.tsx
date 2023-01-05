@@ -4,7 +4,7 @@ import CustomDatePickerStyle from "./style";
 import ErrorMsg from "../ErrorMessage";
 import dateIcon from "../../assets/icons/ic_calendar.svg";
 
-const Index = (props: any) => {
+const CustomDatePicker = (props: any) => {
   const {
     name,
     placeholder,
@@ -12,13 +12,21 @@ const Index = (props: any) => {
     options,
     bgColor = "white",
     border = "1px solid #c6c6c8;",
-    padding = "4px",
+    padding = "8px",
     title,
+    fontFamily = "EnnVisions",
+    labelFamily = "EnnVisions",
     ...rest
   } = props;
 
   return (
-    <CustomDatePickerStyle bgColor={bgColor} border={border} padding={padding}>
+    <CustomDatePickerStyle
+      fontFamily={fontFamily}
+      labelFamily={labelFamily}
+      bgColor={bgColor}
+      border={border}
+      padding={padding}
+    >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {
@@ -46,4 +54,4 @@ const Index = (props: any) => {
   );
 };
 
-export default Index;
+export default CustomDatePicker;

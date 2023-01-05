@@ -113,6 +113,6 @@ export const ProInputsStyle = styled.div`
 `;
 
 export const BecomeProfessionalStyle = styled.div`
-  height: 100vh;
-  margin-top: 86px;
+  height: 93vh;
+  padding-top: 86px;
 `;

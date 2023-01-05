@@ -13,54 +13,70 @@ import {
   whiteColor,
 } from "../../../Components/GlobalStyle";
 import redTickIcon from "../../../assets/icons/ic_select_red.svg";
+import grayTickIcon from "../../../assets/icons/ic_select_gry.svg";
+import Headbar from "../../../Components/Headbar/Headbar";
+import { useState } from "react";
 
 const features1 = [
-  "Picture of Property (if available)",
-  "Property Address",
-  "Municipality",
-  "Roll Number",
-  "Postal Code",
-  "Province, Real-time Market Value (AVM",
-  "AVM Valuation Date",
-  "AVM Confidence Rating",
-  "AVM Range, Roll Number",
-  "Address",
-  "Property Style",
-  "Year Built",
+  { title: "Picture of Property (if available)", select: true },
+  { title: "Property Address", select: true },
+  { title: "Municipality", select: true },
+  { title: "Roll Number", select: true },
+  { title: "Postal Code", select: true },
+  { title: "Province, Real-time Market Value (AVM", select: false },
+  { title: "AVM Valuation Date", select: false },
+  { title: "AVM Confidence Rating", select: false },
+  { title: "AVM Range, Roll Number", select: false },
+  { title: "Address", select: false },
+  { title: "Property Style", select: false },
+  { title: "Year Built", select: false },
 ];
 
 const features2 = [
-  "Picture of Property (if available)",
-  "Property Address",
-  "Municipality",
-  "Roll Number",
-  "Postal Code",
-  "Province, Real-time Market Value (AVM",
-  "AVM Valuation Date",
-  "AVM Confidence Rating",
-  "AVM Range, Roll Number",
-  "Address",
-  "Property Style",
-  "Year Built",
+  { title: "Picture of Property (if available)", select: true },
+  { title: "Property Address", select: true },
+  { title: "Municipality", select: true },
+  { title: "Roll Number", select: true },
+  { title: "Postal Code", select: true },
+  { title: "Province, Real-time Market Value (AVM", select: false },
+  { title: "AVM Valuation Date", select: false },
+  { title: "AVM Confidence Rating", select: false },
+  { title: "AVM Range, Roll Number", select: false },
+  { title: "Address", select: false },
+  { title: "Property Style", select: false },
+  { title: "Year Built", select: false },
 ];
 
-const features = [
+const properties = [
   {
-    title: "Property Value Sales Report",
-    propertyName: "3 Easy Steps To Create A Professional Listing",
+    isWant: false,
+    title: "3 Easy Steps To Create A Professional Listing",
     price: "$50.00",
     features: features1,
   },
   {
-    title: "Comparable Report",
-    propertyName: "We Will Auto Populate Your Home Listing Information",
+    isWant: true,
+    title: "We Will Auto Populate Your Home Listing Information",
     price: "$50.00",
     features: features2,
   },
 ];
 
 const CreateProperty2 = () => {
+  const [propertiesIntro, setPropertiesIntro] = useState(properties);
   const navigate = useNavigate();
+
+  const toggleProperty = (index: number) => {
+    const data = [...propertiesIntro];
+    data[index].isWant = !data[index].isWant;
+    setPropertiesIntro(data);
+  };
+  const toggleFeature = (index: number, featureIndex: number) => {
+    const data = [...propertiesIntro];
+    data[index].features[featureIndex].select =
+      !data[index].features[featureIndex].select;
+    setPropertiesIntro(data);
+  };
 
   return (
     <CreateProperty2Style>
@@ -104,19 +120,27 @@ const CreateProperty2 = () => {
           </div>
         </div>
         <Row>
-          {features.map(({ features, price, propertyName, title }, index) => (
+          {propertiesIntro.map(({ features, price, title, isWant }, index) => (
             <Col key={index} md={6} className="property-card">
-              {/* <Headbar title={propertyName} rightText={price} /> */}
-              <div className="property-card-inner-section">
-                {features.map((title, index) => (
-                  <div key={index} className="d-flex feature mt-2">
-                    <img src={redTickIcon} alt="check-icon" />
+              <Headbar title={title} rightText={price} />
+              <div className="property-card-inner-section cursor-pointer">
+                {features.map(({ title, select }, featureIndex) => (
+                  <div
+                    onClick={() => toggleFeature(index, featureIndex)}
+                    key={index}
+                    className="d-flex feature mt-2"
+                  >
+                    {select ? (
+                      <img src={redTickIcon} alt="check-icon" />
+                    ) : (
+                      <img src={grayTickIcon} alt="grey-tick" />
+                    )}
                     <p className="feature-text ms-2 mb-0">{title}</p>
                   </div>
                 ))}
                 <div className="property-below-btn">
                   <CustomButton
-                    bgcolor={index === 0 ? lightblue2 : PrimaryColor}
+                    bgcolor={isWant ? lightblue2 : PrimaryColor}
                     color={whiteColor}
                     padding="8px 8px"
                     width="120px"
@@ -126,6 +150,7 @@ const CreateProperty2 = () => {
                     fontSize="16px"
                     fontFamily="EnnVisionsMedium"
                     border="none"
+                    clicked={() => toggleProperty(index)}
                   />
                 </div>
               </div>

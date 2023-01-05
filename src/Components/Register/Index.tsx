@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 import flag from "../../assets/icons/ic_flag.svg";
 import AuthenticationText from "../AuthenticationText/Index";
 import CustomModal from "../Modal/CustomModal";
-import Confirmed from "../Confirmed/Index";
+import Confirmed from "../Confirmed/ConfirmedLight";
 import { useState } from "react";
 
 type registerValueTypes = {

@@ -7,10 +7,11 @@ const InputFieldStyle = styled.div<any>`
   .ant-input {
     padding: ${(props) => props.padding} !important;
     border: ${(props) => props.border};
+    border-radius: ${(props) => props.borderRadius};
+    text-align: ${(props) => props.textAlign};
   }
   .ant-input-affix-wrapper {
     padding: 0;
-    border: ${(props) => props.border};
   }
   .ant-input-suffix {
     margin-right: 10px;

@@ -1,14 +1,20 @@
 import styled from "styled-components";
-import { FieldStyleBasicProps } from "../FormControl";
 
-export const CustomDatePickerStyle = styled.div<FieldStyleBasicProps>`
+type CustomDateProps = {
+  padding: string;
+  bgColor: string;
+  border: string;
+  fontFamily: string;
+  labelFamily: string;
+};
+export const CustomDatePickerStyle = styled.div<CustomDateProps>`
   margin-bottom: 10px;
   width: 100%;
 
   label {
-    font-size: 13px;
+    font-size: 14px;
     text-transform: capitalize;
-
+    font-family: ${(props) => props.labelFamily};
     display: block;
     margin-bottom: 10px;
   }
@@ -19,10 +25,10 @@ export const CustomDatePickerStyle = styled.div<FieldStyleBasicProps>`
     border-radius: 5px !important;
     background-color: ${(props) => props.bgColor};
     border: ${(props) => props.border};
-    //padding: 8px 8px;
+    font-family: ${(props) => props.fontFamily};
   }
   .ant-picker {
-    padding: 8px 8px !important;
+    padding: ${(props) => props.padding};
     width: 100%;
   }
 `;

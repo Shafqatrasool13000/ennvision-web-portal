@@ -25,12 +25,13 @@ const validationSchema = Yup.object({
 const Login = () => {
   const navigate = useNavigate();
   const onSubmit = (value: any) => {};
-  const { isLoggedIn, setIsLoggedIn } = useContext(ContextApiData);
+  const { isLoggedIn, setIsLoggedIn, setIsUser } = useContext(ContextApiData);
 
   console.log({ isLoggedIn });
 
   const navigateToDashboard = () => {
     setIsLoggedIn(true);
+    setIsUser(true);
     navigate("/explore-nearby");
   };
 

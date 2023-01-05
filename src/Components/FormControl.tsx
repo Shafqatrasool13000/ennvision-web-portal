@@ -1,6 +1,6 @@
 import Input from "./CustomInput/CustomInput";
 import Select from "./CustomSelect/CustomSelect";
-import Datepicker from "./CustomDatePicker/Index";
+import Datepicker from "./CustomDatePicker/CustomDatePicker";
 import CustomDateTimePicker from "./CustomDateTimePicker/Index";
 import Textarea from "./CustomTextArea/Index";
 // import Checkbox from "./Checkbox";

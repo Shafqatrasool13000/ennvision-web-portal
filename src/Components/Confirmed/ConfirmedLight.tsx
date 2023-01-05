@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/icons/ic_logo(1).svg";
-import CustomButton from "../../Components/CustomButton/CustomButton";
-import { PrimaryColor } from "../../Components/GlobalStyle";
-import ConfirmedStyle from "./style";
-const Confirmed = () => {
+import CustomButton from "../CustomButton/CustomButton";
+import { PrimaryColor } from "../GlobalStyle";
+import { ConfirmedLightStyle } from "./style";
+const ConfirmedLight = () => {
   const navigate = useNavigate();
   return (
-    <ConfirmedStyle>
+    <ConfirmedLightStyle>
       <div className="inner-container">
         <img src={logo} alt="logo" />
         <p className="message">
@@ -27,8 +27,8 @@ const Confirmed = () => {
           />
         </div>
       </div>
-    </ConfirmedStyle>
+    </ConfirmedLightStyle>
   );
 };
 
-export default Confirmed;
+export default ConfirmedLight;

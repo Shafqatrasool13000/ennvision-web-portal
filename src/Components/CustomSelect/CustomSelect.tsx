@@ -14,11 +14,21 @@ const CustomSelect = (props: any) => {
     options,
     bgColor,
     border = "1px solid #d9d9d9",
+    fontFamily = "EnnVisions",
+    labelFamily = "EnnVisions",
+    labelMarginBottom = "10px",
     ...rest
   } = props;
 
   return (
-    <CustomSelectStyle padding={padding} bgColor={bgColor} border={border}>
+    <CustomSelectStyle
+      padding={padding}
+      bgColor={bgColor}
+      border={border}
+      fontFamily={fontFamily}
+      labelFamily={labelFamily}
+      labelMarginBottom={labelMarginBottom}
+    >
       <label htmlFor={name}>{label}</label>
       <Field name={name} id={name} {...rest}>
         {({ field, form, meta }: any) => {

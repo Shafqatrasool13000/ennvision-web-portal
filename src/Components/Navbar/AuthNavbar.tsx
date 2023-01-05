@@ -9,17 +9,22 @@ import plusIcon from "../../assets/icons/ic_add_property_add_photo.svg";
 import { useContext } from "react";
 import { ContextApiData } from "../../utils/CreateContext";
 import BecomeProfesionalMenu from "../DropDownMenu/BecomeProfessionalMenu";
+import UpgradeAccountMenu from "../DropDownMenu/UpgradeAccountMenu";
 
 function AuthNavbar() {
   const {
     isLoggedIn,
     isShowProfessionalOptions,
     setIsShowProfessionalOptions,
+    isProfessional,
+    setIsShowUpgradeAccountOptions,
+    isShowUpgradeAccountOptions,
+    isUser,
   } = useContext(ContextApiData);
-  console.log({ isShowProfessionalOptions });
+  console.log({ isShowProfessionalOptions, isShowUpgradeAccountOptions });
   return (
     <AuthNavbarStyle>
-      <Navbar expand="lg" fixed="top">
+      <Navbar expand="lg">
         <Container className="position-relative">
           <Navbar.Toggle aria-controls="navbarScroll" />
           <NavLink to="/">
@@ -62,24 +67,36 @@ function AuthNavbar() {
               )}
               <img
                 className="ms-5 cursor-pointer"
-                onClick={() => setIsShowProfessionalOptions((prev) => !prev)}
+                onClick={() =>
+                  isUser
+                    ? setIsShowProfessionalOptions((prev) => !prev)
+                    : setIsShowUpgradeAccountOptions((prev) => !prev)
+                }
                 src={profile}
                 alt="profile"
               />
             </div>
           </div>
-          <div
-            className={`position-absolute ${
-              isShowProfessionalOptions && isLoggedIn ? "d-block" : "d-none"
-            }`}
-            style={{
-              zIndex: 24,
-              top: "100%",
-              right: "2%",
-            }}
-          >
-            <BecomeProfesionalMenu />
-          </div>
+          {isLoggedIn && (
+            <div
+              className={`position-absolute ${
+                isShowProfessionalOptions || isShowUpgradeAccountOptions
+                  ? "d-block"
+                  : "d-none"
+              }`}
+              style={{
+                zIndex: 24,
+                top: "100%",
+                right: "2%",
+              }}
+            >
+              {isUser ? (
+                <BecomeProfesionalMenu />
+              ) : isProfessional ? (
+                <UpgradeAccountMenu />
+              ) : null}
+            </div>
+          )}
         </Container>
       </Navbar>
     </AuthNavbarStyle>

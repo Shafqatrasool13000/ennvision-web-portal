@@ -14,8 +14,10 @@ const InputField: React.FC<InputFieldProps> = ({ title, value }) => {
       border="1px solid #EFEFF4"
       padding="8px 8px"
       marginTop="10px"
+      borderRadius="0px"
+      textAlign="center"
     >
-      <Input placeholder="Basic usage" value={`${value} ${title}`} />
+      <Input readOnly placeholder="Basic usage" value={`${value} ${title}`} />
     </InputFieldStyle>
   );
 };

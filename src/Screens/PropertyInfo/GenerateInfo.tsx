@@ -5,8 +5,8 @@ import Headbar from "../../Components/Headbar/Headbar";
 import { GenerateInfoStyle } from "./style";
 import FormControl from "../../Components/FormControl";
 import { Formik } from "formik";
-import plusIcon from "../../assets/icons/ic_add_property_address_add_field.svg";
-import minusIcon from "../../assets/icons/ic_add_property_address_remove_field.svg";
+import plusIcon from "../../assets/icons/ic_maximum.svg";
+import minusIcon from "../../assets/icons/ic_minimum.svg";
 import InputField from "../../Components/InputField/InputField";
 
 const options = [
@@ -118,6 +118,7 @@ const GenerateInfo = () => {
                   control="input"
                   type="email"
                   name="fullName"
+                  readyOnly={true}
                   border="1px solid #EFEFF4"
                   placeholder="Year Furnished"
                   className={

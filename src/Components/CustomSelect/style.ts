@@ -5,6 +5,9 @@ type CustomSelectProps = {
   padding: string;
   border: string;
   bgColor: string;
+  fontFamily: string;
+  labelFamily: string;
+  labelMarginBottom: string;
 };
 
 export const CustomSelectStyle = styled.div<CustomSelectProps>`
@@ -14,6 +17,8 @@ export const CustomSelectStyle = styled.div<CustomSelectProps>`
     font-size: 13px;
     text-transform: capitalize;
     display: block;
+    font-family: ${(props) => props.labelFamily};
+    margin-bottom: ${(props) => props.labelMarginBottom};
   }
   .ant-select-arrow {
     color: #000000;

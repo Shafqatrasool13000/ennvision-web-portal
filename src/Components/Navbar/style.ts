@@ -5,6 +5,13 @@ const NavbarStyle = styled.div`
   background: transparent;
   width: 100%;
   z-index: 20;
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
+  }
   .company-logo {
     width: 164px;
     height: 33px;
@@ -43,6 +50,13 @@ export const AuthNavbarStyle = styled.div`
   background: transparent;
   width: 100%;
   z-index: 20;
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
+  }
   .logo {
     height: 33px;
   }

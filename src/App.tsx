@@ -33,8 +33,6 @@ import CreatePost4 from "./Screens/CreatePost/CreatePost4";
 
 import PostList from "./Screens/CreatePost/Index";
 
-import Confirmed from "./Components/Confirmed/Index";
-
 import ProfessionalProfile from "./Screens/ProfessionalProfile/Index";
 import PropertyParent from "./Screens/ParentComponent/PropertyParent";
 import Login from "./Components/Login/Index";
@@ -47,6 +45,8 @@ import ExploreNearby from "./Screens/ExploreNearby/Index";
 import Story from "./Screens/Story/Index";
 import MyProfile from "./Screens/MyProfile/MyProfile";
 import ProfessionalPackages from "./Screens/ProfessionalPackages/ProfessionalPackages";
+import ConfirmedLight from "./Components/Confirmed/ConfirmedLight";
+import ConfirmedDark from "./Components/Confirmed/ConfirmedDark";
 
 // const Home = lazyLoad("./Screens/Home/Index");
 // const FindHome = lazyLoad("./Screens/FindHome/Index");
@@ -281,7 +281,8 @@ function App() {
           }
         />
 
-        <Route path="confirmed" element={<Confirmed />} />
+        <Route path="confirmed-light" element={<ConfirmedLight />} />
+        <Route path="confirmed-dark" element={<ConfirmedDark />} />
 
         <Route path="post-list" element={<PostList />} />
 

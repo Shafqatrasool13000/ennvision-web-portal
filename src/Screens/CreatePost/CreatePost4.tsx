@@ -11,7 +11,7 @@ import FormControl from "../../Components/FormControl";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import CustomModal from "../../Components/Modal/CustomModal";
-import Confirmed from "../../Components/Confirmed/Index";
+import Confirmed from "../../Components/Confirmed/ConfirmedLight";
 
 const Post_List5 = () => {
   const [isModalVisib, setIsModalVisible] = useState(false);

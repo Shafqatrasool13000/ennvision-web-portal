@@ -4,6 +4,7 @@ import ProfessionalPackagesStyle from "./style";
 import select from "../../assets/icons/ic_add_property_sel_payment.svg";
 import { Container } from "react-bootstrap";
 import RedBlackUnderline from "../../Components/RedBlackUnderline/RedBlackUnderline";
+import { useNavigate } from "react-router-dom";
 
 const packagesData = [
   {
@@ -87,40 +88,47 @@ const responsive = {
   568: { items: 2.2 },
   1024: { items: 3 },
 };
-const items = [
-  ...packagesData.map(
-    ({ plan_name, price, offers, button, duration, selected }, index) => (
-      <div className="card" key={index}>
-        <div className="d-flex justify-content-between head-bar">
-          <div className="d-flex ">
-            <h6 className="heading text-center">{plan_name}</h6>
-            <p className="sub-heading text-center mb-0 ms-2">{duration}</p>
-          </div>
-          <h5 className="price mb-0 text-center">{price}</h5>
-        </div>
-        <div className="offers">
-          {offers.map(({ title }: any, index: number) => (
-            <div
-              key={index}
-              className="offer d-flex align-items-center justify-content-center"
-            >
-              <img src={select} alt="select" />
-              <p className="mb-0 offer-type">{title}</p>
-            </div>
-          ))}
-        </div>
-        <button
-          className={`purchase-btn rounded w-100 ${
-            selected && "bg-danger text-light"
-          }`}
-        >
-          {button}
-        </button>
-      </div>
-    )
-  ),
-];
+
 const ProfessionalPackages = () => {
+  const navigate = useNavigate();
+
+  const items = [
+    ...packagesData.map(
+      ({ plan_name, price, offers, button, duration, selected }, index) => (
+        <div className="card" key={index}>
+          <div className="d-flex justify-content-between head-bar">
+            <div className="d-flex ">
+              <h6 className="heading text-center">{plan_name}</h6>
+              <p className="sub-heading text-center mb-0 ms-2">{duration}</p>
+            </div>
+            <h5 className="price mb-0 text-center">{price}</h5>
+          </div>
+          <div className="offers">
+            {offers.map(({ title }: any, index: number) => (
+              <div
+                key={index}
+                className="offer d-flex align-items-center justify-content-center"
+              >
+                <img src={select} alt="select" />
+                <p className="mb-0 offer-type">{title}</p>
+              </div>
+            ))}
+          </div>
+          <button
+            className={`purchase-btn rounded w-100 ${
+              selected && "bg-danger text-light"
+            }`}
+            onClick={() =>
+              navigate("/bill-info", { state: { link: "/confirmed-dark" } })
+            }
+          >
+            {button}
+          </button>
+        </div>
+      )
+    ),
+  ];
+
   return (
     <ProfessionalPackagesStyle>
       <Container>
